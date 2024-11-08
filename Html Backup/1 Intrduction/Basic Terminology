@@ -1,0 +1,28 @@
+Web : Web is an information space, which comprises of documents and web resources and are interlinked by hyperlinks and have some specific url and are access via internet.
+
+Web Page : Web pages are the documents which are written in a plain text. 
+Web pages contains multi media content (Imgaes, animation, video, audio etc)
+Every web page have some specific URL.
+Must be deployed on atleast one server.
+
+Web Site : Website is a collection of web pages.
+There are two types of website : 
+    1. Static Website
+        |-- Only one way communication takes place.
+        |-- Contents do not change so frequently. 
+    2. Dynamic Website
+        |-- Two way communication takes place
+        |-- contents may change accordingly
+
+Note : Dynamic Website is also termed as Web Application
+
+Web Application : Application which runs on the browser and whose execution takes place on the server is known as web application.It works on client server architecture.
+
+Server : Server is a highly configured machine, which stores data, performs processing on that data and helps in retrieval of data.
+There are two types of server : 
+    1. Application server (Enterprise Application)
+    2. Web Server (Web Application)
+    
+Web Application <----------Frontend + Backend
+                               |
+                             HTML  

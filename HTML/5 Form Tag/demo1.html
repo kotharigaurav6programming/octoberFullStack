@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <form action="welcome.html">
+        <table>
+            <caption>
+                <h2>Registration Form</h2>
+            </caption>
+            <tr>
+                <td>
+                    <label for="username">Username</label>
+                </td>
+                <td>
+                    <input readonly value="John Deo" required type="text" placeholder="Enter Username" id="username" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email</label>
+                </td>
+                <td>
+                    <input required type="email" placeholder="Enter Email" id="email" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Password</label>
+                </td>
+                <td>
+                    <input required type="password" placeholder="Enter Password" id="password" name="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="contact">Contact</label>
+                </td>
+                <td>
+                    <input required type="text" maxlength="10" placeholder="Enter Mobile Number" id="contact" name="contact">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="date">DOB</label>
+                </td>
+                <td>
+                    <input required type="date" id="date" name="date">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="male">Gender</label>
+                </td>
+                <td>
+                    <input checked type="radio" id="male" name="gender">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="cricket">Hobbies</label>
+                </td>
+                <td>
+                    <input checked type="checkbox" id="cricket" name="cricket">
+                    <label for="cricket">Cricket</label>
+                    <input type="checkbox" id="football" name="football">
+                    <label for="football">Football</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="subject">Subject</label>
+                </td>
+                <td>
+                    <select required name="subject" id="subject">
+                    <!-- <select name="subject" id="subject" multiple> -->
+                        <option value="">Select Subject</option>
+                        <option value="C Language">C Language</option>
+                        <option selected value="C++ Language">C++ Language</option>
+                        <option value="C# Language">C# Language</option>
+                        <option value=".Net Language">.Net Language</option>
+                        <option value="Java Language">Java Language</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="address">Address</label>
+                </td>
+                <td>
+                    <textarea required rows="2" cols="22" name="address" id="address" placeholder="Enter Address"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="file">Upload</label>
+                </td>
+                <td>
+                    <input required type="file" name="file" id="file">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>

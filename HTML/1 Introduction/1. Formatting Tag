@@ -1,0 +1,32 @@
+Formatting Tag
+--------------
+1. Heading Tag
+<h1></h1> 32px
+<h2></h2> 24px
+<h3></h3> 19px
+<h4></h4> 16px normal font size
+<h5></h5> 13px
+<h6></h6> 11px
+
+2. <b> bold
+3. <i> italic
+4. <u> underline
+5. <strong> bold
+6. <em> italic
+7. <big> 
+8. <small>
+
+9. <sup> superscript
+10. <sub> subscript 
+11. <q> double quotes
+12. <del> line through (<strike>)
+
+13. <font size="" face="" color="">
+14. <mark> for highlighting text 
+15. blockquote = indentation
+
+16. <address>
+17. <code>
+18. <marquee>
+19. <center>
+20. <pre> preformatted tag

@@ -1,0 +1,15 @@
+Structure of HTML
+-----------------
+<!DOCTYPE html>
+<html>
+    <head>
+        ......
+        <title>Home</title>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+save  : abc.html
+run : browser

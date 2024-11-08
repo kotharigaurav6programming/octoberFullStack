@@ -1,0 +1,91 @@
+Html (HyperText Markup Language) 
+--------------------------------
+Language : Acts as a medium of communication
+HyperText : HyperText is a text which contains link to another text.
+Markup Language : Tag(<>) based language
+  |-- Works on three terminology
+        |-- Definition
+        |-- Processing
+        |-- Presentation
+
+|-- Html document consists of Multi media content(Images,animation,audio,video etc)
+
+|-- Output of Html document is going to be displayed out on browser screen.
+
+|-- We can create html document on any word processing tool(wordpad, notepad, vs code(editor), sublime text, dreamviewer (designing tool)etc).
+
+|-- We need to save html document by .html or .htm extension
+
+|-- Html also works on three terminology : 
+    |-- Tag
+          |-- Tags are hidden keywords, which are mainly used to display content on browser screen.There are different types of tags : 
+            |-- a. Empty Tag (Unbalanced Tag)
+                   Only opening takes place and no closing Tag here.
+                   Ex : <br>,<hr>,<input> etc 
+            |-- b. Container Tag (Balanced Tag)
+                   Opening and Closing both are involved here.
+                   Ex : <html>
+                    ......
+                   </html>,
+                   <title></title>, <head></head> etc 
+            |-- c. Self enclosing Tag
+                   Mainly used in React
+                   Ex : <br/>, <hr/> , <input /> etc
+            |-- d. Semantic Tag
+                   Tag which shows meaning by its name
+                   Ex : <header></header>,
+                        <footer></footer>,
+                        <section></section> etc 
+            |-- e. Non-semantic Tag(Structural Tag)
+                   Tag which shows generalized meaning by its name
+                   Ex : <form></form>,
+                        <div></div> etc 
+
+    |-- Attribute
+        |-- Attribute provides some additional information
+        <img src="" height="" width="">
+        <p align="center">
+        here src, height , width, align are attributes.
+
+    |-- Element 
+        |-- Html is an element, which represents whole document and it comprises of opening of <html> tag and closing of </html> tag.
+        |-- Body is also an element, which represents document's body and it comprises of opening of <body> tag and closing of </body> tag. 
+        
+Structure of Html 
+----------------- 
+<!DOCTYPE html>
+here <! represents MDO = Markup Declaration Open
+     <!--  --> used in commenting also 
+     <!DOCTYPE html> represents html 5
+
+     DOCTYPE : Doctype simply represents, which type of documentation browser needs to be expected from the coming html document.
+
+     html : simply represents html 
+
+     <!-- Html Document Representation -->
+    <html>
+            <!-- Head Portion Representation -->
+             <head>
+                <!-- Defining Title -->
+                <title>
+                    Home
+                </title>
+             </head>
+             <!-- Defining Body of Html Document -->
+             <body>
+                    <!-- Categorization of various Tags -->
+                     <p></p>
+                     <span></span>
+                     <div></div> etc
+             </body>
+    </html>
+
+
+
+
+
+
+
+
+
+

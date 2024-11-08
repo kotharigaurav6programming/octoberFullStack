@@ -1,0 +1,35 @@
+Full Stack
+----------
+    |----FrontEnd-----Presentation Layer (View)
+         |-- HTML
+             |-- Creates Structure of website (HTML5)
+         |-- CSS
+             |-- CSS provides styling effects (CSS3)
+         |-- MEDIA QUERY
+             |-- Used to make responsive website
+             |-- 0px-360px
+             |-- 360px-720px
+             |-- 720px-1200px   
+         |-- BOOTSTRAP
+             |-- Internally uses Media Query and works on the concept of classes
+                 simply for making website responsive
+         |-- JAVASCRIPT
+             |-- Client side as well as server side scripting language   
+         |-- REACT JS | ANGULAR JS
+             |-- Virtual DOM
+
+    |----BackEnd------Server Side Logic Implementation
+         |-- Programming Languages
+                |-- Java,Python,.Net,Node(Express) etc
+                     |-- Java,NodeJS,ExpressJS
+         |-- Database
+                |-- MySql(RDBMS),Mongodb(NoSql),SQL(RDBMS),Postgre(RDBMS) etc
+                |-- Object Relational Mapping (ORM)
+                |-- Object Document Mapping | Mapper (ODM)
+                |-- ORM(RDBMS) and ODM(NoSql) tools
+                    |-- Sequelize    |-- mongoose
+                    |-- typeORM etc
+         |-- Server
+                |-- Highly Configured Machine
+         |-- Server Maintenance
+         |-- API (Application Programming Interface)       
