@@ -6,6 +6,113 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="welcome.html" method="post">
+    <table>
+        <caption>
+            <h2>Registration Form</h2>
+        </caption>
+        <tr>
+            <td>
+                <label for="username">Username</label>
+            </td>
+            <td>
+                <input readonly required type="text" id="username" name="username" placeholder="Enter Username" value="abc@gmail.com">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email">Email</label>
+            </td>
+            <td>
+                <input required type="email" id="email" name="email" placeholder="Enter Email">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="password">Password</label>
+            </td>
+            <td>
+                <input required type="password" id="password" name="password" placeholder="Enter Password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="contact">Contact</label>
+            </td>
+            <td>
+                <input required type="text" id="contact" name="contact" maxlength="10" placeholder="Enter 10-Digit Number">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="dob">DOB</label>
+            </td>
+            <td>
+                <input required type="date" name="dob" id="dob">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="male">Gender</label>
+            </td>
+            <td>
+                <input checked type="radio" name="male" id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="female"  id="female">
+                <label for="female">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="cricket">Hobbies</label>
+            </td>
+            <td>
+                <input checked type="checkbox" id="cricket" name="cricket" value="Cricket">
+                <label for="cricket">Cricket</label>
+                <input type="checkbox" id="football" name="football" value="Football">
+                <label for="football">Football</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="subject">Subject</label>
+            </td>
+            <td>
+                <!-- <select required id="subject" name="subject"> -->
+                <select multiple id="subject" name="subject">
+                    <option value="">Select Subject</option>
+                    <option value="C Language">C Language</option>
+                    <option selected value="C++ Language">C++ Language</option>
+                    <option value="C# Language">C# Language</option>
+                    <option value=".Net Language">.Net Language</option>
+                    <option value="Java Language">Java Language</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="address">Address</label>
+            </td>
+            <td>
+                <textarea required rows="3" cols="21" name="address" id="address" placeholder="Enter Address"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="file">Upload</label>
+            </td>
+            <td>
+                <input required type="file" id="file" name="file">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Register">
+                <input type="reset" value="Reset">
+            </td>
+        </tr>
+    </table>
+    </form>
 </body>
 </html>
