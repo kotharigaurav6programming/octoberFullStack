@@ -1,0 +1,184 @@
+Token : Token is the smallest unit of information 
+Token includes :    
+    1. Constant
+    2. Variable
+    3. Keywords
+    4. Identifiers
+    5. Separators
+    6. Operators
+
+1. Constant : Constant is an entity whose value cannot be changed during the execution of program. And in case of java, we use final keyword to define a constant. Types of constant : 
+    a. Integer Constant
+        -- Contains atleast one digit
+        -- It may be positive or negative (+5, -4)
+        -- By default it is considered as positive (5)
+        -- Decimal point is absent (56)
+
+    b. Real Constant
+        -- Contains atleast one digit
+        -- It may be positive or negative (+5, -4)
+        -- By default it is considered as positive (5)
+        -- Decimal point is present (56.65, 67)
+        
+    c. Character Constant
+        -- Alphabets : 'a','b','A','Z' etc
+        -- Special symbols : '%','@','&' etc 
+        -- Digits : '0','1','9' etc
+
+        9   = integer value
+        '9' = character value
+
+2. Variable : Variable is the name given to a memory location, whose value may change during the execution of program.
+Types of Variables : 
+    a. Local Variable : Whose scope is within block or function.
+    
+    b. Instance Variable : It is also termed as object variable(Multiple copies are going to be allocate).
+
+    c. Static Variable : It is also termed as class variable(single copy is going to be allocated).
+
+Rules to define variable name : 
+    i. Variable name can not starts with a digit.
+       ex : int 1a; invalid
+            int a1; valid
+
+    ii. We can use _ and $ as a special symbol to define variable name.
+        ex : int _a; valid
+             int @a; invalid 
+
+    iii. We can use comma operator to seperate two variables. 
+        ex : int a,b; valid
+             int ab; considered only one variable   
+             int a b; invalid         
+
+3. Keywords : Keywords are reserved words, we cannot use keywords as a variable names. Meaning of keywords are alreaady defined. There are 63 keywords in java. Ex : synchronized, static, final, for , case, default etc 
+
+4. Identifier : user defined names
+    -- variable : lowercase (small letters)
+    -- constant : uppercase (capital letters)
+    -- function : Camel Case 
+    -- class : Pascal case 
+
+    cases :- 
+        camel case : addProduct, addProductCategory etc 
+        pascal case : Demo, MyClass etc 
+        snake case : add_product_category, add_category etc 
+        habib case : add-product-category, add-category etc
+
+5. Separators : 
+        , comma 
+        ; semi-colon
+        () parenthesis 
+        {} curly brackets 
+        [] square brackets 
+
+6. Operators : Operators are the symbols which are used to perform some operations on one or more than one operand(variable and constant).
+Like : x + y , 5 + 2, z + 4;
+
+Types of operators : 
+    1. Assignment Operator(=)
+       Assigns right hand side value to left hand side variable.
+       Like : int a = 100;
+              Here 100 is a value
+              a is a variable 
+              = is a assignment operator
+              and 100 is going to be assigns in a 
+
+    2. Arithmetic Operator 
+       (A=5, B=2)
+    +   Addition         A+B = 5+2 = 7  
+    -   Subtraction      A-B = 5-2 = 3
+    *   Multiplication   A*B = 5*2 = 10
+    /   Division         A/B = 5/2 = 2 (Quotient)  
+    %   Modulus          A%B = 5%2 = 1 (Reminder) 
+
+    ------------------------------------
+    input          input        output
+    ------------------------------------
+    int            int          int 
+    5        /     2            2
+
+    int            float        float 
+    5        /     2.0          2.5
+     
+    float          int          float 
+    5.0        /   2            2.5
+
+    float          float        float 
+    5.0        /   2.0          2.5
+
+    a = 5, b = 2
+    a.0/b Its wrong
+
+    (float)(a/b) = (float)(5/2) = (float)(2) = 2.0
+    (float)a/b = (float)5/2 = 5.0/2 = 2.5
+
+3. Arithmetic Assignment operator | Compound operator | Shorthand operator 
+   +=   -=  *=  /=  %=
+
+  a += 5 <------------ a = a + 5
+  a -= 5 <------------ a = a - 5
+  a *= 5 <------------ a = a * 5
+  a /= 5 <------------ a = a / 5
+  a %= 5 <------------ a = a % 5 
+
+4. Relational Operator : 
+   <    less than                   a<b 
+   >    greater than                a>b
+   <=   less than equals to         a<=b
+   >=   greater than equals to      a>=b
+   !=   Not equals to               a!=b
+   ==   Double equals to            a==b
+        (Comparision operator)  
+
+5. Conditional operator (Ternary operator)    ? :
+
+   (condition) ? expression 1 : expression 2 ;
+     | |________true______|         | 
+     |________________false_________|
+
+
+6. Increment | Decrement Operator 
+Increment Operator (++)
+|-- Post Increment 
+    |-- Print(Use) ----> Increment
+        a = 10
+        print(a++)   10
+        print(a)     11
+
+|-- Pre Increment
+    |-- Increment ------> Print(Use)
+        a = 10
+        print(++a)   11    
+        print(a)     11
+
+Decrement Operator (--)
+|-- Post Decrement 
+    |-- Print(Use) ----> Decrement
+        a = 10
+        print(a--)   10
+        print(a)     9
+
+|-- Pre Decrement
+    |-- Decrement ------> Print(Use)
+        a = 10
+        print(--a)   9    
+        print(a)     9
+
+7. Logical Operator 
+
+Logical And (&&) : When all the conditions are true, then only resultant will be true. 
+
+Logical OR (||) : If any one condition is true, then the resultant will be true.
+
+Logical Not(!) : Opposite
+        true ----> false 
+        false ---> true
+
+8. Bitwise operator 
+
+Bitwise And (&)
+Bitwise Or (|)
+Bitwise Xor (^)
+Bitwise left shift (<<)
+Bitwise right shift (>>)
+Bitwise complement (~)

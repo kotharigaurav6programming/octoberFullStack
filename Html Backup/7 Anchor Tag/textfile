@@ -1,0 +1,24 @@
+Semantic Tag:
+-------------
+<header></header> 
+<footer></footer>
+<summary></summary>
+<section></section>
+etc
+
+Non Semantic Tag:
+-----------------
+<form>
+<div> 
+<p> 
+etc
+
+audio | Video tag
+-------------------
+<audio>
+    <source src=""></source>
+</audio>
+
+<video>
+    <source src=""></source>
+</video>
