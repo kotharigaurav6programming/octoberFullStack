@@ -81,4 +81,100 @@ Line 4 : {
 
 |-- It simply represents the opening of main function definition part
 
+Line 5 : System.out.println("Hello world");
 
+|-- Here System is a class 
+    We cannot create object of System class in our class.
+    Why ? Because there is a private constructor inside System class, which restrict it to create object in any other class.
+
+|-- Here out is object
+    class System{
+        static PrintStream out;
+        ....
+        ....
+    }
+    Here out is the object of PrintStream class
+    and static member of System class.
+
+|-- Here println is a function of PrintStream class
+
+    class PrintStream{
+        public void println(String s){
+            ....
+        }
+        public void print(String s){
+            ....
+        }
+        public void println(int i){
+            ....
+        }
+        public void print(int i){
+            ....
+        }
+        ....
+        ....
+    }
+
+Line 6 :     }
+|-- closing of main function definition part
+
+Line 7 : }
+|-- closing of class definition part 
+
+save : Filename.java 
+compile : javac Filename.java
+run : java classname 
+
+Note : 
+class Hello{}
+
+In this case, file name and class name can be same or different
+
+save : Hello.java (filename) 
+classname : Hello 
+
+save : MyExample.java (filename) 
+classname : Hello 
+
+But in this case : 
+public class Hello{}
+
+In this case, file name and class name must be same.
+
+save : Hello.java (filename) 
+classname : Hello 
+
+---------------------------------
+
+Why Java ? 
+Need of Java
+Types of Application which we can create with the help of java : 
+
+1. Desktop application | Window based application | Standalone application
+Technology used : Swing and AWT (Abstract Windowing Toolkit)
+
+2. Web application : Application which runs on the browser and whose execution takes place on the server. It basically follows client server architecture. 
+Technology used : Servlet, JSP , Framework like Hibernate, spring, spring boot etc.
+Web application uses web server. 
+
+3. Enterprise Application : Application which are distributed in nature. 
+Enterprise application uses application server.
+Technology Used : EJB (Enterprise Java Beans)
+
+4. Mobile Application : 
+5. Games
+6. Embedded system 
+7. Robotics 
+8. Big data hadoop
+
+Features : 
+----------
+1. Simple
+2. Easy to understand
+3. Portable 
+4. Machine Independent 
+5. Secure 
+6. Robust
+7. Object Oriented
+8. Automatic Memory management
+9. Performance
