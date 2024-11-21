@@ -1,0 +1,84 @@
+C program to print Hello world
+
+#include<stdio.h>
+#include<conio.h>
+void main(){
+    clrscr();
+        printf("Hello world");
+    getch();
+}
+
+C++ program to print Hello world
+
+#include<iostream.h>
+#include<conio.h>
+void main(){
+    clrscr();
+        cout<<"Hello world";
+    getch();
+}
+
+Structure of Java Program
+-------------------------
+
+Line 1 : class Hello
+Line 2 : {
+Line 3 :     public static void main(String args[])
+Line 4 :     {
+Line 5 :         System.out.println("Hello world");
+Line 6 :     }
+Line 7 : }
+
+Line 1 Explanation : class Hello
+
+|-- class is a keyword
+|-- class is a userdefined blueprint for creating object
+|-- we define class name in pascal case
+|-- Hello is a userdefined class name 
+|-- By convension, we keep first letter of class name in uppercase
+
+Line 2 : {
+
+|-- It simply represents the opening of class definition part
+
+Line 3 : public static void main(String args[])
+
+|-- public is a keyword
+|-- It is also a access modifier(public, private, protected, default) but its mandatory to write public only here
+|-- Why public ? Because JVM(Java Virtual Machine) can call it from anywhere.
+
+|-- static is also a keyword
+|-- Along with this it is a modifier (static, synchronized, abstract, final etc) but its mandatory to write static only here.
+|-- If we make any method as a static, then in that case we do not needs to create object of that class to call that static method, static methods are directly called by class name. 
+Note : static methods (static member functions) are class member functions.
+
+|-- public static <return_type>
+    public static void : here void means it does not return anything
+
+|-- main : main is predefined word
+|-- (String args[])
+    |-- Here String is a class 
+    |-- args[] is a String array name(user defined name)
+    |-- String arr[] valid
+    |-- String args[] represents command line arguments, which is responsible for taking arguments for main method at run time.
+
+    Note : 
+        String args[], here args is an array
+        String []args, here args is an array
+        String[] args, here args is an array
+        String...args, here args is an array
+        |-- three dots represents varargs (variable arguments)
+
+    Note:
+        String name[],salary;
+            here name is an array and salary is a variable   
+        String []name,salary;
+            here name is an array and salary is a variable   
+        String[] name,salary;
+            here name and salary both are array   
+
+Line 4 : {
+
+|-- It simply represents the opening of main function definition part
+
+
