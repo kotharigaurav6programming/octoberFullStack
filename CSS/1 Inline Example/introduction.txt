@@ -1,0 +1,80 @@
+CSS
+---
+1. Full form of CSS is CASCADING STYLE SHEET.
+
+2. CSS was developed by W3C (World Wide Web Consortium), simply for simplyfying the task of designer.
+
+3. As HTML is mainly used to make structure of your web page but CSS is mainly used to make web pages more effective with its styling effects.
+
+4. As HTML works on the concept of Tags,whereas CSS is mainly works on the concept of properties.
+
+5. CSS provides the functionality of making web pages responsive with the help of Media Query.
+
+6. There are three ways to implement CSS :
+    a. Inline CSS
+    b. Internal CSS
+    c. External CSS 
+
+Out of this three CSS, Priority goes to inline CSS, but the recommended approach is to use External CSS.
+
+7. Currently CSS3 is going in the market.
+
+HW : difference between css and css3
+
+----------------------------
+How to deal with Inline CSS :
+----------------------------
+syntax : 
+<element_name style="property_name:value">
+....
+</element_name>
+
+<element_name style="property_name:value;property_name:value;.....">
+....
+</element_name>
+
+example : 
+<div style="color:red">
+....
+</div>
+
+<p style="font-size:20px; background-color:blue; .....">
+....
+</p>
+
+--------------------------------------------
+How to deal with Internal CSS :
+--------------------------------------------
+<!Doctype html>
+<html>
+    <head>
+        <title></title>
+        <style>
+        Here we use the concept of Selectors, which represents that which property corresponding to its value is going to be implemented on which element. Types of selectors : 
+                 1. Element Selector or Tag Selector 
+                 2. Id selector 
+                 3. Class Selector 
+                 4. Grouping selector 
+                 5. Descendant selector 
+                 6. Universal selector 
+                 7. Pseudo class selector 
+                 8. Pseudo element selector
+                 9. Advance selector 
+                    a. nth-of-type selector 
+                    b. Attribute selector 
+                    c. Adjacent sibling selector 
+                    d. General sibling selector 
+                    e. Direct child selector 
+        On the basis of these selectors, we are going to implement properties corresponding to its value to elements .                
+            property : value;
+            property : value;
+             |            |
+            property : value; 
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <p></p>
+        <span></span>
+    </body>
+</html>
