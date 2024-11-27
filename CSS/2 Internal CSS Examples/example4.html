@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Tag | Element selector */
+        span{
+            background-color: crimson;
+            color:white;
+        }
+        /* Descendant Selector */
+        div span{
+            background-color: darkgreen;
+            color:white;
+        }
+        div p span{
+            background-color: orange;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            <span>This is an example of descendant selector</span>
+        </p>
+        <span>This is an example of descendant selector</span>
+    </div>
+    <span>This is an example of descendant selector</span>
+</body>
+</html> 
