@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+        }
+        #outerdiv{
+            height:250px;
+            background-color: black;
+            width: 350px;
+        }
+        #smallerDiv{
+            height: 170px;
+            width: 170px;
+            margin-left: 80px;
+            margin-top:-85px;
+            border-radius: 50%;
+        }
+        #img{
+            height: 170px;
+            width: 170px;
+            border-radius: 50%;
+        }
+        #leftSection{
+            height: 100vh;
+            width: 350px;
+            background-color: whitesmoke;
+            float: left;
+            position: fixed;
+        }
+        #rightSection{
+            height: 2600px;
+            width: 906px;
+            background-color: goldenrod;
+            float: left;
+            margin-left:350px;
+        }
+        #section{
+            margin: 100px;
+            height: 300px;
+            width: 660px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="leftSection">
+        <div id="outerdiv"></div>
+        <div id="smallerDiv">
+            <img src="logo.png" id="img" alt="">
+        </div>
+    </div>
+    <div id="rightSection">
+        <div id="section"></div>
+        <div id="section"></div>
+        <div id="section"></div>
+        <div id="section"></div>
+        <div id="section"></div>
+        <div id="section"></div>
+    </div>
+
+</body>
+</html>

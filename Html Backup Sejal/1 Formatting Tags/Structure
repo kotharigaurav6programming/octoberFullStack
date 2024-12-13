@@ -1,0 +1,18 @@
+<!DOCTYPE html> 
+Note : HTML is not case sensitive
+here <! means MDO = Markup Declaration Open
+DOCTYPE | Doctype | doctype : It represents which type of documentation browser needs to expect from this document, Like whether it is HTML1, HTML2, HTML3 , HTML4 or HTML5
+
+<html> It represents HTML documentation body
+    <head> It represents Html documentation head, which comprises of title, some files for styling, logo attachment link etc 
+        <title> It prints it content on tab in title bar
+            Home
+        </title>
+    </head>
+    <body> It represents document's body
+        <div> It represents section 
+        <p> It represents Paragraph 
+        <span></span> It also represents content 
+        .....       
+    </body>
+</html>

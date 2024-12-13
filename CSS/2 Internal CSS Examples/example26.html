@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Adjacent sibling selector(+) */
+        /* div+span{
+            background-color: tomato;
+            color:white;
+        } */
+
+        /* direct child selector(>) */
+        /* div>span{
+            background-color: tomato;
+            color:white;
+        } */
+
+        /* general sibling selector(~) */
+        div~span{
+            background-color: tomato;
+            color:white;
+        }
+    </style>    
+</head>
+<body>
+    <div>
+        <span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, minus!
+        </span>
+        <p>
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, tenetur.</span>
+        </p>
+        <span>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, sequi?
+        </span>
+    </div>
+    <span>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, dolor.
+    </span>
+    <p>
+        <span>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, culpa.
+        </span>
+    </p>
+    <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, eveniet.
+    </span>
+</body>
+</html>

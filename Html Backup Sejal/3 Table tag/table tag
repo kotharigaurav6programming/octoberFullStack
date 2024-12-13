@@ -1,0 +1,16 @@
+Table TAG
+----------
+
+<table>    
+<caption>    = table heading
+<thead>      = table head(first row)
+<tbody>      = table body
+<tfoot>      = table foot
+<tr>         = table row
+<td>         = table data
+<th>         = table heading(content in bold of first row) 
+<colgroup>   = column group
+<col>        = column 
+
+multiple rows in single row = rowspan
+multiple column in single column = colspan

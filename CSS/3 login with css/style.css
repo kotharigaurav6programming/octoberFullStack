@@ -1,0 +1,54 @@
+div{
+    height: 400px;
+    width: 70%;
+    background-color: whitesmoke;
+    border-style: solid;
+    margin: auto;
+    border-width: 0px;
+    box-shadow: 1px 1px 30px 1px grey;
+    padding: 10px;
+    font-family: cursive;
+    color:darkslategrey
+}
+h1{
+    font-size: 3.5vw;
+}
+input[type='email'],input[type='password']{
+    border-radius: 10px;
+    height: 40px;
+    width: 70%;
+    border-color: black;
+    margin: 5px;
+    font-size: 18px;
+    font-family: cursive;
+    text-align: center;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    outline-width: 0px;
+}
+input[type='submit'],input[type='reset']{
+    height: 40px;
+    width: 71%;
+    border-color: black;
+    margin: 5px;
+    font-size: 18px;
+    font-family: cursive;
+    text-align: center;
+    border-width: 0px;
+    background-color: darkslategrey;
+    color:white;
+}
+input[type='submit']:hover{
+    background-color: green;
+    border-radius: 10px;
+}
+input[type='reset']:hover{
+    background-color: crimson;
+    border-radius: 10px;
+    color:white;
+}
+input[type='email']:focus,input[type='password']:focus{
+    border-block-color: green;
+    color:darkslategrey;
+}
