@@ -1,0 +1,108 @@
+*{
+    margin:0px;
+   }
+   #container{
+        height: auto;
+    }
+    #header{
+        height: 60px;
+        border-style: solid;
+        /* background-color: teal; */
+    }
+    #logo{
+        height: 50px;
+        width: 50px;
+        border-style: solid;
+        margin-top: 3px;
+        margin-left: 30px;
+        border-radius: 50%;
+    }
+    #banner{
+        height: 300px;
+        border-style: solid;
+        /* background-color: royalblue; */
+    }
+    #section1{
+        height: 250px;
+        border-style: solid;
+        width: 100px;
+        margin: 20px;
+        /* background-color: red; */
+        float: left;
+    }
+    #section2{
+        height: 250px;
+        /* border-style: solid; */
+        width: 740px;
+        margin: 20px;
+        /* background-color: tomato; */
+        float: left;
+    }
+    #section3{
+        height: 250px;
+        border-style: solid;
+        width: 280px;
+        margin: 20px;
+        /* background-color: crimson; */
+        float: left;
+    }
+    #section31{
+        height: 130px;
+        width: 240px;
+        border-style: solid;
+        /* background-color: aquamarine; */
+        border-radius: 50%;
+        margin: 20px;
+    }
+    #section32{
+        height: 60px;
+        width: 240px;
+        margin-left: 20px;
+        border-style: solid;
+        /* background-color: aquamarine; */
+    }
+    #bottomSection{
+        height: 300px;
+        border-style: solid;
+        /* background-color: teal; */
+    }
+    #leftSection{
+        height: 300px;
+        border-style: solid;
+        /* background-color: blueviolet; */
+        width: 280px;
+        float: left;
+    }
+    #ls1,#ls2,#ls3{
+        height:70px;
+        width: 240px;
+        margin: 18px;
+        border-style: solid;
+        /* background-color: brown; */
+    }
+    #rightSection{
+        /* border-style: solid; */
+        /* background-color: aquamarine; */
+        width: 964px;
+        height:300px;
+        float: left;
+    }
+    #circle1{
+        float: left;
+        height: 260px;
+        width: 260px;
+        border-radius: 50%;
+        margin: 20px;
+        margin-left:50px;
+        border-style: solid;
+        /* background-color: sienna; */
+    }
+    #circle2,#circle3{
+        float: left;
+        height: 260px;
+        width: 260px;
+        border-radius: 50%;
+        margin: 20px;
+        border-style: solid;
+        /* background-color: sienna; */
+    }
