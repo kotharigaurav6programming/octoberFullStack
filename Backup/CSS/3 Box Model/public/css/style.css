@@ -1,0 +1,22 @@
+#outerdiv{
+    height: 500px;
+    width: 500px;
+    border-style: solid;
+    background-color: darkslategrey;
+    margin:auto;
+}
+#innerdiv{
+    height: 400px;
+    width: 400px;
+    border-style: solid;
+    border-width: 40px;
+    background-color: grey;
+    margin:50px;
+    padding: 60px;
+    box-sizing: border-box;
+}
+#subdiv{
+    height: 200px;
+    width: 200px;
+    background-color: lightgrey;
+}

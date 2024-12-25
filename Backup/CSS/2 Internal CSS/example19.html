@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:nth-of-type(even){
+            background-color: crimson;
+        }
+        li:nth-of-type(odd){
+            background-color: green;
+        }
+        li:nth-of-type(5){
+            background-color: white;
+        }
+        li::first-letter{
+            text-transform: lowercase;
+        }
+        li::marker{
+            color: red;
+        }
+        ul::first-line{
+            text-decoration: line-through;
+        }
+        ul::after{
+            content: "After Hello";
+        }
+        ul::before{
+            content: "Before Hello";
+        }
+        input::placeholder{
+            color: brown;
+        }
+        input[type='text']{
+            background-color: wheat;
+            color:orange;
+        }
+        input[type='submit']{
+            background-color: black;
+            color:white;
+            border-width: 0px;
+        }
+</style>
+</head>
+<body>
+    <input type="text" placeholder="Enter Username"> <br>
+    <input type="submit" value="Submit">
+    <ul type="circle">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+        <li>Item 9</li>
+        <li>Item 10</li>
+    </ul>
+</body>
+</html>

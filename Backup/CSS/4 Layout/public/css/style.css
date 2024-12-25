@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+}
+#container{
+    height: auto;
+}
+#header{
+    border-style: solid;
+    height: 60px;
+    /* background-color: black; */
+}
+#leftSection{
+    height: 607px;
+    width: 300px;
+    /* background-color: teal; */
+    border-style: solid;
+    float: left;
+}
+#rightSection{
+    height: 607px;
+    width: 948px;
+    /* background-color: darkslategrey; */
+    border-style: solid;
+    float: left;
+}
+#leftCircle{
+    height: 250px;
+    width: 250px;
+    margin: 23px;
+    /* background-color: tomato; */
+    border-radius: 50%;
+    border-style: solid;
+}
+#leftBar1,#leftBar2,#leftBar3{
+    height: 80px;
+    width: 250px;
+    margin: 20px;
+    border-style: solid;
+    /* background-color: yellowgreen; */
+}
+#top{
+    height: 440px;
+    border-style: solid;
+    /* background-color: blueviolet; */
+}
+#bottom{
+    height:160px;
+    border-style: solid;
+    /* background-color: aqua; */
+}
+#topLeft{
+    height: 440px;
+    /* background-color: chocolate; */
+    border-style: solid;
+    width: 250px;
+    float: left;
+}
+#topRight{
+    height: 440px;
+    /* background-color: cornflowerblue; */
+    border-style: solid;
+    width: 685px;
+    float: left;
+}
+#topRightTop{
+    height: 220px;
+    /* background-color: red; */
+    border-style: solid;
+}
+#topRightBottom{
+    height: 212px;
+    /* background-color: blue; */
+    border-style: solid;
+}
+#bottomLeft{
+    height: 158px;
+    border-style: solid;
+    /* background-color: yellow; */
+    width: 468px;
+    float: left;
+}
+#bottomRight{
+    height: 158px;
+    border-style: solid;
+    /* background-color: green; */
+    width: 468px;
+    float: left;
+}
+#bottomLeft1{
+    height: 130px;
+    border-style: solid;
+    /* background-color: teal; */
+    width: 210px;
+    float: left;
+    margin: 10px;
+}
+#bottomLeft2{
+    height: 130px;
+    border-style: solid;
+    /* background-color: teal; */
+    width: 210px;
+    float: left;
+    margin: 10px;
+}
+#bottomRight1{
+    height: 75px;
+    border-style: solid;
+    /* background-color: springgreen; */
+}
+#bottomRight2{
+    height: 75px;
+    border-style: solid;
+    /* background-color: green; */
+}

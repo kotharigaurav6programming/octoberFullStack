@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            border-width: 2px;
+            border-color:black;
+            border-style: solid;
+            float: left;
+            margin:10px;
+        }
+        .demo1{
+            border-radius: 20px;
+            background-color: red;
+        }
+        .demo2{
+            border-radius: 50px;
+            background: linear-gradient(red, orange);
+        }
+        .demo3{
+            border-radius: 75px;
+            background: linear-gradient(90deg,red, orange);
+        }
+        .demo4{
+            border-radius: 100px;
+            background: linear-gradient(90deg,red, orange,green,blue);
+        }
+        .demo5{
+            border-radius: 50%;
+            background: linear-gradient(90deg,red 20%, orange 40%);
+        }
+        .demo6{
+            border-radius: 20px 80px 30px 50px;
+            background: radial-gradient(red 20%, orange 40%);
+        }
+        .demo7{
+            border-radius: 0% 50% 0% 50%;
+            background: radial-gradient(red, orange);
+        }
+        .demo8{
+            border-radius: 0% 75% 0% 75%;
+            background: repeating-linear-gradient(360deg,red 20%, orange 40%);
+        }
+        .demo9{
+            border-radius: 0% 100% 0% 100%;
+            background: repeating-radial-gradient(red 20%, orange 40%);        
+        }
+        .demo10{
+            border-radius: 50% 50% 0% 0%;
+        }
+        #img{
+            border-radius: 50% 50% 0% 0%;
+            height: 200px;
+            width: 200px;
+        }
+        .demo11{
+            border-radius: 0% 50% 50% 50%;
+            background: url(img5.jpg);
+            background-size: cover;
+        }
+        .demo12{
+            border-radius: 0% 50% 50% 0%;
+        }
+        .demo13{
+            border-radius: 0% 0% 50% 50%;
+        }
+
+</style>
+</head>
+<body>
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+    <div class="demo5"></div>
+    <div class="demo6"></div>
+    <div class="demo7"></div>
+    <div class="demo8"></div>
+    <div class="demo9"></div>
+    <div class="demo10">
+        <img src="img5.jpg" id="img" alt="">
+    </div>
+    <div class="demo11"></div>
+    <div class="demo12"></div>
+    <div class="demo13"></div>
+
+</body>
+</html>

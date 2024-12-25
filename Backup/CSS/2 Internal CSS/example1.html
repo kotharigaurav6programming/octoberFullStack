@@ -1,0 +1,158 @@
+ Selectors : selector is the concept which represents which properties corresponding to values are going to implement on which element.
+
+ Types of selectors : 
+ 1. Element selector | Tag selector
+    syntax:
+        element_name{
+            property:value;
+            property:value;
+                |      |
+        } 
+    example : 
+        div{
+            background-color:red;
+            color:white;
+        }
+
+ 2. Id Selector (#)
+    syntax : 
+        #id_name{
+            property_name:value;
+             |              |
+        }
+        <element_name id='id_name'></element_name>
+
+    example : 
+        #demo{
+            color:red;
+        }    
+        <div id="demo"></div>
+        
+        
+ 3. Class Selector (.)
+ syntax : 
+        .class_name{
+            property_name:value;
+             |              |
+        }
+        <element_name class='class_name'></element_name>
+
+    example : 
+        .demo{
+            color:red;
+        }    
+        <div class="demo"></div>
+     
+ 4. Universal selector (*)
+ syntax : 
+        *{
+            property_name:value;
+             |               |
+        }
+  example : 
+        *{
+            color:red;
+        }      
+
+ 5. Grouping selector (,)
+ syntax : 
+        element_name1,element_name2,element_name3,.....{
+            property:value;
+              |         | 
+        }
+
+  example :    
+        div,span{
+            color:red;
+            font-size:30px;
+        }
+ 
+ 6. Descendant selector
+   syntax : 
+    element1 element2 element3 ....{
+        property:value;
+         |         |
+    }     
+    <element1>
+        <element2>
+            <element3></element3>
+        </element2>
+    </element1>
+
+    <element2>
+        <element3></element3>
+    </element2>
+
+    <element3></element3>
+
+    example : 
+    span{
+        color:red;
+    }     
+    p span{
+        color:blue;
+    }
+    div p span{
+        color:purple;
+    }
+    <div>
+        <p>
+            <span></span> purple
+        </p>
+    </div>
+
+    <p>
+        <span></span> blue
+    </p>
+
+    <span></span> red
+    
+ 7. Advanced selector
+     a. Adjacent sibling selector (+) 
+        syntax: 
+            element1 + element2{
+                property:value;
+                    |      |
+            }
+        example : 
+            div + span {
+                color:red;
+            }
+
+     b. General sibling selector (~)
+     syntax: 
+        element1 ~ element2{
+            property:value;
+                |      |
+        }
+     example : 
+        div ~ span {
+            color:red;
+        }
+
+     c. Direct child selector (>)
+     syntax: 
+        element1 > element2{
+            property:value;
+                |      |
+        }
+     example : 
+        div > span {
+            color:red;
+        }
+     d. nth-of-type selector 
+        :nth-of-type(number | even | odd){
+
+        }
+
+     e. Attribute selector
+        syntax: 
+        element_name[type='text']{
+
+        }
+        example : 
+        input[type='text']{
+
+        }
+     f. Pseudo element selector (::) 
+     g. Pseudo class selector (:)

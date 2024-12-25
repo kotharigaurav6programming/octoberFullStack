@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Element | Tag selector */
+        span{
+            color:red;
+        }
+        /* Descendant selector */
+        p span{
+            color:green;
+        }
+        div p span{
+            color:purple;
+        } 
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quo?
+            </span>
+        </p>
+    </div>
+    
+    <p>
+        <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, explicabo.
+        </span>
+    </p>
+
+    <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, error.
+    </span>
+</body>
+</html>
