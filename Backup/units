@@ -1,0 +1,66 @@
+Ways to give Units : 
+--------------------
+
+1. PX means Pixel
+   (Picture Element) = fixed
+
+   div----parent-----width = 400px
+   div----child------width = 300px 
+
+   div----parent-----width = 200px
+   div----child------width = 300px 
+
+2. %
+
+   div----parent-----width = 400px
+   div----child------width = 75% (300px) 
+
+   div----parent-----width = 200px
+   div----child------width = 75% (150px) 
+
+3. vh(viewport height) and vw(viewport width)
+   1vh = 1% of device height
+   1vw = 1% of device width 
+   
+   device width = 400px
+
+   1vh = 1% of 400px 
+       = 1/100 * 400 = 4px 
+
+   100vh = 100 * 4 = 400px 
+
+   1vw = 1% of 400px
+       = 1/100 * 400 = 4px 
+
+   100vw = 100 * 4 = 400px 
+
+
+4. em and rem 
+em = empherical unit 
+rem = root empherical unit (Html is the root element here)
+
+em 
+---
+By default : 1em = 16px
+             2em = 32px 
+             2.5em = 40px 
+             
+With respect to parent : 
+parent = size : 20px
+
+1em = 20px 
+2em = 40px 
+2.5em = 50px  
+
+rem 
+---
+By default : 1rem = 16px
+             2rem = 32px 
+             2.5rem = 40px 
+             
+With respect to html root element : 
+size : 20px
+
+1rem = 20px 
+2rem = 40px 
+2.5rem = 50px  

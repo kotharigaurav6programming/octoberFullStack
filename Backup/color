@@ -1,0 +1,53 @@
+Ways to implement color : 
+
+1. By color name
+   color:red 
+
+2. By RGB
+   (Red Green Blue)
+   
+   Red,Green,Blue = 0 to 255
+
+   (0,0,0)       = black
+   (34,45,56)
+   (100,34,236)
+    |       | 
+   (255,255,255) = white
+
+3. By RGBA
+   (RED GREEN BLUE ALPHA)
+   Alpha is for opacity
+   Value of opacity ranges from 0 to 1
+   where 0 represents transparency and 1 represents solid color 
+
+4. By HSL (Hue, Saturation, Lightness)
+   Hue = gives value in degree
+   Saturation = gives value in % 
+   Lightness = gives value in % 
+   
+   Saturation 
+   100%   75%    50%    25%     0%
+   <------------------------------
+   Darkness                Lightness
+
+   Lightness
+   100%   75%    50%    25%     0%
+   <------------------------------
+   Lightness                Darkness
+
+5. By HSLA (Hue, Saturation, Lightness, Alpha)
+Hue = gives value in degree
+Saturation = gives value in % 
+Lightness = gives value in % 
+Alpha = opacity
+
+6. By Hex code 
+   #RRGGBB 
+   #000000 = black
+   #999999 = white
+   #67ab54
+
+   #776622
+   #RRGGBB 
+   #762 shorthand way
+   #RGB shorthand way
