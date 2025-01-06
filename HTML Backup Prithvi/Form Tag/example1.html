@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend align="center">
+            <fieldset>
+                Fill out the Details
+            </fieldset>
+        </legend>
+    <form action="welcome.html" method="get">
+        <table align="center">
+            <caption>
+                <h2>Registration Form</h2>
+            </caption>
+            <tr>
+                <td>
+                    <label for="username">Username</label>
+                </td>
+                <td>
+                    <input required id="username" name="username" type="text" placeholder="Enter Username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email</label>
+                </td>
+                <td>
+                    <input required id="email" name="email" type="email" placeholder="Enter Email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Password</label>
+                </td>
+                <td>
+                    <input required id="password" name="password" type="password" placeholder="Enter Password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="contact">Contact</label>
+                </td>
+                <td>
+                    <input required id="contact" name="contact" type="text" maxlength="10" placeholder="Enter 10-digit Mobile Number">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="date">DOB</label>
+                </td>
+                <td>
+                    <input required id="date" name="date" type="date">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="male">Gender</label>
+                </td>
+                <td>
+                    <input required id="male" name="gender" value="male" type="radio">
+                    <label for="male">Male</label>
+                    <input id="female" name="gender" value="female" type="radio">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="cricket">Hobbies</label>
+                </td>
+                <td>
+                    <input required id="cricket" name="cricket" value="cricket" type="checkbox">
+                    <label for="cricket">Cricket</label>
+                    <input id="football" name="football" value="football" type="checkbox">
+                    <label for="football">Football</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="subject">Subject</label>
+                </td>
+                <td>
+                    <select name="subject" id="subject" required>
+                    <!-- <select multiple name="subject" id="subject"> -->
+                        <option value="">Select Subject</option>
+                        <option value="C Language">C Language</option>
+                        <option value="C++ Language">C++ Language</option>
+                        <option value="Java Language">Java Language</option>
+                        <option value="Mern Stack">Mern Stack</option>
+                    </select>    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="address">Address</label>
+                </td>
+                <td>
+                    <textarea required id="address" name="address" placeholder="Enter Address" rows="2" cols="21"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="file">Upload File</label>
+                </td>
+                <td>
+                    <input id="file" required name="file" type="file">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</fieldset>
+
+</body>
+</html>
