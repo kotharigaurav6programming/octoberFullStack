@@ -198,3 +198,92 @@ iframe{
     font-family: candara;
     font-size:18px;
 }
+#account{
+    height: auto;
+    width: 330px;
+    background-color: whitesmoke;
+    margin: auto;
+    margin-top: 70px;
+}
+#account button{
+    font-family: candara;
+    height: 50px;
+    width: 165px;
+    font-size: 16px;
+    float: left;
+    border-width: 0px;
+}
+#on{
+    color:white;
+    background-color: black;
+}
+#off{
+    background-color:lightgrey;
+    color: black;
+}
+#space{
+    height: 80px;
+}
+input[type='email'],input[type='password'],input[type='text']{
+    height: 30px;
+    width: 260px;
+    margin-left: 32px;
+    margin-top: 5px;
+    outline: 0px;
+    font-size: 16px;
+    font-family: candara;
+    text-align: center;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-color: black;
+    background-color: transparent;
+    
+}
+input[type='checkbox']{
+    margin-left: 32px;
+    margin-top: 5px;
+}
+#remember{
+    font-size: 16px;
+    font-family: candara;
+}
+input[type='submit'],input[type='reset']{
+    height: 35px;
+    width: 267px;
+    border-radius: 5px;
+    background-color: black;
+    color:white;
+    font-size: 17px;
+    font-family: candara;
+    border-width: 0px;
+    margin-left: 32px;
+    margin-top: 5px;
+}
+
+#link{
+    text-decoration: none;
+    font-family: candara;
+    font-size: 16px;
+    color:darkslategrey;
+}
+#imageSection{
+    height: 280px;
+    width: 254px;
+    float: left;
+    margin: 20px;
+    margin-top: 100px;
+    overflow: hidden;
+}
+#sectionImage{
+    height: 280px;
+    width: 254px;
+}
+#sectionImage:hover{
+    transition: 2s;
+    /* transform: scale(1.1); */
+    /* transform: scaleY(1.2); */
+    /* transform: rotate(360deg); */
+    border-radius: 50%;
+    transform: scaleX(-1);
+}
