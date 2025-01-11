@@ -1,0 +1,145 @@
+*{
+    margin:0px;
+}
+#container{
+    height:auto;
+    width: 90%;
+    margin: auto;
+}
+#logo{
+    height: 70px;
+    margin: 5px;
+}
+#heading{
+    font-size: 35px;
+    font-family: candara;
+    margin-left: 10px;
+    margin-top: 20px;
+    position: absolute;
+    color:#4682B4;
+    font-weight: bold;
+}
+#nav{
+    position: sticky;
+    top:0;
+    height: 50px;
+    background-color:#4682B4;
+    z-index: 1;
+}
+#nav ul{
+    list-style: none;
+    padding-top: 10px;
+}
+#nav ul li{
+    display: inline;
+}
+#nav ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: candara;
+    margin-left: 57px;
+}
+#nav a:hover{
+    color:black;
+}
+#nav ul li ul{
+    display: none;
+}
+#nav ul li:hover ul{
+    display: block;
+    position: absolute;
+    width:140px;
+    margin-left: 270px;
+    background-color: #4682B4;
+}
+#nav ul li ul li{
+    margin-left: -55px;
+    line-height: 50px;
+}
+#banner{
+    height: 500px;
+}
+#bannerImg{
+    height: 500px;
+    width: 100%;
+}
+#mqdemo{
+    background-color: whitesmoke;
+    color:black;
+    font-size: 19px;
+    font-family: candara;
+    padding: 5px;
+}
+#content{
+    height: 300px;
+    padding: 50px;
+    font-family: candara;
+    text-align: justify;
+}
+#content p{
+    color:black;
+    margin-top: 10px;
+    font-size: 19px;
+}
+#box{
+    height: 430px;
+    background-color: rgba(135,206,250,0.5);
+    padding: 50px;
+}
+#box1,#box2,#box3{
+    height: 400px;
+    background-color: #4682B4;
+    width: 302px;
+    margin: 20px;
+    float: left;
+    font-family: candara;
+    text-align: justify;
+}
+#bannerBox{
+    height: 250px;
+    width: 100%;
+}
+#box1 h2,p,#box2 h2,p,#box3 h2,p{
+    margin: 10px;
+    color:white;
+}
+#box1 button,#box2 button,#box3 button{
+    color: black;
+    height: 40px;
+    width: 250px;
+    border-width: 0px;
+    background-color: black;
+    color:white;
+    margin-top: -10px;
+}
+#newsletter{
+    height: 120px;
+    background-color: #4682B4;
+    padding: 40px;
+    font-family: candara;
+    color:white;
+}
+#newsinput{
+    height: 40px;
+    width: 600px;
+    font-size: 18px;
+    font-family: candara;
+    text-align: center;
+    outline: 0px;
+    border-width: 0px;
+}
+#newsbtn{
+    height: 43px;
+    background-color: orange;
+    border-width: 0px;
+    color:white;
+    font-size: 18px;
+    width: 200px;
+    margin-left: -4px;
+}
+#about{
+    height:500px;
+    padding: 50px;
+    background-color: green;
+}

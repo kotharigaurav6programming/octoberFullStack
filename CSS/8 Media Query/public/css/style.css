@@ -1,0 +1,49 @@
+/* @media screen and (max-width:1000px){
+    body{
+        background-color: blue;
+    }
+}
+
+@media screen and (max-width:800px){
+    body{
+        background-color: red;
+    }
+}
+ */
+
+/* @media screen and (min-width:1000px){
+    body{
+        background-color: blue;
+    }
+} */
+
+/* @media screen and (min-width:0px) and (max-width:360px){
+    body{
+        background-color: blue;
+    }
+}
+
+@media screen and (min-width:361px) and (max-width:540px){
+    body{
+        background-color: orange;
+    }
+}
+
+@media screen and (min-width:541px) and (max-width:1000px){
+    body{
+        background-color: brown;
+    }
+}
+ */
+
+ @media screen and (orientation:landscape){
+    body{
+        background-color: brown;
+    }
+}
+
+@media screen and (orientation:portrait){
+    body{
+        background-color: blue;
+    }
+}
