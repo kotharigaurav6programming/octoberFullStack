@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-color: green;
+            animation-name: animate;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            position: absolute;
+            /* animation-direction: reverse; */
+            /* animation-direction: alternate-reverse; */
+            animation-timing-function: ease-in;
+        }
+        @keyframes animate {
+            0%{
+                top:0px;
+                left:0px;
+                background-color: red;
+            }
+            25%{
+                top:400px;
+                left:400px;
+                /* margin-left: 400px; */
+                background-color: green;
+            }
+            50%{
+                top:0px;
+                left:400px;
+                background-color: blue;
+            }
+            75%{
+                top:400px;
+                left:0px;
+                background-color: orange;
+            }
+            100%{
+                top:0px;
+                left:0px;
+                background-color: purple;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

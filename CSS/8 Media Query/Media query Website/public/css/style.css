@@ -287,6 +287,10 @@ input[type='submit'],input[type='reset']{
     border-radius: 50%;
     transform: scaleX(-1);
 }
+#hum,#humber{
+    display: none;
+}
+
 
 /* ------------------------------------------------ */
 /* ------------------------------------------------ */
@@ -326,14 +330,17 @@ input[type='submit'],input[type='reset']{
     #nav ul{
         padding-top: 10px;
         list-style: none;
+        display: none;
     }
     #nav ul li{
-        display: inline;
+        display: block;
+        background-color: black;
     }
     #nav ul li a{
         color:white;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 19px;
+        line-height: 30px;
         font-family: candara;
         margin-left:20px;
     }
@@ -353,13 +360,27 @@ input[type='submit'],input[type='reset']{
     #nav ul li:hover ul{
         display: block;
         position: absolute;
-        width: 160px;
-        margin-left: 405px;
-        background-color: black;
+        width: 90px;
+        margin-left: 105px;
+        margin-top: -130px;
+        background-color: orange;
         border-radius: 0px 0px 20px 20px;
     }
+    /* Humberger logic starts */
+        #hum{
+            display: none;
+        }
+        #humber{
+            display: inline;
+            float: right;
+        }
+        #hum:checked ~ ul{
+            display: inline;
+        }
+    /* Humberger logic ends */
     #nav ul li ul li{
-        margin-left: -45px;
+        margin-left: -35px;
+        margin-top: -10px;
         line-height: 40px;
     }
     #content h1{
@@ -434,56 +455,71 @@ input[type='submit'],input[type='reset']{
         margin-left: -3px;
     }
     #about{
-        height: 1500px;
+        height: 1000px;
         padding: 60px;
         /* background-color: green; */
     }
     #about1{
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         /* background-color: red; */
         float: left;
         margin: 10px;
         border-radius: 50%;
     }
     #aboutImg{
-        height: 400px;
-        width: 400px;
+        height: 300px;
+        width: 300px;
         border-radius: 50%;
     }
     #about2{
-        height: 400px;
-        width: 590px;
+        height: 650px;
+        width: 100%;
         /* background-color: red; */
         float: left;
-        margin: 10px; 
+        margin-left: -10px;
         font-family: candara;
-        padding: 20px;
+        padding: 10px;
     }
     #about2 p{
         font-size: 18px;
     }
     #contact{
         padding: 60px;
-        height: 500px;
+        height: 1160px;
         background-color: whitesmoke;
         font-family: candara;
     }
-    #contact1,#contact2,#contact3{
-        height: 380px;
-        width: 190px;
+    #contact1,#contact2{
+        height: 350px;
+        width: 145px;
         background-color: lightgray;
-        padding: 20px;
-        margin: 10px;
+        padding: 2px;
+        margin: 2px;
         float: left;
         font-family: candara;
-        font-size: 18px;
+        font-size: 14px;
     }
+    #contact3{
+        height: 280px;
+        width: 260px;
+        background-color: lightgray;
+        padding: 20px;
+        margin: 2px;
+        float: left;
+        font-family: candara;
+        font-size: 14px;
+        text-align: center;
+    }
+    #contact3 p{
+        text-align: center;
+    }
+
     #contact4{
         height: 420px;
         width: 300px;
         /* background-color: red; */
-        margin: 10px;
+        margin: 2px;
         float: left;
     }
     #contact1 a,#contact2 a,#contact3 a{
@@ -575,7 +611,8 @@ input[type='submit'],input[type='reset']{
         width: 254px;
         float: left;
         margin: 20px;
-        margin-top: 100px;
+        margin-top: 10px;
+        margin-left: 85px;
         overflow: hidden;
     }
     #sectionImage{

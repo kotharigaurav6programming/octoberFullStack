@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            animation-name: animate;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes animate {
+            0%{
+                background-color: hsl(60,20%,80%);
+                border-radius: 10%;
+            }
+            20%{
+                background-color: hsl(60,40%,60%);
+                border-radius: 30%;
+            }
+            40%{
+                background-color: hsl(60,60%,40%);
+                border-radius: 50%;
+            }
+            60%{
+                background-color: hsl(60,80%,20%);
+                border-radius: 30%;
+            }
+            80%{
+                background-color: hsl(60,90%,15%);
+                border-radius: 20%;
+            }
+            100%{
+                background-color: hsl(60,95%,10%);
+                border-radius: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>
