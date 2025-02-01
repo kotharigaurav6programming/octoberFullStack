@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinkist-like Search Bar</title>
+  <style>
+    /* Center the search bar */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    /* Search container */
+    .search-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+    }
+
+    /* Search input styling */
+    #search {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      font-size: 18px;
+      border: 2px solid #ccc;
+      border-radius: 25px;
+      background-color: #fff;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Search input focus effect */
+    #search:focus {
+      border-color: #0077ff;
+      box-shadow: 0 0 8px rgba(0, 119, 255, 0.4);
+    }
+
+    /* Placeholder text effect */
+    #search::placeholder {
+      color: #aaa;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    /* Search icon style */
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #aaa;
+      pointer-events: none;
+    }
+
+    /* Optional: Focus effect on search bar */
+    #search:focus::placeholder {
+      color: transparent; /* Hide placeholder text on focus */
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search for something...">
+    <span class="search-icon">🔍</span>
+  </div>
+
+  <script>
+    // Optional: Change placeholder dynamically after a delay (simulating "live" search change)
+    setTimeout(function() {
+      const searchInput = document.getElementById('search');
+      searchInput.placeholder = 'What are you looking for?'; // Update placeholder text
+    }, 2000); // Change after 2 seconds
+  </script>
+
+</body>
+</html>
+

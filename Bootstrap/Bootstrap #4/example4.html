@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search-container {
+          position: relative;
+          width: 100%;
+          max-width: 300px;
+        }
+      
+        .search-container input {
+          width: 100%;
+          padding: 10px 30px 10px 10px; /* Add extra space for the icon */
+          border: 1px solid #ccc;
+          border-radius: 20px;
+        }
+      
+        .search-container .search-icon {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 18px;
+        }
+      </style>   
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search for something...">
+
+    <script>
+      // Change placeholder content after a delay
+      setTimeout(function() {
+        const searchInput = document.getElementById('search');
+        searchInput.placeholder = 'New placeholder after delay...';
+      }, 2000); // 2000 milliseconds = 2 seconds
+    </script>
+    
+</body>
+</html>
