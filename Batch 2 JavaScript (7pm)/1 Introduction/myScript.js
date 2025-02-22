@@ -1,0 +1,2 @@
+document.write("<span style='color:red'>This is an example of javaScript</span> <br> ");
+document.write("This is an example of javaScript <br> ");

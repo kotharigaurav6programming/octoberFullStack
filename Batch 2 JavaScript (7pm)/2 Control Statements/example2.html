@@ -1,0 +1,30 @@
+<!-- example showing the concept of typeof operator -->
+<script>
+    var a;
+    document.write("<br>typeof a : "+typeof a);
+    a = 100;
+    document.write("<br>typeof 100 : "+typeof a);
+    a = "100";
+    document.write("<br>typeof \"100\" : "+typeof a);
+    a = true;
+    document.write("<br>typeof true : "+typeof a);
+    a = null;
+    document.write("<br>typeof null : "+typeof a);
+    a = undefined;
+    document.write("<br>typeof undefined : "+typeof a);
+    a = NaN;
+    document.write("<br>typeof NaN : "+typeof a);
+    a = [];
+    document.write("<br>typeof [] : "+typeof a);
+    a = {};
+    document.write("<br>typeof {} : "+typeof a);
+    a = function(){};
+    document.write("<br>typeof function(){} : "+typeof a);
+    a = {
+            name:"Andrew"
+        };
+    document.write("<br>typeof name : "+typeof a.name);
+    a = Symbol();
+    document.write("<br>typeof Symbol : "+typeof a);
+
+</script>

@@ -1,0 +1,76 @@
+JavaScript
+----------
+1. JavaScript was developed by Brenden Eich in 1995.
+
+2. JavaScript was mainly came to overcome the limitation of VBScript.
+
+   Limitations of VBScript : 
+   i. Browser specific -- Internet Explorer
+   ii. Operating System specific -- Windows OS
+
+3. JavaScript was initially known as LiveScript, but Java programming       
+   language is very popular at that time, so Brenden Eich simply for gaining popularity put its script name from LiveScript to JavaScript.
+
+    Note : JavaScript and Java are two different things because JavaScript is a scripting language whereas Java is a programming language.
+
+4. JavaScript is a client side as well as server side scripting language.
+   
+   Client Side --> Front End --> HTML, CSS, Bootstrap, ReactJS etc
+   |-- Mainly used for the purpose of Validation and events.
+
+   Server Side --> Back End  --> Node, Express etc
+   |-- Mainly for implementing core concepts.
+
+5. JavaScript is mainly used to make website more interactive and attractive.
+
+6. In other words, JavaScript is a prototype based object oriented,       
+   imperative, loosely typed, interpreted scripting language.
+
+   Prototype : Module | Function
+
+   Object Oriented : Real world deal + oops concepts
+   
+   Prototype Based : Here we called it as a prototype based because the creation of object is based on function or in other words, objects are created by functions
+
+   Imperative : What ever instructions you are giving, it works on that concepts only, whether you are giving correct instructions or not.
+
+   For example, if i want to add two numbers, but i simply gives 5-2 then it will give 3 as a result instead of 7.
+
+   Loosely typed : c/c++ = strictly typed
+                   int a = 100;    char ch = 'a';   float f = 78.3f;
+                   a = 100;         Invalid
+                   ch = 'a';        Invalid   
+                   f = 78.3f;       Invalid
+
+                   JavaScript = loosely typed
+                   a = 67;   b = 'x';   f = 45.45;
+                   Here we have var,let and const keywords to set variable as it have some specific scope.
+
+                   let a = 67;   var b = 'x';    const f = 3.14; 
+
+7. JavaScript is used to make dhtml, here dhtml means Dynamic HTML.
+
+8. JavaScript cannot run on its own, Browser is responsible to run javascript 
+   code. Every browser have javascript engine to execute javascript code.
+   |-- Google chrome = V8 engine
+   |-- Mozila Firefox = Spider Monkey
+   |-- Internet Explorer = Chakra
+
+9. ECMA(European Computer Manufacturer Association) International created 
+   ECMA Script to standerized JavaScript. 
+   ECMA Script like ES5,ES6,ES7 etc 
+
+10. JavaScript cannot deal with Html tags directly.Browser creates a DOM structure where Html Tags are considered as nodes(object) and with that JavaScript may interact with HTML tags.
+
+11. There is Built-In object called as document. Which wraps the entire HTML Document. Here document is the object of HTMLDocument(Function | Prototype).
+document comes under DOM(Document Object Model)
+
+There is another Built-In object called as window. Which deals with entire browser. Here window is the object of Window(Function | Prototype).
+window comes under BOM(Browser Object Model)
+
+12. Here we write scripting inside <script> tag.
+<script>
+   ....
+   ....
+</script>
+We can also create internal script and external script.
