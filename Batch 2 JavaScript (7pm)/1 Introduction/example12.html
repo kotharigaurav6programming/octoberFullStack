@@ -1,5 +1,46 @@
+<!-- 
+    Type Coercion : 
+        1. Number to String
+        2. String to Number
+        3. Boolean to Number
+        4. Equality
+-->
 <script>
-    document.write(2 == 2); 
-    document.write(2 == 2 == 2); 
-    document.write(2 == 2 == 2 == 0);      
+    var res;
+    // Number to String
+    res = 5 + "100";
+    document.write("<br>value of res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    // String to Number
+    res = "100" - 23;
+    document.write("<br>value of res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    // Boolean to Number 
+    res = true - 4 + false - true;
+    document.write("<br>value of res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    // Equality
+    res = null == null;
+    document.write("<br>value of res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = null == undefined;
+    document.write("<br>value of res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = null == 0;
+    document.write("<br>value of res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = null == false;
+    document.write("<br>value of res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = null >= 0;
+    document.write("<br>value of res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
 </script>

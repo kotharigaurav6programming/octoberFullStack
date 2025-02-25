@@ -1,2 +1,4 @@
-document.write("<span style='color:red'>This is an example of javaScript</span> <br> ");
-document.write("This is an example of javaScript <br> ");
+document.write("document is the object of : "+document.constructor.name);
+document.write("<br>window is the object of : "+window.constructor.name);
+document.write("<br>typeof HTMLDocument : "+typeof HTMLDocument);
+document.write("<br>typeof Window : "+typeof Window);

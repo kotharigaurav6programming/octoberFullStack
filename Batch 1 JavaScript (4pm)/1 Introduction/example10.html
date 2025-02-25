@@ -1,4 +1,49 @@
+<!-- Type Coercion
+        1. Number to string
+        2. String to number
+        3. Boolean to number
+        4. Equality 
+-->
 <script>
-    document.write("This is an example of JavaScript....");
-    console.log("This is an example of JavaScript");
+    var res;
+    // number to string
+    res = 5 + "100";
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    // string to number
+    res = "100"-23;
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    // boolean to number
+    res = true + 3;
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = false - 3 + true;
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    // equality
+    res = null == null;
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = null == undefined;
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = null == 0;
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = null >= 0;
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
+    res = null == false;
+    document.write("<br>res : "+res);
+    document.write("<br>typeof res : "+typeof res);
+
 </script>

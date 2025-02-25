@@ -1,0 +1,12 @@
+
+<script>
+    var p = 1000;
+    var r = 2.3;
+    var t = 2;
+
+    var amt = p * Math.pow(1+r/100,t);
+    var ci = amt - p;
+    document.write("<br>Amount : "+amt);
+    document.write("<br>Compound Interest : "+ci.toFixed(3));
+
+</script>
