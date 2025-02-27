@@ -1,0 +1,22 @@
+<script>
+    var arr = [1,2,3,4,5];
+
+    // for in loop : works on indexing
+    document.write("<br>Array elements are : <br>");
+    for(var index in arr){
+        document.write("arr["+index+"] : "+arr[index]+"<br>");
+    }
+
+    // for of loop : works on value
+    document.write("<br>Array elements are : <br>");
+    for(var value of arr){
+        document.write("value : "+value+"<br>");
+    }
+
+    // for each loop 
+    document.write("<br>Array elements are : <br>");
+    arr.forEach((value)=>{
+        document.write("value : "+value+"<br>");
+    });
+
+</script>

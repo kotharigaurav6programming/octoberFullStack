@@ -1,0 +1,19 @@
+<!-- example showing the concept of switch control statement  -->
+<!-- 
+    -- Menu based programming language 
+    -- Works on the concept of cases
+    -- duplicate cases allowed
+-->
+<script>
+
+    var num = 10,i=1;
+    switch(i++){
+        case -3 : num++;
+        case 2 : --num;
+                    break;
+        case 1 : num--; // 10--->9
+        case 0 : --num; // 8
+        default : document.write("number : "+num--); // 8----->7
+                    break;
+    }
+</script>

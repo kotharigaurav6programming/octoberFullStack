@@ -1,0 +1,9 @@
+ <!-- reversing three digit number -->
+<script>
+    var num = 123;
+    var last = num%10;
+    var middle = parseInt(num/10)%10;
+    var first = parseInt(num/100);
+    var rev = last*100 + middle * 10 + first*1;
+    document.write("<br>reverse : "+rev);
+</script>
