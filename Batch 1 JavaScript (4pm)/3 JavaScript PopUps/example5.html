@@ -1,0 +1,13 @@
+<!-- Program to print table of a number -->
+<script>
+    var num = prompt("Enter number");
+    var str = '';
+    if(isNaN(num))
+        alert("Please enter correct number");
+    else{
+        for(var i=1;i<=10;i++){
+            str += num+" x "+i+" = "+(num*i)+"\n";
+        }
+        alert(str);
+    }
+</script>
