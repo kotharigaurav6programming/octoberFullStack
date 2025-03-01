@@ -1,0 +1,19 @@
+<!-- 
+JavaScript Popup's | JavaScript Dialog Boxes
+---------------------------------------------
+    1. alert()
+    2. confirm() 
+    3. prompt()
+-->
+    <script>
+        var num = prompt("Enter number");
+        var str='';
+        if(num=="" || isNaN(num))
+            alert("Please enter correct number");
+        else{
+            for(var i=1;i<=10;i++){
+                str += num+" x "+i+" = "+(num*i)+"\n";
+            }
+            alert(str);
+        }
+    </script>
