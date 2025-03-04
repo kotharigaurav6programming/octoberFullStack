@@ -1,0 +1,20 @@
+Polymorphism
+------------
+1. Compile time Polymorphism
+    or Early Binding
+    or Static Binding
+
+   Method Overloading(Function Overloading) 
+    |-- same name function with different no. of arguments or
+        with same no. of arguments but with different datatypes.
+    |-- lies in same class
+    |-- No inherit mechanism is there.
+
+2. Run time Polymorphism
+    or Late Binding
+    or Dynamic Binding
+
+   Method Overriding(Function Overriding) 
+    |-- same name function with same no. of arguments.
+    |-- lies in different classes
+    |-- Inherit mechanism is must.

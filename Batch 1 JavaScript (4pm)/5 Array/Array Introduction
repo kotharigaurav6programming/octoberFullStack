@@ -15,3 +15,10 @@ There is also a special type of 2d array we have, which is known as jagged array
 9. In JavaScript we define array by square brackets like [].
 10. Array can hold primitive data elements as well as object references.
 11. We can also create array of objects just like number array, string array or mixed type array.
+
+
+     0    1   2   3   4   <---------indexing
+    _____________________
+    | 2 | 4 | 5 | 8 | 8 |
+    _____________________
+  arr[0] arr[1] ....arr[4]   
