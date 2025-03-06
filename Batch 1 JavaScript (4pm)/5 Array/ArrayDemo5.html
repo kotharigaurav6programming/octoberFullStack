@@ -1,0 +1,12 @@
+<script>
+    var arr = [212,223,324,425,5,56]; // array declaration and initialization
+    document.writeln("Array elements are : "+arr+"<br>");
+    document.writeln("Minimum element : "+Math.min(212,223,324,425,5,56)+"<br>");
+    document.writeln("Maximum element : "+Math.max(212,223,324,425,5,56)+"<br>");
+    document.writeln("Minimum element : "+Math.min(...arr)+"<br>");
+    document.writeln("Maximum element : "+Math.max(...arr)+"<br>");
+    document.writeln("Minimum element : "+Math.min.apply(null,arr)+"<br>");
+    document.writeln("Maximum element : "+Math.max.apply(null,arr)+"<br>");
+    document.writeln(`Maximum element : ${Math.max.apply(null,arr)}<br>`);
+
+</script>

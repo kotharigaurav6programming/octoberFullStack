@@ -1,0 +1,42 @@
+<script>
+    var arr = [12,23,34,45,56]; // array declaration and initialization
+    document.writeln("Array elements are : "+arr+"<br>");
+    /*
+        document.writeln("Array elements are : <br>");
+        var result = arr.map((element)=>{
+            document.writeln(element);
+        });
+        document.write("<br>Array : "+result);
+    */
+    /*
+        document.writeln("Array elements are : <br>");
+        var result = [];
+        result = arr.map((element)=>{
+            document.write("result length : "+result.length+"<br>");
+            return element;
+        });
+        document.write("result length : "+result.length+"<br>");
+        document.write("<br>Array : "+result);
+    */
+   /*
+        document.writeln("Array elements are : <br>");
+        var result = arr.map((element)=>{
+            return element%2==0 ? true : false;
+        });
+        document.write("<br>Array : "+result);
+*/
+/*
+        document.writeln("Array elements are : <br>");
+        var result = arr.map((element)=>{
+            return element%2==0;
+        });
+        document.write("<br>Array : "+result);
+*/
+        document.writeln("Array elements are : <br>");
+        var result = arr.map((element)=>{
+            if(element%2==0)
+                return true;
+        });
+        document.write("<br>Array : "+result);
+
+</script>

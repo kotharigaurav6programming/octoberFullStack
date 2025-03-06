@@ -1,0 +1,66 @@
+<script>
+    var arr = [212,223,324,425,5,56]; // array declaration and initialization
+    document.writeln("Array elements are : "+arr+"<br>");
+    /*
+        document.writeln("Array elements are : <br>");
+        var result = arr.forEach((element)=>{
+            document.writeln(element);
+        });
+        document.write("<br>Array : "+result);
+    */
+    /*    
+        document.writeln("Array elements are : <br>");
+        var result = arr.forEach((element)=>{
+            return element%2==0 ? true : false;
+        });
+        document.write("<br>Array : "+result);
+*/
+
+        document.writeln("Array elements are : <br>");
+        var result = arr.find((element,index)=>{
+            document.write("index: "+index+"<br>");
+            return element>30;
+        });
+        document.write("Array : "+result+"<br>");
+
+
+        document.writeln("<br>Array elements are : <br>");
+        var result = arr.filter((element,index)=>{
+            document.write("index: "+index+"<br>");
+                return element>30;
+        });
+        document.write("Array : "+result+"<br>");
+
+        document.writeln("<br>Array elements are : <br>");
+        var result = arr.some((element,index)=>{
+            document.write("index: "+index+"<br>");
+                return element>30;
+        });
+        document.write("Array : "+result+"<br>");
+
+        document.writeln("<br>Array elements are : <br>");
+        var result = arr.every((element,index)=>{
+            document.write("index: "+index+"<br>");
+                return element>30;
+        });
+        document.write("Array : "+result+"<br>");
+
+        var result = arr.reduce((element1,element2)=>{
+            document.write("<br>element1: "+element1+"&nbsp;&nbsp;element2 : "+element2+"<br>");
+                return element1+element2;
+        });
+        document.write("Array Sum : "+result+"<br>");
+
+        var result = arr.reduce((element1,element2)=>{
+            document.write("<br>element1: "+element1+"&nbsp;&nbsp;element2 : "+element2+"<br>");
+                return element1+element2;
+        },0);
+        document.write("Array Sum : "+result+"<br>");
+
+        var result = arr.reduce((element1,element2)=>{
+            document.write(`<br>element1: ${element1} &nbsp;&nbsp;element2 : ${element2}<br>`);
+                return element1+element2;
+        },0);
+        document.write("Array Sum : "+result+"<br>");
+
+</script>
