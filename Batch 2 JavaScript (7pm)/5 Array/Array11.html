@@ -1,0 +1,17 @@
+<!-- Program to reverse array elements -->
+<script>
+     var size = parseInt(prompt("Enter size : "));
+        var arr = [];
+        alert("Enter array elements");
+        for(var i=0;i<size;i++){
+            arr[i] = parseInt(prompt("Enter "+(i+1)+" Element : "));
+        }
+        document.write("<br>Array elements are : "+arr+"<br>");
+        for(var i=0;i<arr.length/2;i++){
+            var temp = arr[i];
+            arr[i] = arr[arr.length-1-i];
+            arr[arr.length-1-i] = temp;
+        }
+        document.write("<br>Array elements after reverse are : "+arr+"<br>");
+        
+</script>

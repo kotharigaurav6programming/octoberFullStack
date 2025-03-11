@@ -1,0 +1,34 @@
+<script>
+    var arr = [122,223,234,38,256];
+    document.write("<br>Array elements are : "+arr);
+    
+    document.write("<br><br>Array elements are : ");
+    var result = arr.find((element,index)=>{
+        document.write("<br>index : "+index); 
+        return element>30;
+    });
+    document.write("<br>Array : "+result);
+
+    document.write("<br><br>Array elements are : ");
+    var result = arr.filter((element,index)=>{
+        document.write("<br>index : "+index); 
+        return element>30;
+    });
+    document.write("<br>Array : "+result);
+    document.write("<br>Array element : "+result[1]);
+
+    document.write("<br><br>Array elements are : ");
+    var result = arr.some((element,index)=>{
+        document.write("<br>index : "+index); 
+        return element>30;
+    });
+    document.write("<br>Array : "+result);
+
+    document.write("<br><br>Array elements are : ");
+    var result = arr.every((element,index)=>{
+        document.write("<br>index : "+index); 
+        return element>30;
+    });
+    document.write("<br>Array : "+result);
+
+</script>

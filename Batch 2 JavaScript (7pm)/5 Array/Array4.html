@@ -1,0 +1,18 @@
+<script>
+    var arr = [12,23,34,45,56];
+    document.write("<br>Array elements are : "+arr);
+    
+    document.write("<br>Array elements are : ");
+    var result = arr.forEach((element)=>{
+        document.writeln(element);
+    });
+    document.write("<br>Array : "+result);
+
+
+    var result = arr.forEach((element)=>{
+        return element;
+    });
+    document.write("<br>Array : "+result);
+
+
+</script>

@@ -1,0 +1,59 @@
+Events :
+Every action which can change the state of an object is known as an event.
+
+button(object) -------> click(action) --------> state change
+                            |
+                          Event                                
+                            |-- Event Handler
+                            |-- Event Handler Function
+
+Example : <button onclick="alert('Button Clicked')">
+          Here onclick is Event Handler
+          and alert('Button Clicked') is Event Handler function 
+
+Types of Event : 
+    a. Mouse Event
+        |-- onmouseover
+        |-- onmousemove
+        |-- onmouseup
+        |-- onmousedown
+        |-- onmousewheel
+        |-- onmouseenter
+        |-- onmouseleave
+        |-- click event
+                |-- onclick
+                |-- obdblclick (dbl means double)
+                |-- oncontextmenu (for right click)
+    b. Key Event
+        |-- onkeyup
+        |-- onkeydown
+        |-- onkeypress
+    c. Form Event
+        |-- onsubmit
+        |-- onchange
+        |-- onfocus (input events)
+        |-- onblur (input events)
+    d. Load Event
+        |-- onload
+        |-- onunload
+    etc
+
+In case of HTML : 
+Elements
+    |-- div,button
+    |-- img
+    |-- input etc
+Attributes
+    |-- style
+    |-- src, height, width
+    |-- type, name, value etc
+
+In case of JavaScript : 
+object<----->Elements
+    |-- div,button
+    |-- img
+    |-- input etc
+properties<------->Attributes
+    |-- style
+    |-- src, height, width
+    |-- type, name, value etc

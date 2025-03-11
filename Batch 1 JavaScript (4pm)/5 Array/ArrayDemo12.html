@@ -1,0 +1,55 @@
+<script>
+    var arr = [];
+    var n = parseInt(prompt("Enter no. of 2d array"));
+    var r = parseInt(prompt("Enter rows"));
+    var c = parseInt(prompt("Enter columns"));
+    
+    for(var i=0;i<n;i++){
+        alert("You are now dealing with "+(i+1)+" 2d array");
+        arr[i] = [];
+        for(var j=0;j<r;j++){
+            arr[i][j] = [];
+            for(var k=0;k<c;k++){
+                arr[i][j][k] = parseInt(prompt("Enter array element"));
+            }
+        }
+    }
+    document.write("Array elements are : <br>");
+    for(var i=0;i<n;i++){
+        for(var j=0;j<r;j++){
+            for(var k=0;k<c;k++){
+                document.writeln(arr[i][j][k]);
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+    }
+</script>
+
+<!-- 
+    multidimensional array : 
+
+    arr[no. of 2d array][no. of rows][no. of columns]
+
+    arr[2][3][3]
+        |-----------|
+    arr[0]      arr[1]
+    1 2 3       5 6 7    
+    4 5 6       6 5 4 
+    4 5 6       3 4 5
+        3x3         3x3
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

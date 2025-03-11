@@ -1,0 +1,32 @@
+<script>
+    var size = parseInt(prompt("Enter size of array : "));
+    var arr = [];
+    alert("Enter array elements : ");
+    for(i=0;i<size;i++){
+        arr[i] = prompt("Enter Element ");
+    }
+
+    document.write("Array elements are : "+arr+"<br>");    
+    for(i=0;i<parseInt(size/2);i++){
+        var temp = arr[i];
+        arr[i] = arr[size-1-i];
+        arr[size-1-i] = temp;
+    }
+    document.write("Array elements after reversing are : "+arr+"<br>");    
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

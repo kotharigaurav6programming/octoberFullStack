@@ -1,0 +1,12 @@
+<!-- Program to find out sum of first and last element of an array -->
+<script>
+     var size = parseInt(prompt("Enter size : "));
+        var arr = [];
+        alert("Enter array elements");
+        for(var i=0;i<size;i++){
+            arr[i] = parseInt(prompt("Enter "+(i+1)+" Element : "));
+        }
+        document.write("<br>Array elements are : "+arr+"<br>");
+        document.write("<br>Sum of first and last element of an Array : "+(arr[0]+arr[arr.length-1])+"<br>");
+        
+</script>

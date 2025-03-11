@@ -1,0 +1,35 @@
+<script>
+    var arr = [12,23,34,45,56];
+    document.write("<br>Array elements are : "+arr);
+    /*
+    document.write("<br>Array elements are : ");
+    var result = arr.map((element)=>{
+        document.writeln(element);
+    });
+    document.write("<br>Array : "+result);
+*/
+/*
+    var result = arr.map((element)=>{
+        return element;
+    });
+    document.write("<br>Array : "+result);
+*/
+/*
+    var result = arr.map((element)=>{
+        return element%2==0 ? true : false;
+    });
+    document.write("<br>Array : "+result);
+*/
+/*
+    var result = arr.map((element)=>{
+        return element%2==0;
+    });
+    document.write("<br>Array : "+result);
+*/
+    var result = arr.map((element)=>{
+        if(element%2==0)
+            return true;
+    });
+    document.write("<br>Array : "+result);
+
+</script>

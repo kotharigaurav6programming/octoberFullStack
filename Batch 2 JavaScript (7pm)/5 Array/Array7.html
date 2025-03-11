@@ -1,0 +1,21 @@
+<script>
+    var arr = [145,255,63,4,855];
+    document.write("<br>Array elements are : "+arr);
+    
+    document.write("<br>Minimum Element : "+Math.min(145,255,63,4,855));
+    document.write("<br>Maximum Element : "+Math.max(145,255,63,4,855));
+    document.write("<br>Minimum Element : "+Math.min(...arr));
+    document.write("<br>Maximum Element : "+Math.max(...arr));
+    document.write("<br>Minimum Element : "+Math.min.apply(null,arr));
+    document.write("<br>Maximum Element : "+Math.max.apply(null,arr));
+
+    document.write("<br>sort : "+arr.sort());
+    document.write("<br>sort : "+arr.sort((a,b)=>{
+        //document.write("<br>a : "+a+"&nbsp;&nbsp;&nbsp;b : "+b); 
+        return a-b;
+    }));
+    document.write("<br>sort : "+arr.sort((a,b)=>{
+        return b-a;
+    }));
+
+</script>
