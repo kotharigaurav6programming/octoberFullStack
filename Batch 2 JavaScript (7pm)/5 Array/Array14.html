@@ -1,0 +1,20 @@
+<!-- program showing the concept of two dimensional array -->
+<script>
+    var arr = [];
+    var r = parseInt(prompt("Enter rows"));
+    var c = parseInt(prompt("Enter columns"));
+    
+    for(var i=0;i<r;i++){
+        arr[i] = [];
+        for(var j=0;j<c;j++){
+            arr[i][j] = parseInt(prompt('Enter element'));
+        }
+    }
+    document.write("<br>Array elements are : <br>");
+    for(var i=0;i<r;i++){
+        for(var j=0;j<c;j++){
+            document.writeln(arr[i][j]);
+        }
+        document.write("<br>");
+    }
+</script>

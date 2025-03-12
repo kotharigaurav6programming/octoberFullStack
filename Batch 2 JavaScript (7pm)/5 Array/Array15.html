@@ -1,0 +1,20 @@
+<!-- program showing the concept of jagged array -->
+<script>
+    var arr = [];
+    var r = parseInt(prompt("Enter rows"));
+    
+    for(var i=0;i<r;i++){
+        arr[i] = [];
+        var c = parseInt(prompt("Enter columns for "+(i+1)+" row"));
+        for(var j=0;j<c;j++){
+            arr[i][j] = parseInt(prompt('Enter element'));
+        }
+    }
+    document.write("<br>Array elements are : <br>");
+    for(var i=0;i<r;i++){
+        for(var j=0;j<arr[i].length;j++){
+            document.writeln(arr[i][j]);
+        }
+        document.write("<br>");
+    }
+</script>

@@ -1,0 +1,25 @@
+<!-- program showing the concept of multi dimensional array -->
+<script>
+    var arr = [];
+    var n = parseInt(prompt("Enter no. of 2d array"));
+    var r = parseInt(prompt("Enter rows"));
+    var c = parseInt(prompt("Enter columns"));
+    
+    for(var i=0;i<n;i++){
+        arr[i] = [];
+        for(var j=0;j<r;j++){
+            arr[i][j] = [];
+            for(var k=0;k<c;k++)
+                arr[i][j][k] = parseInt(prompt('Enter element'));
+        }
+    }
+    document.write("<br>Array elements are : <br>");
+    for(var i=0;i<n;i++){
+        for(var j=0;j<r;j++){
+            for(var k=0;k<c;k++)
+                document.writeln(arr[i][j][k]);
+            document.write("<br>");
+        }
+        document.write("<br>");
+    }
+</script>
