@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(typeof Date());
+        console.log(typeof new Date());
+        function myFun(){
+            var obj = new Date();
+            document.getElementById("display").innerHTML = obj.toLocaleTimeString();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="document.getElementById('show').innerHTML=Date()">click</button>
+    <button onclick="document.getElementById('show').innerHTML=new Date()">click</button>
+    <button onclick="myFun()">click</button>
+    <button onclick="this.innerHTML=Date()">click</button>
+    <p id="show"></p>
+    <p id="display"></p>
+</body>
+</html>

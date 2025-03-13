@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var tempName = 'glowbulb.jpg';
+        function myFun(imageObj){
+           // alert(imageObj.src);
+            var temp = imageObj.src;
+            imageObj.src = tempName;
+            tempName = temp;
+        }
+    </script>
+</head>
+<body>
+    <img onclick="myFun(this)" src="offbulb.jpg" height="400" alt="">
+</body>
+</html>
