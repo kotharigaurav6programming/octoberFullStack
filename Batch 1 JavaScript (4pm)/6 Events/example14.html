@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outerDiv{
+            height:500px;
+            width: 800px;
+            margin: auto;
+            border: 2px solid black;
+        }
+        #topDiv{
+            height: 300px;
+            width: 98%;
+            margin: 1%;
+        }
+        #largerImg{
+            height: 300px;
+            width: 100%;
+        }
+        #bottomDiv{
+            height: 165px;
+            width: 98%;
+            margin: 1%;
+        }
+        #innerDiv{
+            height: 100%;
+            width: 24%;
+            float: left;
+            margin-left:0.7%;
+        }
+        #smallerImg{
+            height: 100%;
+            width: 100%;
+        }
+
+</style>
+    <script>
+        function swapImage(smallerElement){
+            var largerElement = document.getElementById("largerImg");
+            var temp = largerElement.src;
+            largerElement.src = smallerElement.src;
+            smallerElement.src = temp; 
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h2>Swap Image Example</h2>
+    </center>
+    <div id="outerDiv">
+        <div id="topDiv">
+            <img src="img1.jpg" id="largerImg" alt="">
+        </div>
+        <hr color="black">
+        <div id="bottomDiv">
+            <div id="innerDiv">
+                <img src="img2.jpg" id="smallerImg" onclick="swapImage(this)" alt="">
+            </div>
+            <div id="innerDiv">
+                <img src="img3.jpg" id="smallerImg" onclick="swapImage(this)" alt="">
+            </div>
+            <div id="innerDiv">
+                <img src="img4.jpg" id="smallerImg" onclick="swapImage(this)" alt="">
+            </div>
+            <div id="innerDiv">
+                <img src="img5.jpg" id="smallerImg" onclick="swapImage(this)" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

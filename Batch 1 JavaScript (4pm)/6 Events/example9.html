@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outerDiv{
+            height: 300px;
+            width: 350px;
+            margin: 10px;
+            float: left;
+        }
+        .innerDiv{
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            border-style: solid;
+        }
+        button{
+            margin-top:10px;
+            margin-left: 90px;
+        }
+    </style>
+    <script>
+        function setColor(color,divId){
+            // alert(color);
+            var demo = document.getElementById(divId);
+            demo.style.backgroundColor = color;
+        }
+    </script>
+</head>
+<body id="demo">
+    <div id="outerDiv">
+        <div class="innerDiv" id="circle1"></div>
+        <button onclick="setColor('red','circle1')">Red</button>
+    </div>
+    <div id="outerDiv">
+        <div class="innerDiv" id="circle2"></div>
+        <button onclick="setColor('green','circle2')">Green</button>
+    </div>
+    <div id="outerDiv">
+        <div class="innerDiv" id="circle3"></div>
+        <button onclick="setColor('blue','circle3')">Blue</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function zoom(value){
+            var element = document.getElementById("img");
+            // alert(h+" "+w);
+            if(value==0){
+                element.height-=50;
+                element.width-=50;
+            }else{
+                element.height+=50;
+                element.width+=50;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="zoom(1)">ZoomIn</button>
+    <button onclick="zoom(0)">ZoomOut</button>
+    <br>
+    <img id="img" src="bulb.jpg" height="200" width="200" alt="">
+</body>
+</html>

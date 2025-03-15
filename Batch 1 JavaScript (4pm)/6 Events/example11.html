@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script>
+        function fillColor(color){
+            var paraArray = document.getElementsByTagName("p");
+            // alert(paraArray.length);
+            for(i=0;i<paraArray.length;i++){
+                paraArray[i].style.color = color;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="fillColor('tomato')">Tomato</button>
+    <button onclick="fillColor('dodgerblue')">Dodgerblue</button>
+    <button onclick="fillColor('orchid')">orchid</button>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi officiis exercitationem, modi sit tempora ad fuga blanditiis soluta fugit, nam voluptates aperiam itaque porro esse, impedit excepturi? Mollitia, quisquam? Labore amet nesciunt inventore ut fuga accusamus commodi voluptatum, voluptates quas.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi officiis exercitationem, modi sit tempora ad fuga blanditiis soluta fugit, nam voluptates aperiam itaque porro esse, impedit excepturi? Mollitia, quisquam? Labore amet nesciunt inventore ut fuga accusamus commodi voluptatum, voluptates quas.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi officiis exercitationem, modi sit tempora ad fuga blanditiis soluta fugit, nam voluptates aperiam itaque porro esse, impedit excepturi? Mollitia, quisquam? Labore amet nesciunt inventore ut fuga accusamus commodi voluptatum, voluptates quas.</p>
+
+</body>
+</html>
