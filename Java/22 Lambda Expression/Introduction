@@ -1,0 +1,34 @@
+-- Procedure oriented programming language
+-- Object oriented programming language
+
+   Why Functional programming ?
+   Answer : Java is facing a problem of Boilers plate code, which means we write same code in a repetative manner with little or no modification.
+
+   Java 8 functionalities :  
+-- Functional programming language : 
+   Functional programming language focuses on what needs to be done rather than how it can be done.  
+
+   Functional programming includes : 
+    a. Functional Interface
+        @FunctionalInterface annotation
+
+    b. Lambda Expression
+        |-- internally deals with anonymous class
+        |-- It basically completes the incomplete method with the help of arrow function or lambda expression
+        
+    c. Method reference
+        |-- Method reference through static method
+        |-- Method reference through instance method
+        |-- Method reference through constructor
+
+    d. Predicate
+------------------------------------------------------
+
+user A -------rice---------- cook X ---------- Idli
+         |----rice---------- cook Y ---------- Flour
+         |----rice---------- cook Z ---------- cook
+
+user A -------rice---------- cook X ----description------ Idli
+         |----rice---------- cook X ----description------ Flour
+         |----rice---------- cook X ----description------ cook
+
