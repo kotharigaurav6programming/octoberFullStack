@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(element){
+            alert("You selected "+element.value);
+        }
+        function show(){
+            document.getElementById("demo1").checked ? alert('You select '+document.getElementById("demo1").value) : '';
+
+            document.getElementById("demo2").checked ? alert('You select '+document.getElementById("demo2").value) : '';
+
+            document.getElementById("demo3").checked ? alert('You select '+document.getElementById("demo3").value) : '';
+
+            document.getElementById("demo4").checked ? alert('You select '+document.getElementById("demo4").value) : '';
+
+            document.getElementById("demo5").checked ? alert('You select '+document.getElementById("demo5").value) : '';
+        }
+    </script>
+</head>
+<body>
+    <!-- <h2>Select Item</h2>
+    <input type="radio" name="item" value="IceCream" onclick="show(this)">IceCream <br>    
+    <input type="radio" name="item" value="Chocolate" onclick="show(this)">Chocolate <br>    
+    <input type="radio" name="item" value="Juice" onclick="show(this)">Juice <br>    
+    <input type="radio" name="item" value="Candy" onclick="show(this)">Candy <br>    
+    <input type="radio" name="item" value="Chips" onclick="show(this)">Chips <br>     -->
+
+    <h2>Select Item</h2>
+    <input type="radio" id="demo1" name="item" value="IceCream">IceCream <br>    
+    <input type="radio" id="demo2" name="item" value="Chocolate">Chocolate <br>    
+    <input type="radio" id="demo3" name="item" value="Juice">Juice <br>    
+    <input type="radio" id="demo4" name="item" value="Candy">Candy <br>    
+    <input type="radio" id="demo5" name="item" value="Chips">Chips <br>    
+    <input type="submit" value="Select Item" onclick="show()"> <br>    
+
+</body>
+</html>

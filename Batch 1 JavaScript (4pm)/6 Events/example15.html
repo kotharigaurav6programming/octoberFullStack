@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function foc(){
+            var demo = document.getElementById("demo");
+            demo.style.backgroundColor = 'wheat';
+        }
+        function blr(){
+            var demo = document.getElementById("demo");
+            demo.style.backgroundColor = 'black';
+            demo.style.color='white';
+        }
+
+</script>
+</head>
+<body>
+    <form action="" onsubmit="alert('Form Submitted successfully')">
+        <button>Click</button>
+    </form>
+    <input type="text" id="demo" placeholder="Enter text" onfocus="foc()" onblur="blr()">
+</body>
+</html>

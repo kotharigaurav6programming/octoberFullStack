@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            var demoArray = document.getElementsByClassName("demo");
+            var item='';
+            for(i=0;i<demoArray.length;i++){
+                demoArray[i].checked ? item+= demoArray[i].value+'\n' : '';
+            }
+            if(item)            
+               alert('You select '+item);
+            else
+                alert("You haven't select anything");
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Select Item</h2>
+    <input type="checkbox" class="demo" value="IceCream">IceCream <br>    
+    <input type="checkbox" class="demo" value="Chocolate">Chocolate <br>    
+    <input type="checkbox" class="demo" value="Juice">Juice <br>    
+    <input type="checkbox" class="demo" value="Candy">Candy <br>    
+    <input type="checkbox" class="demo" value="Chips">Chips <br>    
+    <input type="submit" value="Select Item" onclick="show()"> <br>    
+
+</body>
+</html>

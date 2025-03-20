@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 10px;
+            background-color: green;
+            padding: 10px;
+        }
+        h1{
+            padding: 10px;
+            background-color: crimson;
+        }
+        p{
+            padding: 20px;
+            margin-top: 30px;
+            background-color: blue;
+            color:white;
+        }
+    </style>
+    <script>
+        function over(){
+            document.getElementById("demo1").innerHTML++;
+        }
+        function enter(){
+            document.getElementById("demo2").innerHTML++;
+        }
+        function move(){
+            document.getElementById("demo3").innerHTML++;
+        }
+</script>
+</head>
+<body>
+    <div onmouseover="over()">
+        <center>
+            <h1>
+                Mouse over
+                <span id="demo1">0</span>
+            </h1>
+        </center>        
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut minima neque ipsam porro cupiditate qua ea quidem excepturi. Praesentium aperiam hic nam placeat. Omnis?
+        </p>
+    </div>
+    <div onmouseenter="enter()">
+        <center>
+            <h1>
+                Mouse enter
+                <span id="demo2">0</span>
+            </h1>
+        </center>        
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut minima neque ipsam porro cupiditate qua ea quidem excepturi. Praesentium aperiam hic nam placeat. Omnis?
+        </p>
+    </div>
+    <div onmousemove="move()">
+        <center>
+            <h1>
+                Mouse move
+                <span id="demo3">0</span>
+            </h1>
+        </center>        
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut minima neque ipsam porro cupiditate qua ea quidem excepturi. Praesentium aperiam hic nam placeat. Omnis?
+        </p>
+    </div>
+
+</body>
+</html>

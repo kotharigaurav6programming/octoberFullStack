@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function usernameValidate(){
+            var username = document.getElementById("username");
+            var udisplay = document.getElementById("udisplay");
+            if(username.value.trim()==""){
+                udisplay.innerHTML="Username Required";
+                udisplay.style.color="red";
+                return false;
+            }else{
+                udisplay.innerHTML="";
+                return true;
+            }
+        }
+        function emailValidate(){
+            var email = document.getElementById("email");
+            var edisplay = document.getElementById("edisplay");
+            if(email.value.trim()==""){
+                edisplay.innerHTML="Email Required";
+                edisplay.style.color="red";
+                return false;
+            }else{
+                edisplay.innerHTML="";
+                return true;
+            }
+        }
+        function passwordValidate(){
+            var password = document.getElementById("password");
+            var pdisplay = document.getElementById("pdisplay");
+            if(password.value.trim()==""){
+                pdisplay.innerHTML="Password Required";
+                pdisplay.style.color="red";
+                return false;
+            }else{
+                pdisplay.innerHTML="";
+                return true;
+            }
+        }
+
+        function validate(){
+        
+        }
+    </script>
+</head>
+<body>
+    <h2>JavaScript Validation-II</h2>
+    <form action="welcome.html" onsubmit="return validate()">
+        <input type="text" onkeyup="usernameValidate()" placeholder="Enter Username" name="username" id="username"> 
+        <span style="color:red" id="udisplay">*</span>
+        <br>
+        <input type="email" onkeyup="emailValidate()" placeholder="Enter Email" name="email" id="email"> 
+        <span style="color:red" id="edisplay">*</span>
+        <br>
+        <input type="password" onkeyup="passwordValidate()" placeholder="Enter Password" name="password" id="password">
+        <span style="color:red" id="pdisplay">*</span>
+        <br>
+        <input type="radio" name="gender" id="male"> 
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female"> 
+        <label for="female">Female</label>
+        <span style="color:red" id="gdisplay">*</span>
+        <br>
+        <select name="subject" id="subject">
+            <option value="">Select Subject</option>
+            <option value="C LANGUAGE">C LANGUAGE</option>
+            <option value="C++ LANGUAGE">C++ LANGUAGE</option>
+            <option value="C# LANGUAGE">C# LANGUAGE</option>
+        </select>
+        <span style="color:red" id="sdisplay">*</span>
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
+
+

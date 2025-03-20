@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function operation(operator){
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var result;
+            switch(operator){
+                case '+' : 
+                           result = num1+num2;
+                           document.getElementById("add").value = "Addition : "+result;
+                           break; 
+                case '-' : result = num1-num2;
+                document.getElementById("sub").value = "Subtraction : "+result;
+                                      
+                break; 
+                case '*' : result = num1*num2;
+                           break; 
+                case '/' : result = num1/num2;
+                           break; 
+                case '%' : result = num1%num2;
+                           break; 
+            }
+            document.getElementById("res").value = result;
+            document.getElementById("show").innerHTML = "Result : "+result;
+        }
+    </script>
+</head>
+<body>
+    <h2>How To Take values in Javascript</h2>
+        Enter first number <br>
+        <input type="text" placeholder="Enter first number" name="num1" id="num1"> <br>
+        Enter second number <br>
+        <input type="text" placeholder="Enter second number" name="num2" id="num2"> <br>
+        Result <br>
+        <input type="text" readonly placeholder="Enter Result" name="res" id="res"> <br><br>
+        <input type="submit" id="add" value="+" onclick="operation('+')"> 
+        <input type="submit" id="sub" value="-" onclick="operation('-')">
+        <input type="submit" id="mul" value="*" onclick="operation('*')">
+        <input type="submit" id="div" value="/" onclick="operation('/')">
+        <input type="submit" id="mod" value="%" onclick="operation('%')">
+        <br><br>
+        <span id="show" style="color:red">Result will show here..</span>
+</body>
+</html>
