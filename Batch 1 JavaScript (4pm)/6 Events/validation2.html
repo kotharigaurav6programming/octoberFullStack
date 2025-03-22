@@ -41,9 +41,81 @@
                 return true;
             }
         }
+        function genderValidate(){
+            var male = document.getElementById("male");
+            var female = document.getElementById("female");
+            var gdisplay = document.getElementById("gdisplay");
+            if(male.checked==false && female.checked==false){
+                gdisplay.innerHTML="Gender Required";
+                return false;
+            }else{
+                gdisplay.innerHTML = "";
+                return true;
+            }
+        } 
+        function subjectValidate(){
+            var subject = document.getElementById("subject");
+            var sdisplay = document.getElementById("sdisplay");
+            if(subject.selectedIndex==0){
+                sdisplay.innerHTML="Subject Required";
+                sdisplay.style.color="red";
+                return false;
+            }else{
+                sdisplay.innerHTML="";
+                return true;
+            }
+        }
 
         function validate(){
-        
+            var usernameStatus = usernameValidate();
+            var emailStatus = emailValidate();
+            var passwordStatus = passwordValidate();
+            var genderStatus = genderValidate();
+            var subjectStatus = subjectValidate();
+
+            var edisplay = document.getElementById("edisplay");
+            var pdisplay = document.getElementById("pdisplay");
+            var gdisplay = document.getElementById("gdisplay");
+            var sdisplay = document.getElementById("sdisplay");
+
+            if(usernameStatus==false){
+                if(emailStatus==false)
+                    edisplay.innerHTML="*"
+                if(passwordStatus==false)
+                    pdisplay.innerHTML="*"
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*"
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*"
+                return false;
+            }
+            else if(emailStatus==false)
+            {
+                if(passwordStatus==false)
+                    pdisplay.innerHTML="*"
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*"
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*"
+                return false;
+            }
+            else if(passwordStatus==false)
+            {
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*"
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*"
+                return false;
+            }
+            else if(genderStatus==false)
+            {
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*"
+                return false;
+            }
+            else if(subjectStatus==false)
+                return false;
+
         }
     </script>
 </head>
@@ -59,13 +131,13 @@
         <input type="password" onkeyup="passwordValidate()" placeholder="Enter Password" name="password" id="password">
         <span style="color:red" id="pdisplay">*</span>
         <br>
-        <input type="radio" name="gender" id="male"> 
-        <label for="male">Male</label>
-        <input type="radio" name="gender" id="female"> 
-        <label for="female">Female</label>
+        <input onclick="genderValidate()" type="radio" name="gender" id="male"> 
+        <label onclick="genderValidate()" for="male">Male</label>
+        <input onclick="genderValidate()" type="radio" name="gender" id="female"> 
+        <label onclick="genderValidate()" for="female">Female</label>
         <span style="color:red" id="gdisplay">*</span>
         <br>
-        <select name="subject" id="subject">
+        <select onchange="subjectValidate()" name="subject" id="subject">
             <option value="">Select Subject</option>
             <option value="C LANGUAGE">C LANGUAGE</option>
             <option value="C++ LANGUAGE">C++ LANGUAGE</option>
