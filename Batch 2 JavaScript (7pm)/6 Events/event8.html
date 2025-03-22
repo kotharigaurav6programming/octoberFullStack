@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(){
+            var txt = document.getElementById("txt");
+            var display = document.getElementById("display");
+
+            if(txt.value.trim()==''){
+                display.innerHTML="Field Required";
+                display.style.color="red";
+            }else{
+                //var reg = /\d/;
+                //var reg = /\d{2}/;
+                //var reg = /^\d/;
+                //var reg = /^\d$/;
+                //var reg = /^\d{4}$/;
+                //var reg = /^\d{4,}$/;
+                // var reg = /^\d{4,7}$/;
+                // var reg = /^\d+$/;
+                //var reg = /\D/;
+                // var reg = /^\D+$/;
+                // var reg = /\d{2}$/;
+                //var reg = /^[0-9]+$/;
+                // var reg = /^[0-9]$/;
+                // var reg = /^[A-Z]+$/;
+                // var reg = /^[a-z]+$/;
+                // var reg = /^[~!@#$%^&*()]+$/;
+                // var reg = /^[0-9A-Za-z_]+$/;
+                // var reg = /^\w+$/;
+                // var reg = /^[6789][0-9]{9}$/;
+//var reg = /^(?=.+?[0-9])(?=.+?[A-Z])(?=.+?[a-z])(?=.+?[~!@#$%^&*()_+]).{8}$/;
+// var reg = /^(?=.+?[0-9])(?=.+?[A-Z])(?=.+?[a-z])(?=.+?[~!@#$%^&*()_+]).{8,}$/;
+// var reg = /^(?=.+?[0-9])(?=.+?[A-Z])(?=.+?[a-z])(?=.+?[~!@#$%^&*()_+]).{8,12}$/;
+// var reg = /^[0-9A-Za-z_]+@[a-z]+\.[a-z]{2,3}$/;
+// var reg = /^[0-9A-Za-z_]+@[a-z]+\.edu\.[a-z]{2,3}$/;
+// var reg = /^[0-9A-Za-z_]+@[a-z]+.[a-z]{2,3}.[a-z]{2,3}$/;
+// var reg = /^[0-9A-Za-z_]+@gmail+.[a-z]{2,3}$/;
+var reg = /^[0-9A-Za-z_]+@(gmail|yahoo|GMAIL|YAHOO)+.[a-z]{2,3}.[a-z]{2,3}$/;
+
+                if(reg.test(txt.value)){
+                    display.innerHTML="Valid";
+                    display.style.color="green";
+                }else{
+                    display.innerHTML="Invalid";
+                    display.style.color="purple";
+                }   
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>JavaScript Validation - III | Regular Expression</h2>
+    <input type="text" onkeyup="validate()" placeholder="Enter text" name="txt" id="txt"> 
+    <span id="display" style="color:red">*</span>
+    <br>
+    <input type="submit" onclick="validate()" value="Check">
+
+</body>
+</html>

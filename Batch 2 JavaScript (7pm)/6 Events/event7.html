@@ -41,9 +41,80 @@
                 return true;
             }
         }
+        function genderValidate(){
+            var male = document.getElementById("male");
+            var female = document.getElementById("female");
+            var gdisplay = document.getElementById("gdisplay");
+            if(male.checked==false && female.checked==false){
+                gdisplay.innerHTML="Gender Required";
+                return false;
+            }else{
+                gdisplay.innerHTML="";
+                return true;
+            }
+        }
+        function subjectValidate(){
+            var subject = document.getElementById("subject");
+            var sdisplay = document.getElementById("sdisplay");
+            
+            if(subject.selectedIndex==0){
+                sdisplay.innerHTML="Subject Required";
+                return false;
+            }else{
+                sdisplay.innerHTML="";
+                return true;
+            }
+        }
 
         function validate(){
+            var usernameStatus = usernameValidate();
+            var emailStatus = emailValidate();
+            var passwordStatus = passwordValidate();
+            var genderStatus = genderValidate();
+            var subjectStatus = subjectValidate();
             
+            var edisplay = document.getElementById("edisplay");
+            var pdisplay = document.getElementById("pdisplay");
+            var gdisplay = document.getElementById("gdisplay");
+            var sdisplay = document.getElementById("sdisplay");
+
+            if(usernameStatus==false){
+                if(emailStatus==false)
+                    edisplay.innerHTML="*";
+                if(passwordStatus==false)
+                    pdisplay.innerHTML="*";
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*";
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*";
+                return false;
+            }
+            else if(emailStatus==false)
+            {
+                if(passwordStatus==false)
+                    pdisplay.innerHTML="*";
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*";
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*";
+                return false;
+            }
+            else if(passwordStatus==false)
+            { 
+                if(genderStatus==false)
+                    gdisplay.innerHTML="*";
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*";
+                return false;
+            }
+            else if(genderStatus==false)
+            { 
+                if(subjectStatus==false)
+                    sdisplay.innerHTML="*";
+                return false;
+            }
+            else if(subjectStatus==false)
+                  return false;
         }
     </script>
 </head>
@@ -59,13 +130,13 @@
         <input type="password" onkeyup="passwordValidate()" placeholder="Enter Password" id="password" name="password">
         <span id="pdisplay" style="color:red">*</span>
         <br>
-        <input type="radio" id="male" name="gender"> 
+        <input onclick="genderValidate()" type="radio" id="male" name="gender"> 
         <label for="male">Male</label>
-        <input type="radio" id="female" name="gender"> 
+        <input onclick="genderValidate()" type="radio" id="female" name="gender"> 
         <label for="female">Female</label>
-        <span id="gdisplay" style="color:red">*</span>
+        <span  id="gdisplay" style="color:red">*</span>
         <br>
-        <select name="subject" id="subject">
+        <select onchange="subjectValidate()" name="subject" id="subject">
             <option value="">Select Subject</option>
             <option value="C Language">C Language</option>
             <option value="C++ Language">C++ Language</option>
