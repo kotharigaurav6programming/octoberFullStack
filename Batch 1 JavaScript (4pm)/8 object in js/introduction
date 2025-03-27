@@ -1,0 +1,47 @@
+Object in JavaScript
+--------------------
+There are two ways to deal with object in JavaScript : 
+
+a. By Object Literal
+    var obj = {};
+    var newObj = {
+        key : value,
+        key : value,
+         |      |
+    }
+
+    typeof newObj = object
+    typeof key = string
+    typeof value = its depend upon data which it holds
+
+    var newObj = {
+        name : "Andrew Anderson",
+        age : 30,
+    }
+
+    typeof newObj = object
+
+    typeof name = string
+    typeof "Andrew Anderson" = string
+
+    typeof age = string
+    typeof 30 = number
+
+    newObj.address = "Indore";
+    delete newObj.age;
+
+    newObj["first name"] = "Andrew"
+
+    const fname = "First Name";
+    newObj[fname] = "Peter"
+
+    var obj = {
+        name : "Andrew",
+        for : 123,
+        let : "Indore",
+        return : 23
+    }
+
+b. By Object Constructor(with new keyword)
+    var obj = new Object();
+

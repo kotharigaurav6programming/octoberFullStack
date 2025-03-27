@@ -1,0 +1,28 @@
+<!-- example showing the concept of prototype -->
+<script>
+    function Employee(address){
+        this.address = address;
+
+        // setter function
+        this.setData = function(name,age,salary){
+            this.name=name,
+            this.age = age,
+            this.salary = salary
+        }
+        // getter function
+        this.getData = function(){
+            document.write("<br>Name : "+this.name);
+            document.write("<br>Age : "+this.age);
+            document.write("<br>Salary : "+this.salary);
+            document.write("<br>Address : "+this.address);
+        }
+    }   
+    var name = prompt("Enter Username");
+    var age = prompt("Enter Age");
+    var salary = prompt("Enter Salary");
+    var address = prompt("Enter Address");
+    
+    const emp = new Employee(address);
+    emp.setData(name,age,salary);
+    emp.getData();
+</script>

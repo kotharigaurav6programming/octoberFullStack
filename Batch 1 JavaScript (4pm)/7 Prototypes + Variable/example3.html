@@ -1,0 +1,19 @@
+<!-- example showing the concept of const, const and const -->
+<!-- const = block scopic (ES6) -->
+<script>
+    const a = 100;
+    document.write("<br>Before value of a : "+a);
+    {
+        const a = 400;
+        document.write("<br>Inside block value of a : "+a);
+    }
+    document.write("<br>Outside block value of a : "+a);
+    function myFun(){
+        const a = 800;
+        document.write("<br>Inside function value of a : "+a);
+    }
+    myFun();
+    document.write("<br>Outside function value of a : "+a);
+
+
+</script>
