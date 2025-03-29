@@ -1,0 +1,27 @@
+<!-- Example showing the concept of prototype -->
+<script>
+    function Employee(){
+        // setter method    
+        this.setData = function(){
+            this.name = "Andrew Anderson",
+            this.age = 45,
+            this.salary = 12345
+        }
+        // getter method
+        this.getData = function(){
+            document.write("<br>Name : "+this.name);
+            document.write("<br>Age : "+this.age);
+            document.write("<br>Salary : "+this.salary);
+        }
+    }
+    const emp = new Employee();
+    emp.setData();
+    emp.salary+=1000;
+    emp.name = "Andy";
+    emp.getData();    
+
+    const emp1 = new Employee();
+    emp1.setData();
+    emp1.getData();    
+
+</script>

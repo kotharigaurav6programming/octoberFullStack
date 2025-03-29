@@ -1,0 +1,15 @@
+<script>
+
+    var obj = {
+            name:'Andrew Anderson',
+            age:78,
+            salary : 1234,
+            isAdmin:true,
+            address : {},
+            students:['c','c++']
+    };
+    
+    for(var key in obj){
+        document.write("<br><b>KeyName : </b>"+key+"<b> and type of key : </b>"+typeof key+"<b> value it holds : </b>"+obj[key]+" <b>and type of data : </b>"+typeof obj[key]);
+    }
+</script>

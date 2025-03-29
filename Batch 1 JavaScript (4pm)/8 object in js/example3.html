@@ -1,0 +1,38 @@
+<script>
+    /*
+    var obj = {
+        'first name':'Andrew Anderson',
+        age:32,
+        salary:22333
+    }
+   
+    document.write("<br>Name : ",obj['first name']);
+    document.write("<br>Age : ",obj.age);
+    document.write("<br>Salary : ",obj.salary);
+    */
+
+    /*
+    var obj = {
+        name:'Andrew Anderson',
+        age:32,
+        salary:22333
+    }
+   
+    document.write("<br>Name : ",obj.name);
+    document.write("<br>Age : ",obj.age);
+    document.write("<br>Salary : ",obj.salary);
+    */
+
+    var obj = new Object();
+    var name = "Full Name";
+    var age = 'age';    
+        obj[name]='Andrew Anderson';
+        obj[age]=32;
+        obj.salary=22333;
+    
+    document.write("<br>Name : ",obj[name]);
+    document.write("<br>Name : ",obj["Full Name"]);
+    document.write("<br>Age : ",obj[age]);
+    document.write("<br>Salary : ",obj.salary);
+
+</script>

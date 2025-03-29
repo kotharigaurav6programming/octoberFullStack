@@ -1,0 +1,54 @@
+Exception : Exceptions are the run time anomalies(unexpected situation) which may arise during the execution of program, and the mechanism of handling such type of exceptions are known as exception handling mechanism.
+
+Exception handling mechanism includes : 
+
+1. Find the problem (Hit the exception)
+2. Inform that error has occured(Throw the exception)
+3. Receive the error information(Catch the exception)
+4. Take corrective measures(Handle the exception)
+
+Keywords used in exception handling : 
+
+There are 5 keywords used in exception handling : 
+try, catch, throw, throws, finally
+
+here try, catch and finally are blocks
+whereas throw and throws are keywords
+
+try with catch
+---------------
+try{
+    ...
+    ...
+}catch(Exception e){
+    ...
+    ...
+}
+
+try with multiple catch
+------------------------
+try{
+    ...
+    ...
+}catch(Exception e){
+    ...
+    ...
+}catch(Exception e){
+    ...
+    ...
+}catch(Exception e){
+    ...
+    ...
+}
+
+try with generalized catch
+------------------------
+try{
+    ...
+    ...
+}catch(Exception_1 | Exception_2 | Exception_3 e){
+    ...
+    ...
+}
+
+

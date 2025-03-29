@@ -1,0 +1,18 @@
+<!--  example showing the concept of var, let and const -->
+<!-- const = block scopic (ES6) -->
+<script>
+    const a = 100;
+    document.write("<br>before value of a : "+a);
+    {
+        const a = 400;
+        document.write("<br>value of a inside block: "+a);
+    }
+    document.write("<br>after value of a : "+a);
+    function myFun(){
+        const a = 800;
+        document.write("<br>value of a inside function : "+a);
+    }
+    myFun();
+    document.write("<br>value of a outside function : "+a);
+</script>
+

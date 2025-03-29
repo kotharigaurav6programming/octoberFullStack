@@ -1,0 +1,18 @@
+<script>
+    function myFun(){
+        var obj1 = {name:'Andrew Anderson',age:28};
+        var obj2 = {name:'Peter Parker',age:23}; 
+        var obj3 = {name:'Mark',age:21}; 
+
+        var arr = [obj1,obj2,obj3];
+
+        var table = "<table border='1' cellspacing='0' cellpadding='8'><caption><h2>Student Data</h2></caption><tr><th>S.No</th><th>Name</th><th>Age</th></tr>";
+        for(i=0;i<arr.length;i++){
+            table+=`<tr><td>${i+1}</td><td>${arr[i].name}</td><td>${arr[i].age}</td></tr>`;    
+        }
+        table+='</table>';
+        document.getElementById("show").innerHTML = table;
+    }
+</script>
+<button onclick="myFun()">Show Data</button>
+<p id="show"></p>
