@@ -1,0 +1,48 @@
+<script>
+function myFun(){
+    var arr = [
+                {
+                    name:'Andrew Anderson',
+                    age:56,
+                    address : {
+                        city : "Indore"
+                    }
+                },
+                {
+                    name:'Peter Parker',
+                    age:43,
+                    address : {
+                        city : "Indore"
+                    }
+                },
+                {
+                    name:'Jackson Jack',
+                    age:65,
+                    address : {
+                        city : "Indore"
+                    }
+                }
+            ];
+
+    var table = "<table border='1' cellpadding='8' cellspacing='0'><caption><h2>Student Data</h2></caption><tr><th>S.No</th><th>Name</th><th>Age</th><th>Address</th></tr>"
+
+    for(var index in arr){
+        table+= `<tr><td>${parseInt(index)+1}</td>`;                
+        for(var key in arr[index]){
+            if(typeof arr[index][key] == 'object'){
+                for(var subkey in arr[index][key]){
+                    table+=`<td>${arr[index][key][subkey]}</td>`;
+                }
+            }else{
+                table+=`<td>${arr[index][key]}</td>`;
+            }
+        }
+        table+='</tr>';
+    }
+    table+="</table>";
+    document.getElementById("show").innerHTML = table;
+}
+</script>
+
+<button onclick="myFun()">Click Here</button>
+<p id="show"></p>
