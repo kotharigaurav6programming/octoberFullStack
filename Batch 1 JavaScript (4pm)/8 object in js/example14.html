@@ -1,0 +1,35 @@
+<script>
+        var arr = [
+                    {
+                        name:'Andrew Anderson Andy',
+                        age:28,
+                        address:{
+                            city:"Indore"
+                        }
+                    },{
+                        name:'Peter Parker',
+                        age:23,
+                        address:{
+                            city:"Indore"
+                        }
+                    },{
+                        name:'Mark',
+                        age:21,
+                        address:{
+                            city:"Indore"
+                        }
+                    }
+                ];
+        for(var index in arr){
+            for(var key in arr[index]){
+              if(typeof arr[index][key]=="object"){
+                for(var subkey in arr[index][key]){
+                    document.write("<br><b> "+subkey+" : </b>"+arr[index][key][subkey]);
+                }
+              }else{
+                document.write("<br><b> "+key+" : </b>"+arr[index][key]);
+              }  
+            }
+            document.write("<br>");
+        }
+</script>

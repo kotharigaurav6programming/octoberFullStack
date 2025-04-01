@@ -1,0 +1,30 @@
+<script>
+    function myFun(){
+        var arr = [
+                    {
+                        name:'Andrew Anderson Andy',
+                        age:28
+                    },{
+                        name:'Peter Parker',
+                        age:23
+                    },{
+                        name:'Mark',
+                        age:21
+                    }
+                ];
+
+        var table = "<table border='1' cellspacing='0' cellpadding='8'><caption><h2>Student Data</h2></caption><tr><th>S.No</th><th>Name</th><th>Age</th></tr>";
+        
+        for(var index in arr){
+            table+=`<tr><td>${parseInt(index)+1}</td>`;
+            for(var key in arr[index]){
+                table+=`<td>${arr[index][key]}</td>`;    
+            }
+            table+="</tr>";
+        }            
+        table+='</table>';
+        document.getElementById("show").innerHTML = table;
+    }
+</script>
+<button onclick="myFun()">Show Data</button>
+<p id="show"></p>

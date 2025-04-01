@@ -1,0 +1,47 @@
+<script>
+        var arr = [
+                    {
+                        name:'Andrew Anderson Andy',
+                        age:28,
+                        address:{
+                            city:{
+                                cityName : 'Indore'
+                            }
+                        }
+                    },{
+                        name:'Peter Parker',
+                        age:23,
+                        address:{
+                            city:{
+                                cityName : 'Indore'
+                            }
+                        }
+                    },{
+                        name:'Mark',
+                        age:21,
+                        address:{
+                            city:{
+                                cityName : 'Indore'
+                            }
+                        }
+                    }
+                ];
+        for(var index in arr){
+            for(var key in arr[index]){
+              if(typeof arr[index][key]=="object"){
+                for(var subkey in arr[index][key]){
+                   if(typeof arr[index][key][subkey] == "object"){
+                        for(var innerkey in arr[index][key][subkey]){
+                            document.write("<br><b>"+innerkey+" : </b>"+arr[index][key][subkey][innerkey]);
+                        }
+                   }else{
+                    document.write("<br><b> "+subkey+" : </b>"+arr[index][key][subkey]);
+                   } 
+                }
+              }else{
+                document.write("<br><b> "+key+" : </b>"+arr[index][key]);
+              }  
+            }
+            document.write("<br>");
+        }
+</script>

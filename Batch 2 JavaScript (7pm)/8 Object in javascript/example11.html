@@ -1,0 +1,15 @@
+<script>
+    var obj1 = {name:'Andrew Anderson',age:56};
+    var obj2 = {name:'Peter Parker',age:43};
+    var obj3 = {name:'Jackson Jack',age:65};
+
+    var arr = [obj1,obj2,obj3];
+
+    var table = "<table border='1' cellpadding='8' cellspacing='0'><caption><h2>Student Data</h2></caption><tr><th>S.No</th><th>Name</th><th>Age</th></tr>"
+    arr.forEach((obj,index)=>{
+        table+=`<tr><td>${index+1}</td><td>${obj.name}</td><td>${obj.age}</td></tr>`;
+    });
+    table+="</table>";
+    document.write(table);
+</script>
+
