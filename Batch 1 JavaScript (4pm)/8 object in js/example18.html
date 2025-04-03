@@ -1,0 +1,138 @@
+<script>
+    var arr=[
+        {
+            name:"Andrew Anderson",
+            age:56,
+            address : {
+                countryName:"India",
+                country:{
+                    stateName:"Madhya Pradesh",
+                    state:{
+                        cityName:"Indore",
+                        city:{
+                            streetName:"MG Road",
+                            street:{
+                                houseNumber:420
+                            }
+                        }
+                    }
+                }
+            }
+        },{
+            name:"Peter Parker",
+            age:56,
+            address : {
+                countryName:"India",
+                country:{
+                    stateName:"Madhya Pradesh",
+                    state:{
+                        cityName:"Indore",
+                        city:{
+                            streetName:"MG Road",
+                            street:{
+                                houseNumber:420
+                            }
+                        }
+                    }
+                }
+            }
+        },{
+            name:"Jack Jackson",
+            age:56,
+            address : {
+                countryName:"India",
+                country:{
+                    stateName:"Madhya Pradesh",
+                    state:{
+                        cityName:"Indore",
+                        city:{
+                            streetName:"MG Road",
+                            street:{
+                                houseNumber:420
+                            }
+                        }
+                    }
+                }
+            }
+        },{
+            name:"Mathew Math",
+            age:56,
+            address : {
+                countryName:"India",
+                country:{
+                    stateName:"Madhya Pradesh",
+                    state:{
+                        cityName:"Indore",
+                        city:{
+                            streetName:"MG Road",
+                            street:{
+                                houseNumber:420
+                            }
+                        }
+                    }
+                }
+            }
+        },{
+            name:"Jackson Peter",
+            age:56,
+            address : {
+                countryName:"India",
+                country:{
+                    stateName:"Madhya Pradesh",
+                    state:{
+                        cityName:"Indore",
+                        city:{
+                            streetName:"MG Road",
+                            street:{
+                                houseNumber:420
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ];
+
+    var table = '<table border="1" cellspacing="0" cellpadding="10"><tr><th>S.No</th><th>Name</th><th>Age</th><th>CountryName</th><th>StateName</th><th>CityName</th><th>StreetName</th><th>HouseNumber</th></tr>';
+
+        for(var index in arr){
+            table+=`<tr><td>${parseInt(index)+1}</td>`;
+                for(var key in arr[index]){
+                    if(typeof arr[index][key]=="object"){
+                        for(var subkey in arr[index][key]){
+                          if(typeof arr[index][key][subkey]=="object"){
+                            for(var innerkey in arr[index][key][subkey]){
+                                if(typeof arr[index][key][subkey][innerkey]=="object") {
+                                    for(var innersubkey in arr[index][key][subkey][innerkey]){
+                                        if(typeof arr[index][key][subkey][innerkey][innersubkey]=="object"){
+                                            for(var subinnerkey in arr[index][key][subkey][innerkey][innersubkey]){
+                                                if(typeof arr[index][key][subkey][innerkey][innersubkey][subinnerkey] == "object"){
+                                                    for(var lastkey in arr[index][key][subkey][innerkey][innersubkey][subinnerkey]){
+                                                        table+=`<td>${arr[index][key][subkey][innerkey][innersubkey][subinnerkey][lastkey]}</td>`;    
+                                                    }
+                                                }else{
+                                                    table+=`<td>${arr[index][key][subkey][innerkey][innersubkey][subinnerkey]}</td>`;
+                                                }
+                                            }
+                                        }else{
+                                            table+=`<td>${arr[index][key][subkey][innerkey][innersubkey]}</td>`;
+                                        }
+                                    }
+                                }else{
+                                    table+=`<td>${arr[index][key][subkey][innerkey]}</td>`;
+                                }
+                            }
+                          } else{
+                            table+=`<td>${arr[index][key][subkey]}</td>`;
+                          } 
+                        }
+                    }else{
+                        table+=`<td>${arr[index][key]}</td>`;
+                    }
+                }
+            table+='</tr>';
+        }
+
+    table+='</table>';
+    document.write(table);
+</script>

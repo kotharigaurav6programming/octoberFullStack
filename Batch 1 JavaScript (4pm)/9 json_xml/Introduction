@@ -1,0 +1,52 @@
+XML vs JSON
+-----------
+
+XML = EXtensible Markup Language
+
+a. It uses the concept of tags
+b. It is heavy weight as it uses tags (limitation)
+c. Data transfer format
+d. Language Independent
+e. Concept of array is absent here (limitation)
+
+<movies>
+    <movie>
+        <movie-name>Park</movie-name> 
+        <rating>3 Rotten tomatoes</rating> 
+        <producer>James Gosling</producer>
+    </movie>
+    <movie>
+        <movie-name>Park</movie-name> 
+        <rating>3 Rotten tomatoes</rating> 
+        <producer>James Gosling</producer>
+    </movie>
+    <movie>
+        <movie-name>Park</movie-name> 
+        <rating>3 Rotten tomatoes</rating> 
+        <producer>James Gosling</producer>
+    </movie>
+</movies>
+
+JSON = JavaScript object Notation
+
+a. It uses the concept of key value pair
+b. It is lightweight as it uses key value pair (advantage)
+c. Data transfer format
+d. Language Independent
+e. Concept of array is present (advantage)
+
+[{
+    "movie-name":"Park",
+    "rating":"3 Rotten tomatoes",
+    "producer":"James Gosling"
+},
+{
+    "movie-name":"Park",
+    "rating":"3 Rotten tomatoes",
+    "producer":"James Gosling"
+},
+{
+    "movie-name":"Park",
+    "rating":"3 Rotten tomatoes",
+    "producer":"James Gosling"
+}]
