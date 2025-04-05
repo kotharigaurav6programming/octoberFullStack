@@ -1,0 +1,41 @@
+<script>
+    function myFun() {
+        var xhttp = new XMLHttpRequest();
+        var method = 'GET';
+        var url = 'https://jsonplaceholder.typicode.com/posts';
+        var async_status = true;
+        // specify the request
+        xhttp.open(method, url, async_status);
+        // sends request
+        xhttp.send();
+
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 0)
+                console.log("readystate : ", xhttp.readyState);
+            if (xhttp.readyState == 1)
+                console.log("readystate : ", xhttp.readyState);
+            if (xhttp.readyState == 2)
+                console.log("readystate : ", xhttp.readyState);
+            if (xhttp.readyState == 3)
+                console.log("readystate : ", xhttp.readyState);
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                // console.log(typeof xhttp.responseText);
+                const arr = JSON.parse(xhttp.responseText);
+                var table = "<table border='1' cellpadding='8' cellspacing='0'><caption><h2>Student Data</h2></caption><tr><th>S.No</th><th>UserId</th><th>Id</th><th>Title</th><th>Body</th></tr>"
+
+                for (var index in arr) {
+                    table += `<tr><td>${parseInt(index) + 1}</td>`;
+                    for (var key in arr[index]) {
+                        table += `<td>${arr[index][key]}</td>`;
+                    }
+                    table += '</tr>';
+                }
+                table += "</table>";
+                document.getElementById("show").innerHTML = table;
+
+            }
+        }
+    }
+</script>
+<button onclick="myFun()">Click</button>
+<p id="show"></p>
