@@ -1,0 +1,18 @@
+<script>
+    // spread operator with object 
+    var obj1 = {
+        fname:'Andrew',
+        lname:'Anderson'
+    }
+    var obj2 = {
+        address:'Indore',
+        pincode:452010,
+        fname:'Mathew'
+    }
+    var obj3 = {...obj1,...obj2};
+    document.write("fname : "+obj3.fname+"<br>");
+    document.write("lname : "+obj3.lname+"<br>");
+    document.write("address : "+obj3.address+"<br>");
+    document.write("pincode : "+obj3.pincode+"<br>");
+
+</script>

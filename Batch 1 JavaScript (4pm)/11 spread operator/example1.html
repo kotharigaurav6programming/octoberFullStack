@@ -1,0 +1,19 @@
+<script>
+
+    var car1 = ['kia','maruti','kiger','Hundai verna','nano'];
+    var car2 = car1;
+
+    car2[2] = 'Maruti fronx';
+    document.write("car1 : "+car1+"<br>");
+    document.write("car2 : "+car2+"<br>");
+
+    // solution : spread operator
+
+    var car1 = ['kia','maruti','kiger','Hundai verna','nano'];
+    var car2 = [...car1];
+
+    car2[2] = 'Maruti fronx';
+    document.write("<br>car1 : "+car1+"<br>");
+    document.write("car2 : "+car2+"<br>");
+
+</script>

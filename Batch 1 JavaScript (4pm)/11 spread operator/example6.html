@@ -1,0 +1,16 @@
+<script>
+    // object destructuring
+    var obj = {
+        fname:'Andrew',
+        lname:'Anderson',
+        address:'Indore'
+    }
+    
+    const {salary=45678,fname:FirstName,lname,address} = obj;
+    document.write("FirstName : "+FirstName+"<br>");
+    // document.write("fname : "+fname+"<br>");
+    document.write("lname : "+lname+"<br>");
+    document.write("address : "+address+"<br>");
+    document.write("salary : "+salary+"<br>");
+
+</script>

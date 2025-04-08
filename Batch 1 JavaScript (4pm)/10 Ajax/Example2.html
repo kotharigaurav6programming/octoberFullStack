@@ -1,0 +1,39 @@
+<script>
+    function myFun() {
+        var obj = {
+            "userId" : 101,
+            "id" : 10001,
+            "title":"My Title",
+            "body" : "This is an example of Post Ajax"
+        }
+        var xhttp = new XMLHttpRequest();
+        var method = 'POST';
+        var url = 'https://jsonplaceholder.typicode.com/posts';
+        var async_status = true;
+        // specify the request
+        xhttp.open(method, url, async_status);
+        // xhttp.setRequestHeader("content-type","application/json");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // sends request
+        xhttp.send(JSON.stringify(obj));
+
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 0)
+                console.log("readystate : ", xhttp.readyState);
+            if (xhttp.readyState == 1)
+                console.log("readystate : ", xhttp.readyState);
+            if (xhttp.readyState == 2)
+                console.log("readystate : ", xhttp.readyState);
+            if (xhttp.readyState == 3)
+                console.log("readystate : ", xhttp.readyState);
+            if (xhttp.readyState == 4 && xhttp.status == 201) {
+                alert("Gets entry");
+                console.log("readystate : ", xhttp.readyState);
+                const result = JSON.parse(xhttp.responseText);
+                document.getElementById("show").innerHTML = result;
+            }
+        }
+    }
+</script>
+<button onclick="myFun()">Click</button>
+<p id="show"></p>
