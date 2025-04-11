@@ -1,0 +1,22 @@
+<script>
+    // example showing the concept of callback
+    /*
+    var a = 100;
+    function myFun(value){
+        document.write("typeof value : "+typeof value);
+        document.write("<br>value : "+value);
+    }
+    myFun(a);
+    */
+
+    var myFun = function(){
+        document.write("<br>Its my function");
+    }
+
+    function myFun1(callback){
+        document.write("<br>typeof value : "+typeof callback);
+        document.write("<br>value : "+callback);
+        callback();
+    }
+    myFun1(myFun);
+</script>

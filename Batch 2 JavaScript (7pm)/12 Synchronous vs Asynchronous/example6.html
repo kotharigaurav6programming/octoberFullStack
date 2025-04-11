@@ -1,0 +1,19 @@
+<script>
+// Asynchronous
+    console.log("Before execution");
+        function myFun1(a,b){
+            console.log("Its my fun1 : "+(a+b));
+        }
+        function myFun2(){
+            console.log("Its my fun2");
+        }
+        function myFun3(){
+            console.log("Its my fun3");
+        }
+        setTimeout(()=>{
+            myFun1(1000,2000);
+        },0); // zero time delay
+        myFun2();
+        setInterval(myFun3,1000);
+    console.log("After execution");
+</script>

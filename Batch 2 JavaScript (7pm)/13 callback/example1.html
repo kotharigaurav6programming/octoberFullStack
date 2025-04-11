@@ -1,0 +1,21 @@
+<!-- callback -->
+
+<script>
+    /*
+    var a  = 100
+    function myFun(value){
+        document.write("<br>typeof value : "+typeof value);
+        document.write("<br>value : "+value);
+    }
+    myFun(a);
+    */
+
+    var a  = function(){document.write("<br>Its my fun");}
+    function myFun(value){
+        document.write("<br>typeof value : "+typeof value);
+        document.write("<br>value : "+value);
+        value();
+    }
+    myFun(a);
+
+</script>

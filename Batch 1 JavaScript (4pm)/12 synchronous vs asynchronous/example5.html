@@ -1,0 +1,20 @@
+<script>
+// asynchronous
+    console.log("Before execution");
+        function myFun1(){
+            console.log("its myFun1");
+        }
+        function myFun2(a,b){
+            console.log("its myFun2 : "+(a+b));
+        }
+        function myFun3(rno,name){
+            console.log("Roll Number : "+rno);
+            console.log("Name : "+name);             
+        }
+        setInterval(myFun1,2000);
+        setTimeout(myFun2,0,34,45);
+        setTimeout(()=>{
+            myFun3(101,'Andrew Anderson');
+        },5000);
+    console.log("After execution");
+</script>

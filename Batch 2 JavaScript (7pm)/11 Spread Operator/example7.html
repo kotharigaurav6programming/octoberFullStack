@@ -1,0 +1,27 @@
+<script>
+    // object destructuring
+    function myfun(){
+        var obj = {
+            fname:'Andrew',
+            lname:'Anderson',
+            address : {
+                state:'Indore',
+                country:'India',
+                toString(){
+                    return this.state+" "+this.country;
+                }
+            },
+            pincode : 452010,
+            stdcode : '0731'
+        }
+        return obj;
+    }
+    const {fname:FirstName,lname,salary=1234,address,pincode} = myfun();
+
+    document.write("<br>fname : "+FirstName);
+    document.write("<br>lname : "+lname);
+    document.write("<br>salary : "+salary);
+    document.write("<br>address : "+address);
+    document.write("<br>pincode : "+pincode);
+
+</script>

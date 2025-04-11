@@ -1,0 +1,13 @@
+<script>
+// asynchronous
+    console.log("Before execution");
+        var count = 1;
+        function myFun1(){
+            if(count<11)
+                console.log(count++);
+            else    
+                clearInterval(x);
+        }
+        var x = setInterval(myFun1,1000);
+    console.log("After execution");
+</script>

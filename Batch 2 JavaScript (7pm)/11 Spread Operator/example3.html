@@ -1,0 +1,21 @@
+<script>
+    var obj1 = {
+        fname:'Andrew',
+        lname:'Anderson'
+    }
+    var obj2 = {
+        fname:'Mathew',
+        address : 'Indore',
+        pincode : 452010
+    }
+    var obj3 = {
+        ...obj1,
+        ...obj2
+    }
+
+    document.write("<br>fname : "+obj3.fname);
+    document.write("<br>lname : "+obj3.lname);
+    document.write("<br>address : "+obj3.address);
+    document.write("<br>pincode : "+obj3.pincode);
+
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div onclick="alert('div clicked')">
+        <p onclick="alert('p clicked')">
+            <button onclick="alert('button clicked')">Click</button>
+        </p>
+    </div> -->
+
+    <div onclick="alert('div clicked')">
+        <p onclick=event.stopPropagation()>
+            <button onclick="alert('button clicked')">Click</button>
+        </p>
+    </div>
+
+</body>
+</html>
