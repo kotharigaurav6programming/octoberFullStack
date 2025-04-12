@@ -1,0 +1,22 @@
+<!-- callback -->
+
+<script>
+    //  synchronous callback
+    console.log("Before Execution");
+    
+    function myFun(callback1,callback2){
+        console.log("statement 1");
+            callback1();
+        console.log("statement 2");
+            callback2();
+        console.log("statement 3");
+    }
+    myFun(function(){
+        console.log("Its my 1st function");
+    },function(){
+        console.log("Its my 2nd function");
+    });
+
+    console.log("After Execution");
+    
+</script>

@@ -1,0 +1,16 @@
+<!-- callback -->
+
+<script>
+    var num1  = parseInt(prompt("Enter first number"));
+    var num2  = parseInt(prompt("Enter second number"));
+    
+    const fun = ()=>{
+        console.log("Sum : "+(num1+num2));
+    }
+
+    function myFun(callback){
+        console.log("Going to perform addition");
+        callback();
+    }
+    myFun(fun);    
+</script>

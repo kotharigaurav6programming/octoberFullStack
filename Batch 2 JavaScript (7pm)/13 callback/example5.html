@@ -1,0 +1,13 @@
+<!-- callback -->
+
+<script>
+    const fun = (message)=>{
+        console.log("Hello user ",message);
+    }
+
+    function myFun(callback){
+        var msg = "How are you ?";
+        callback(msg);
+    }
+    myFun(fun);    
+</script>
