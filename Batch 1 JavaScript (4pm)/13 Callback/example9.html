@@ -1,0 +1,20 @@
+<script>
+    // example of asynchronous callback
+    console.log("before execution");
+    
+    function gotoroom(callback){
+        console.log("gotoroom");
+        callback(wonprize);        
+    }
+    function removegarbage(callback){
+        console.log("removegarbage");
+        callback();
+    }
+    function wonprize(){
+        console.log("wonprize");
+    }
+    setTimeout(gotoroom,2000,removegarbage);
+
+    console.log("after execution");
+
+</script>

@@ -1,0 +1,23 @@
+<script>
+    // example of synchronous callback
+
+    var myFun1 = function(){
+        console.log("This is my 1st function");
+    }
+    var myFun2 = function(){
+        console.log("This is my 2nd function");
+    }
+    
+    console.log("Before execution");
+    function myFun(callback1,callback2){
+        console.log("This is statement 1");
+            callback1();
+        console.log("This is statement 2");
+            callback2();
+        console.log("This is statement 3");        
+    }
+
+    myFun(myFun1,myFun2);
+    console.log("After execution");
+
+</script>
