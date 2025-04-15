@@ -1,0 +1,12 @@
+<script>
+    new Promise((resolve,reject)=>{
+        resolve("Hello");
+        // reject(new Error("error occured"));
+    }).then(function(msg){
+        console.log("its resolve result : "+msg);
+    },function(msg){
+        console.log("its reject result : "+msg);
+    }).finally(()=>{
+        console.log("finally will executes after both cases");
+    });
+</script>

@@ -1,0 +1,68 @@
+// https://javascript.info/promise-basics
+// https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/
+
+What is Promise ? 
+------------------------------
+
+A Promise is an object which takes a callback and executes it asynchronously. A promise is considered easier to use and to maintain the callbacks.
+
+In Other words, A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved.
+
+A promise did not remove the use of callbacks, but it made the chaining of functions straightforward and simplified the code, making it much easier to read.
+
+Constructor Promise()  Syntax:
+---------------------------------------------------
+var promiseObj = new Promise( executor );
+
+Example : 
+
+var promise = new Promise(function(resolve, reject) {
+  // executor 
+});
+The function passed to new Promise is called the executor. When new Promise is created, the executor runs automatically. 
+Its arguments resolve and reject are callbacks provided by JavaScript itself. Our code is only inside the executor.
+
+When the executor obtains the result, be it soon or late, doesn’t matter, it should call one of these callbacks:
+
+resolve(value) — if the job finished successfully, with result value.
+reject(error) — if an error occurred, with error value.
+
+The promise object returned by the new Promise constructor has these internal properties:
+
+state — initially "pending", then changes to either "fulfilled" when resolve is called or "rejected" when reject is called.
+result — initially undefined, then changes to value when resolve(value) called or error when reject(error) is called.
+
+So the executor eventually moves promise to one of these states:
+
+|------------------------------------------|                                                                        state:"fulfilled"                
+| new Promise(executor)  |                  _____resolve(value)______result: value
+|------------------------------------------|_______|                                                                            
+|state:"pending"                  |                |_____reject(error)________state: "rejected"
+|result:undefined                 |                                                                        result: error    
+|------------------------------------------|
+
+A Promise is in one of these states:
+
+Pending: initial state, neither fulfilled nor rejected.
+
+Fulfilled: onFulfilled() will be called (e.g., resolve() was called) meaning that the operation completed successfully.
+
+Rejected: onRejected() will be called (e.g., reject() was called) meaning that the operation failed.
+
+A pending promise can either be fulfilled with a value, or rejected with a reason (error).
+
+There are 5 static methods of Promise class:
+--------------------------------------------------------------------------
+
+1) Promise.all(promises) – waits for all promises to resolve and returns an array of their results. If any of the given promises 
+     rejects, it becomes the error of Promise.all, and all other results are ignored.
+2) Promise.allSettled(promises) (recently added method) – waits for all promises to settle and returns their results as an 
+     array of objects with:
+            state: "fulfilled" or "rejected"
+            value (if fulfilled) or reason (if rejected).
+3) Promise.race(promises) – waits for the first promise to settle, and its result/error becomes the outcome.
+4) Promise.resolve(value) – makes a resolved promise with the given value.
+5) Promise.reject(error) – makes a rejected promise with the given error.
+
+Of these five, Promise.all is probably the most common in practice.
+

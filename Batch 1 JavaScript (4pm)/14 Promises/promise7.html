@@ -1,0 +1,21 @@
+<script>
+    var num = parseInt(prompt("Enter number"));
+    const res = (num)=>{
+        var status='';
+        if(isNaN(num))
+            status = false;
+        else{
+            for(i=1;i<=10;i++){
+                status += num +' x '+i+' = '+(num*i) +'\n';
+            }
+        }
+        return new Promise((resolve,reject)=>{
+            status ? resolve(status) : reject("Please Enter Number");
+        })
+    }
+    res(num).then((msg)=>{
+        console.log(msg);
+    }).catch((msg)=>{
+        console.log(msg);
+    });
+</script>
