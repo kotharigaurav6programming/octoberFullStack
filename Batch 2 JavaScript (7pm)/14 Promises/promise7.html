@@ -1,0 +1,27 @@
+<script>
+    var num = 10;
+    function display(num){
+        console.log("num : ",num);
+        return new Promise((resolve,reject)=>{
+            resolve(num);
+        });
+    }
+    display(num).then((num)=>{
+        display(num+2).then((num)=>{
+            display(num+2).then((num)=>{
+                display(num+2).then((num)=>{
+                      console.log("num : ",num+2);
+                      console.log("End of program");
+                }).catch((error)=>{
+                    console.log("Error : ",error);
+                });
+            }).catch((error)=>{
+                console.log("Error : ",error);
+            });
+        }).catch((error)=>{
+            console.log("Error : ",error);
+        });
+    }).catch((error)=>{
+        console.log("Error : ",error);
+    });
+ </script>

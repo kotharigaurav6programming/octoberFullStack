@@ -1,0 +1,15 @@
+<script>
+    const status = {
+        SUCCESS : 'Promise Resolved with a value',
+        ERROR : new Error("Promise Rejected with a reason") 
+    }
+
+    new Promise((resolve,reject)=>{
+        reject(status.ERROR);
+    }).catch((msg)=>{
+        console.log("catch : ",msg);
+    }).then((msg)=>{
+        console.log("then : ",msg);
+    });
+
+</script>

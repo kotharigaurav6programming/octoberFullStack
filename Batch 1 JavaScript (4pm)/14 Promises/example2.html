@@ -1,0 +1,57 @@
+<script>
+    // const res = new Promise((resolve,reject)=>{});
+    // console.log(res);
+//--------------------------------------------------------------    
+    // const res = new Promise((resolve,reject)=>{
+    //     resolve(1);
+    // });
+    // console.log(res);
+//-------------------------------------------------------------------
+//     const res = new Promise((resolve,reject)=>{
+//         reject(new Error('Error occured'));
+//     });
+// //    console.log(res);
+//     res.catch((result)=>{
+//         console.log(result);
+//     });
+//----------------------------------------------------------------------
+// const res = new Promise((resolve,reject)=>{
+//         reject("Error occured");
+//     });
+// //    console.log(res);
+//     res.catch((result)=>{
+//         console.log(result);
+//     });
+//----------------------------------------------------------------------
+    // const res = new Promise((resolve,reject)=>{
+    //     reject("Error occured");
+    // });
+    // res.then((result)=>{
+    //     console.log("resolve : ",result);
+    // });
+    // res.catch((result)=>{
+    //     console.log("reject : ",result);
+    // });
+//----------------------------------------------------------------------
+    // const res = new Promise((resolve,reject)=>{
+    //     reject(new Error("Error occured"));
+    // });
+    // const result = res.catch((result)=>{
+    //     return result;
+    // })
+    // result.then((num)=>{
+    //     console.log("resolve : ",num);
+    // }).catch((num)=>{
+    //     console.log("reject : ",num);
+    // });
+//--------------------------------------------------------
+    const res = new Promise((resolve,reject)=>{
+        resolve("done");
+    });
+    res.then((result)=>{
+        console.log("resolve : ",result);
+    });
+    res.catch((result)=>{
+        console.log("reject : ",result);
+    });
+</script>

@@ -1,0 +1,12 @@
+<script>
+
+   var num = parseInt(prompt("Enter number")); 
+   new Promise((resolve,reject)=>{
+       (num%2==0) ? resolve("even") : reject("odd");
+   }).then((msg)=>{
+        console.log(msg);
+   }).catch((error)=>{
+        console.log(error);
+   });
+   
+</script>

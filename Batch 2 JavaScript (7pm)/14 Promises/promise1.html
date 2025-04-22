@@ -9,3 +9,30 @@
     });
 
 </script>
+
+<!--
+    new Promise(executor);
+
+    executor: 
+        (resolve,reject)=>{
+            ....
+            ....
+        }
+
+        resolve, reject = callback provided by javascript implicitly 
+
+    const obj = new Promise((resolve,reject)=>{
+        ...
+        ...
+    })
+
+    obj.then() <----------- when promise object holds resolve value
+
+    obj.catch() <----- when promise object holds reject object or rejection with reason
+
+    obj.then().catch() promise chaining
+
+    obj.then(first_argument_resolve, second_argument_reject);
+    obj.then(()=>{},()=>{});
+
+--->

@@ -1,0 +1,75 @@
+<script>
+
+/*
+    const res = new Promise((resolve,reject)=>{
+        reject("Error occured");
+    })
+    
+    res.catch((error)=>{
+        console.log(error);        
+    });
+*/
+
+/*
+    const status = {
+        SUCCESS : 'Promise with a resolve value',
+        ERROR : new Error("Promise with a reject reason")
+    }
+    const res = new Promise((resolve,reject)=>{
+        resolve(status.SUCCESS);
+    })
+    
+    res.then((msg)=>{
+        console.log(msg);
+    });
+
+    res.catch((error)=>{
+        console.log(error);        
+    });
+*/
+/*
+const status = {
+        SUCCESS : 'Promise with a resolve value',
+        ERROR : new Error("Promise with a reject reason")
+    }
+    const res = new Promise((resolve,reject)=>{
+        resolve(status.SUCCESS);
+    })
+    
+    res.then((msg)=>{
+        console.log(msg);
+    }).catch((error)=>{
+        console.log(error);        
+    });
+*/
+/*
+    const status = {
+        SUCCESS : 'Promise with a resolve value',
+        ERROR : new Error("Promise with a reject reason")
+    }
+    const res = new Promise((resolve,reject)=>{
+        reject(status.ERROR);
+    })
+    
+    res.then((msg)=>{
+        console.log(msg);
+    }).catch((error)=>{
+        console.log(error);        
+    });
+*/
+
+    const status = {
+        SUCCESS : 'Promise with a resolve value',
+        ERROR : new Error("Promise with a reject reason")
+    }
+    const res = new Promise((resolve,reject)=>{
+        reject(status.ERROR);
+    })
+    
+    res.catch((error)=>{
+         console.log("catch : ",error);  
+        return error;      
+    }).then((msg)=>{
+        console.log("then : ",msg);
+    });
+</script>

@@ -1,0 +1,28 @@
+<script>
+    // const res1 = new Promise((resolve,reject)=>{});
+    // console.log(res1);
+
+    // const res2 = new Promise((resolve,reject)=>{
+    //     resolve();
+    // });
+    // console.log(res2);
+
+    // const res3 = new Promise((resolve,reject)=>{
+    //     resolve("Hello");
+    // });
+    // console.log(res3);
+
+    const res4 = new Promise((resolve,reject)=>{
+        reject("Error occured");
+    }).catch((error)=>{
+        console.log(error);        
+    });
+
+    const res5 = new Promise((resolve,reject)=>{
+        reject(new Error("Error occured"));
+    }).catch((error)=>{
+        console.log(error);        
+    });
+
+
+</script>

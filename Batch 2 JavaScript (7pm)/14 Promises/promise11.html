@@ -1,0 +1,20 @@
+<script>
+    function getData(num){
+        return new Promise((resolve,reject)=>{
+            if(num<=10)
+                resolve(num*num);
+            else    
+                reject(new Error("Limit Exceeds"));
+        });
+    }
+    const data = getData(13).then((value)=>{
+        return value*value;
+    }).catch((error)=>{
+        return error;
+    });
+    console.log(data);
+    
+    data.then((value)=>{
+        console.log("Result : ",value);
+    });
+</script>

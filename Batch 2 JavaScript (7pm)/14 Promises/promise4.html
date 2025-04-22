@@ -1,0 +1,12 @@
+<script>
+   new Promise((resolve,reject)=>{
+        // resolve();
+        reject();
+   }).then(function(){
+        console.log("resolve");
+   },function(){
+        console.log("reject");
+   }).finally(()=>{
+        console.log("Always Executes"); 
+   }); 
+</script>
