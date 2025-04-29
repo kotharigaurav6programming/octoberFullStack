@@ -1,10 +1,23 @@
-public class Demo8 
+
+public class Demo13 
 {
     public static void main(String[] args) {
-        String s1 = "hello";
-        String s2 = "HELLO";
-        String s3 = s1.toUpperCase().intern();
+//      StringBuffer sb = new StringBuffer("Hello ");
+      StringBuilder sb = new StringBuilder("Hello ");
+     
+      sb.append("Welcome");
+        System.out.println(""+sb);
         
-        System.out.println("s2==s3 : "+(s2==s3));
+      sb.insert(6, "Andrew ");
+        System.out.println(""+sb);
+                
+      sb.delete(6, 13);
+        System.out.println(""+sb);
+        
+      sb.replace(6, 14, "Peter Parker");
+        System.out.println(""+sb);
+              
+      sb.reverse();
+        System.out.println(""+sb);
     }
 }
