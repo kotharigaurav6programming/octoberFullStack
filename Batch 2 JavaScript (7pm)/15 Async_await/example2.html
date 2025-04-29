@@ -1,0 +1,17 @@
+<script>
+    function show(){
+        return new Promise((resolve,reject)=>{
+            resolve("Resolved Value");
+        });
+    }
+    async function display(){
+        try{
+            console.log("statement before");            
+            console.log(await show());
+            console.log("statement after");
+        }catch(error){
+            console.log("Error : ",error);
+        }
+    }
+    display();
+</script>

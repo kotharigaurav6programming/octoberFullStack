@@ -1,0 +1,25 @@
+<script>
+    function gotoroom(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("gotoroom");
+            },2000);
+        });
+    }    
+    function removegarbage(){
+        return new Promise((resolve,reject)=>{
+            resolve("removegarbage");
+        });
+    }    
+    function wonprize(){
+        return new Promise((resolve,reject)=>{
+            reject("wonprize");
+        });
+    }    
+
+    Promise.race([gotoroom(),removegarbage(),wonprize()]).then((msg)=>{
+        console.log("",msg);
+    }).catch((error)=>{
+        console.log("Error : ",error);
+    });
+</script>

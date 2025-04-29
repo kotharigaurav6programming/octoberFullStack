@@ -1,6 +1,8 @@
 Full Stack
 ----------
     |----FrontEnd-----Presentation Layer (View)
+    Web Designing
+    |-- Web Technologies
          |-- HTML
              |-- Creates Structure of website (HTML5)
          |-- CSS
@@ -19,9 +21,11 @@ Full Stack
              |-- Virtual DOM
 
     |----BackEnd------Server Side Logic Implementation
+    Web Development
          |-- Programming Languages
-                |-- Java,Python,.Net,Node(Express) etc
-                     |-- Java,NodeJS,ExpressJS
+                |-- Java,Python,.Net
+             (Node(Express) provides runtime environment)   
+                |-- Java,NodeJS,ExpressJS
          |-- Database
                 |-- MySql(RDBMS),Mongodb(NoSql),SQL(RDBMS),Postgre(RDBMS) etc
                 |-- Object Relational Mapping (ORM)

@@ -1,0 +1,21 @@
+<script>
+    /*
+    async function display(){
+        return 1;
+    }
+    console.log(display());
+    console.log("",display());
+    console.log(""+display());
+    console.log(display().toString());
+    */
+
+    async function display(){
+        // return 1;
+        return new Error("Error occured");
+    }
+    display().then((msg)=>{
+        console.log("Inside Then : ",msg);
+    }).catch((error)=>{
+        console.log("Inside Catch : ",error);
+    });
+</script>

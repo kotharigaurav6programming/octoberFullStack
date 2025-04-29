@@ -1,0 +1,28 @@
+<script>
+    function gotoroom(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("gotoroom");
+            },2000);
+        });
+    }    
+    function removegarbage(){
+        return new Promise((resolve,reject)=>{
+            resolve("removegarbage");
+        });
+    }    
+    function wonprize(){
+        return new Promise((resolve,reject)=>{
+            reject("wonprize");
+        });
+    }    
+
+    Promise.allSettled([gotoroom(),removegarbage(),wonprize()]).then((msg)=>{
+        // console.log("",msg);
+        msg.forEach((obj)=>{
+            console.log("status : "+obj.status+" reason : "+(obj.value ? obj.value : obj.reason));
+        });
+    }).catch((error)=>{
+        console.log("Error : ",error);
+    });
+</script>
