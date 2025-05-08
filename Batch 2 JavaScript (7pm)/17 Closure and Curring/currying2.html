@@ -1,0 +1,12 @@
+<script>
+
+function myFun(greet){
+    return (name)=>{
+        return (year)=>{
+            return `${greet}${name}You are ${new Date().getFullYear()-year} years old`
+        }
+    }
+}
+const res = myFun("Hello ")("Andrew Anderson , ")(2000);
+document.write(res);
+</script>

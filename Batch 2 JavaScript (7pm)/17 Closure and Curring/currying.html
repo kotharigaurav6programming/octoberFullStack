@@ -1,0 +1,64 @@
+<script>
+    // example without currying
+    /*
+    function addition(a,b,c){
+        return a+b+c;
+    }
+    console.log("Addition : ",addition(10,20,30));
+    */
+
+    /*
+    // example showing the concept of closure
+    function addition(a){
+        return function(b){
+            return function(c){
+                return a+b+c;
+            }
+        }
+    }
+    const add = addition(10);
+    const sum = add(20);
+    console.log("Result : ",sum(40));
+*/
+
+    // example showing the concept of closure
+    /*
+    function addition(a){
+        var d = 200;
+        return function(b){
+            return function(c){
+                return a+b+c+d;
+            }
+        }
+    }
+    const add = addition(10);
+    const sum = add(20);
+    console.log("Result : ",sum(40));
+    */ 
+
+    // example showing the concept of curring
+
+    /*
+    function addition(a){
+        var d = 200;
+        return function(b){
+            return function(c){
+                return a+b+c+d;
+            }
+        }
+    }
+    const add = addition(10)(20)(40);
+    console.log("Result : ",add);
+    */
+
+    function addition(a){
+        return (b,c)=>{
+            return (d)=>{
+                return a+b+c+d;
+            }
+        }
+    }
+    const add = addition(10)(20,30)(40);
+    console.log("Result : ",add);
+
+</script>

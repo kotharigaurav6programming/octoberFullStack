@@ -1,0 +1,31 @@
+<script>
+function operation(operator){
+    return (a)=>{
+        return (b)=>{
+            var res;
+            switch(operator){
+                case '+' : res = a+b; break;
+                case '-' : res = a-b; break;
+                case '*' : res = a*b; break;
+                case '/' : res = a/b; break;
+                case '%' : res = a%b; break;
+                default : res = "Invalid Selection"; break;
+            }  
+            return res;
+        }
+    }
+}
+
+var add = operation('+');
+var sub = operation('-');
+var mul = operation('*');
+var div = operation('/');
+var mod = operation('%');
+
+document.write("<br>Addition : ",add(2)(3));
+document.write("<br>Subtraction : ",sub(2)(3));
+document.write("<br>Multiplication : ",mul(2)(3));
+document.write("<br>Division : ",div(2)(3));
+document.write("<br>Modulus : ",mod(2)(3));
+
+</script>

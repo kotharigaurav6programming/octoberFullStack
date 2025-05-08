@@ -104,7 +104,8 @@ function updateUser(index){
    
     const updateForm = `<div class="col-md-6 wow fadeInUp mx-auto" data-wow-delay="0.1s">
     <div class="bg-light p-5 h-100 d-flex align-items-center">
-        <form action="viewUsers.html" onsubmit="return userUpdate('${userObj.email}')">
+         <form action="viewUsers.html" onsubmit="return userUpdate('${userObj.email}')">
+
             <div class="row g-3">
                 <h3 class="mb-4">Update Form</h3> 
                 <div class="col-12">
@@ -141,7 +142,7 @@ function updateUser(index){
                     </div>
                 </div>
                 <div class="col-12">
-                    <button class="btn btn-primary col-5 py-2" type="submit">Update</button>
+                    <button class="btn btn-primary col-5 py-2" onclick="userUpdate('${userObj.email}')" type="submit">Update</button>
                     <button class="btn btn-primary col-5 py-2" type="reset">Reset</button>
                 </div>
 
@@ -154,10 +155,35 @@ document.getElementById("showTable").innerHTML = updateForm;
 
 function userUpdate(email){
     // alert("inside update user");
-    var username = document.getElementById("username").value;
+    //var username = document.getElementById("username").value;
     // var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var contact = document.getElementById("contact").value;
+    //var password = document.getElementById("password").value;
+    //var contact = document.getElementById("contact").value;
+    var obj = {
+        username : document.getElementById("username").value,
+        email : email,
+        password : document.getElementById("password").value,
+        contact : document.getElementById("contact").value
+    }
+    // console.log(obj.username);
+    // console.log(obj.email);
+    // console.log(obj.password);
+    // console.log(obj.contact);
+    
+    const userArray = JSON.parse(localStorage.getItem("userData"));
+    for(var i=0;i<userArray.length;i++){
+        if(userArray[i].email==email)
+            break;
+    }
+    // console.log("indexing : ",i);
+    
+    userArray.splice(i,1,obj);
+    // console.log("userArray : ",userArray);
+    
+    localStorage.setItem("userData",JSON.stringify(userArray));
+    // alert(username+" "+email+" "+password+" "+contact);
+}
 
-    alert(username+" "+email+" "+password+" "+contact);
+function removeActiveEmail(){
+    localStorage.setItem("activeEmail","");
 }

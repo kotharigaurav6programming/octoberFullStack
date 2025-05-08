@@ -1,0 +1,74 @@
+<script>
+    /*
+    function outerFunction(){
+        function innerFunction(){
+            console.log("inner function called");
+        }
+        innerFunction();
+    }
+    outerFunction();
+    */
+
+    /*
+    function outerFunction(){
+        function innerFunction(){
+            console.log("inner function called");
+        }
+        innerFunction();
+    }
+    const res = outerFunction();
+    console.log(res);
+    */
+    /*
+    function outerFunction(){
+        function innerFunction(){
+            console.log("inner function called");
+        }
+        return innerFunction;
+    }
+    const res = outerFunction();
+    res();
+    */
+ 
+    /* 
+    function outerFunction(){
+        return function innerFunction(){
+            console.log("inner function called..!!");
+        }
+    }
+    const res = outerFunction();
+    res();
+    */
+
+    /*
+    function outerFunction(){
+        var name = "Andrew Anderson";
+        return function innerFunction(){
+            console.log("name : "+name);
+        }
+    }
+    const res = outerFunction();
+    res();
+    */
+    /*
+    function outerFunction(){
+        var firstName = "Andrew";
+        return function innerFunction(lastName){
+            console.log(firstName+" "+lastName);
+        }
+    }
+    const res = outerFunction();
+    res('Anderson Andy');
+    */
+
+    function outerFunction(num3){
+        var num1 = 100;
+        return function innerFunction(num2){
+            return num1*num2*num3;
+        }
+    }
+    const res = outerFunction(300);
+    console.log("Result : ",res(200));
+    console.log("Result : "+res(200));
+
+</script>

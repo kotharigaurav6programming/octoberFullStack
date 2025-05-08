@@ -30,7 +30,12 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    
+    <script src="js/myScript.js"></script>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
 </head>
 
 <body>
@@ -86,7 +91,7 @@
                     <a href="profile.html" class="nav-item nav-link active">Home</a>
                     <a href="viewUsers.html" class="nav-item nav-link">View Users</a>
                     <a href="service.html" class="nav-item nav-link">Update Password</a>
-                    <a href="login.html" class="nav-item nav-link">Logout</a>
+                    <a href="login.html" onclick="removeActiveEmail()" class="nav-item nav-link">Logout</a>
                 </div>
                 <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
