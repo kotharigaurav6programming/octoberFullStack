@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, aut! Hic omnis ex tempore perferendis illo praesentium odio nostrum fugiat.</div>
+    <br>
+    <div class="demo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, aut! Hic omnis ex tempore perferendis illo praesentium odio nostrum fugiat.</div>
+    <br>
+    <div class="demo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, aut! Hic omnis ex tempore perferendis illo praesentium odio nostrum fugiat.</div>
+    
+    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, laudantium exercitationem dolor autem vero perspiciatis! Sapiente quidem iure suscipit laboriosam.</span> <br>
+
+        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, laudantium exercitationem dolor autem vero perspiciatis! Sapiente quidem iure suscipit laboriosam.</span> <br>
+
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, laudantium exercitationem dolor autem vero perspiciatis! Sapiente quidem iure suscipit laboriosam.</span> <br>
+    <script>
+        const demo = document.getElementsByClassName("demo");
+        for(i=0;i<demo.length;i++){
+            if(i==0)
+                demo[i].style.backgroundColor = "grey";
+            if(i==1)
+                demo[i].style.backgroundColor = "orange";
+            if(i==2)
+                demo[i].style.backgroundColor = "red";
+        }
+
+        const demoAgain = document.getElementsByTagName("span");
+        for(i=0;i<demoAgain.length;i++){
+            if(i==0)
+                demoAgain[i].style.backgroundColor = "grey";
+            if(i==1)
+                demoAgain[i].style.backgroundColor = "orange";
+            if(i==2)
+                demoAgain[i].style.backgroundColor = "red";
+        }
+    </script>
+</body>
+</html>

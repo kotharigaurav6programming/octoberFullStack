@@ -1,0 +1,18 @@
+<script>
+    class Parent{
+        display(){
+            document.write("<br>Its a parent method");
+        }
+    }
+    class Child extends Parent{
+        show(){
+            document.write("<br>Its a child method");
+        }
+        display(){ // method overriding
+            document.write("<br>Its a child method");
+        }
+    }
+    const obj = new Child();
+    obj.show();
+    obj.display();
+</script>

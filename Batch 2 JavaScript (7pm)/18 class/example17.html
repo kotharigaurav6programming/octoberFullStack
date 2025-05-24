@@ -1,0 +1,18 @@
+<script>
+    class Parent{
+        constructor(firstName){
+            this.firstName = firstName;
+        }
+    }
+    class Child extends Parent{
+        constructor(firstName,secondName){
+            super(firstName);
+            this.secondName = secondName;
+        }
+        printName(){
+            document.write("Names : "+this.firstName+" "+this.secondName);
+        }
+    } 
+    const obj = new Child('Andrew','Peter');
+    obj.printName();
+</script>

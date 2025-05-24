@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <p id="demo1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolores iste tenetur, quam nisi magnam quaerat repellendus, distinctio, maxime molestias voluptate. Repellendus incidunt accusantium aperiam! Id labore at commodi excepturi.</p>
+
+        <p id="demo2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae sequi tempore laudantium voluptatem nemo rem totam illo cumque nisi atque corrupti ipsum, rerum officia voluptatibus adipisci at eligendi mollitia. Unde!</p>
+    </div>
+
+    <button onclick="remove()">Click To Remove</button>
+
+    <script>
+        function remove(){
+            var main = document.getElementById("main");
+            var demo2 = document.getElementById("demo2");
+            main.removeChild(demo2);
+
+            var para = document.createElement("p");
+            var text = document.createTextNode("This is an example of JavaScript");
+
+            para.appendChild(text);
+            main.appendChild(para);
+
+        }
+    </script>
+</body>
+</html>

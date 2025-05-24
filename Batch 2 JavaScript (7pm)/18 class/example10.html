@@ -1,0 +1,18 @@
+<script>
+    class Demo{
+        display(){
+            var a = 100;
+            var b = 200;
+            this.c = 300; 
+            document.write("<br>a : "+a);
+            document.write("<br>b : "+b);
+            document.write("<br>c : "+this.c);
+        }
+        show(){
+            document.write("<br>c : "+this.c);      
+        }
+    }
+    const obj = new Demo();
+    obj.display();
+    obj.show();
+</script>

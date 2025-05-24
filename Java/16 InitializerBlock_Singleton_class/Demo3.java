@@ -3,7 +3,7 @@
 class Demo3{
     void display(){
         int a = 10;
-        // initializer block
+        // normal block
         {
             int b = 20;
             System.out.println("value of a : "+a);

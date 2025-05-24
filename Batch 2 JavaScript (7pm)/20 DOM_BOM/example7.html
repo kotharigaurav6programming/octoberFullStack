@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.google.com" id="demo">Click</a>
+    <script>
+        const demo = document.getElementById("demo");
+        console.log(demo.getAttribute("href"));
+        demo.setAttribute("href","http://www.facebook.com");
+        demo.removeAttribute("href");
+    </script>
+</body>
+</html>

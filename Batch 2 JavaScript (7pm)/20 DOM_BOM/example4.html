@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+            color:brown;
+            background-color: green;
+        }
+        .demoAgain{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo" class="demoAgain" >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum reiciendis, assumenda perspiciatis hic labore voluptas nihil adipisci! Sunt, ducimus? Facilis officiis corrupti sit illo, sint libero debitis sapiente nam doloribus!
+    </div>
+    <script>
+        var demo = document.getElementById("demo");
+        demo.style.backgroundColor = "dodgerblue"
+        demo.classList.remove("demoAgain");
+        demo.classList.add("demo");
+    </script>
+</body>
+</html>

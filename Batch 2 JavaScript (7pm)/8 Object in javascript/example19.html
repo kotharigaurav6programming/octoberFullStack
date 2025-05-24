@@ -1,0 +1,24 @@
+<script>
+    var obj = {
+        firstName : "andrew anderson",
+        age: 45,
+        address : "Indore"
+    }
+    // document.write("<br>isFrozen : "+Object.isFrozen(obj));
+    // obj.pincode = 452010;
+    // document.write("<br>pincode : "+obj.pincode);
+    // obj.address = "Bhopal";
+    // document.write("<br>address : "+obj.address);
+    // delete obj.age;
+    // document.write("<br>age : "+obj.age);
+
+    Object.freeze(obj);
+    document.write("<br>isFrozen : "+Object.isFrozen(obj));
+    obj.pincode = 452010;
+    document.write("<br>pincode : "+obj.pincode);
+    obj.address = "Bhopal";
+    document.write("<br>address : "+obj.address);
+    delete obj.age;
+    document.write("<br>age : "+obj.age);
+
+</script>

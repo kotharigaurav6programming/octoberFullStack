@@ -1,0 +1,27 @@
+<script>
+    var num1 = parseInt(prompt("Enter First Number : "));
+    var num2 = parseInt(prompt("Enter Second Number : "));
+    class Demo{
+        add(a,b){
+            document.write("<br>sum : "+(a+b));
+        }
+        sub(a,b){
+            document.write("<br>sub : "+(a-b));
+        }
+        mul(a,b){
+            document.write("<br>mul : "+(a*b));
+        }
+        div(a,b){
+            document.write("<br>div : "+(a/b));
+        }
+        mod(a,b){
+            document.write("<br>mod : "+(a%b));
+        }
+    }
+    const obj = new Demo();
+    obj.add(num1,num2);
+    obj.sub(num1,num2);
+    obj.mul(num1,num2);
+    obj.div(num1,num2);
+    obj.mod(num1,num2);
+</script>

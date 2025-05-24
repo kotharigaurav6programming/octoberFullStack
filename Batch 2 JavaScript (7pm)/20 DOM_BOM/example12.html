@@ -1,0 +1,15 @@
+<script>
+    function showDetails(address,salary){
+        return `Hello ${this.name}, you live in ${address} and your age and salary is ${this.age} and ${salary}`;
+    }
+
+    const obj = {
+        name : "Mathew Math",
+        age : 33
+    } 
+
+    const result = showDetails.call(obj,"Indore",2332);
+    document.write("Function is going to be executes.....");
+    document.write(result);
+    
+</script>

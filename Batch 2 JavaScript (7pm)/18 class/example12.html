@@ -1,0 +1,18 @@
+<script>
+    class Parent{
+         constructor(){
+            this.role = "parent"
+         }
+    }
+    class Child extends Parent{
+        constructor(){
+            super();
+            this.c = 300; 
+            document.write("<br>c : "+this.c);
+        }
+    }
+    const obj = new Child();
+    console.log(obj);
+    console.log(obj.role);
+    
+</script>

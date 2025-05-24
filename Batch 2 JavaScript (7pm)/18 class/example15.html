@@ -1,0 +1,18 @@
+<script>
+    class Demo{
+        #a = 100;
+        #display(){
+            document.write("<br>a : "+this.#a);
+        }
+        show(){
+            this.#display();
+            this.view();
+        }
+        view(){
+            document.write("<br>view called");
+        }
+    }   
+    const obj = new Demo();
+    obj.show();
+    
+</script>

@@ -1,0 +1,15 @@
+<script>
+    function showDetails(address,salary){
+        return `Hello ${this.name}, you live in ${address} and your age and salary is ${this.age} and ${salary}`;
+    }
+
+    const obj = {
+        name : "Peter Parker",
+        age : 33
+    } 
+
+    const result = showDetails.apply(obj,["Indore",2332]);
+    document.write("Function is going to be executes.....");
+    document.write(result);
+    
+</script>

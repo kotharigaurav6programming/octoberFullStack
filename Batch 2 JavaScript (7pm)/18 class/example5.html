@@ -1,0 +1,65 @@
+<script>
+    var num1 = parseInt(prompt("Enter First Number : "));
+    var num2 = parseInt(prompt("Enter Second Number : "));
+    class Demo{
+        setData(x,y){
+            this.a = x;
+            this.b = y;
+        }
+        swap(){
+            var temp = this.a;
+            this.a = this.b;
+            this.b = temp;
+        }
+        display(){
+            document.write("<br>a : "+this.a+"<br>b : "+this.b);
+        }
+    }
+    const obj = new Demo();
+    obj.setData(num1,num2);
+    document.write("<br>Before Swapping");
+    obj.display();
+    obj.swap();
+    document.write("<br>After Swapping");
+    obj.display();
+</script>
+
+
+<!--
+
+    console.log(a);
+    var a=100;
+
+    Hoisting
+
+    var a; // declare
+    a = undefined // initialize
+    console.log(a);
+    a=100;
+
+-------------------------
+    console.log(a);
+    let a=100;
+
+    Hoisting
+
+    let a; // declare
+    console.log(a); // reference error
+    a=100;
+
+    TDZ (Temporal Dead Zone)
+
+    {
+        .....
+        console.log(a);
+        ......    
+        ......    
+        let a = 100;
+    }
+-->
+
+
+
+
+
+

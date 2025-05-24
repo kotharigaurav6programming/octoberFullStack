@@ -1,0 +1,27 @@
+<script>
+    var str = "Hello";
+    document.write("<br>Result : "+str.includes("h")); 
+    document.write("<br>Result : "+str.includes("H")); 
+    document.write("<br>Result : "+str.charAt(3));
+    document.write("<br>Result : "+str.charCodeAt(3));
+    
+    var str1 = "       Hello        ";
+    document.write("<br>Result : "+str1.trim()); 
+    var str2 = ["Hello", "user" ,"how", "are" ,"you"];
+    document.write("<br>Result : "+str2.join("-")); 
+
+    var str3 = "Hello user";
+    document.write("<br>Result : "+str3.substring(1,4));
+    str2.splice(2,2,"noname");
+    document.write("<br>Result : "+str2);
+
+    var res = str3.split(" ");
+    document.write("<br>"+res.length);
+
+    var res1 = "hello";
+    document.write("<br>"+res1.length);
+    
+    var res2 = new String("Hello");
+    document.write("<br>"+res2);
+
+</script>
