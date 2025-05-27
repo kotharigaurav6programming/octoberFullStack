@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function setEmail(){
+            var email = document.getElementById("email").value;
+            sessionStorage.setItem("email",email);
+            alert("Email setted successfully in session storage");
+        }
+    </script>
+</head>
+<body>
+        <h1>Example of Session Storage in Javascript</h1>
+        <form action="profile.html" onsubmit="setEmail()">
+            <input type="email" name="email" id="email" placeholder="Enter Email"> <br>
+            <input type="submit" value="Add">
+        </form>
+</body>
+</html>
