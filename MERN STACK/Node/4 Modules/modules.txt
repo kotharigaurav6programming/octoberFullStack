@@ -1,0 +1,172 @@
+// https://www.tutorialkart.com/nodejs/create-a-nodejs-module/
+// https://www.edureka.co/blog/nodejs-tutorial/#whatisnode
+// https://www.tutorialsteacher.com/nodejs/nodejs-local-modules
+
+/*
+for module concept : 
+ https://medium.com/free-code-camp/require-module-in-node-js-everything-about-module-require-ccccd3ad383
+*/
+
+Note : In Node.js Application, a Module can be considered as a block of code that provide a simple or complex functionality that can communicate with external application.
+https://www.geeksforgeeks.org/what-are-modules-in-node-js/
+
+Node.js Modules
+----------------------------
+The modules(A set of functions you want to include in your application) in Node.js represents various functionalities that are bundled up into single or multiple JS files. These modules have a unique context, thus, they never interfere nor pollute the scope of other modules.
+
+[ NOTE ] The module.exports is a special object which is included in every JS file in the Node.js application by default. Use module.exports to expose a function, object or variable as a module in Node.js.
+
+These modules enable the code reusability and enhance the ease of usage. Node.js basically provides three types of modules:
+
+1) Core Modules
+2) Local Modules
+3) Third-Party Modules
+
+1)Core Module(Built-in Modules)
+-------------------------------------------------------
+Since Node.js is a very lightweight framework, the core modules bundle the absolute minimum functionalities(refers to the features and other functionality that certain tool developers must offer). These modules generally get loaded when the Node process starts its execution. All you need to do is, import these core modules in order to use them in your code.
+
+Below I have listed down a few of the important Core modules.
+
+Core 			                     Module Description
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+http			                   Contains classes, methods, and events required to create Node.js HTTP server
+url			                         Contains methods for URL resolution and parsing in Node
+querystring		          Contains methods to deal with a query string of Node
+path			                    Contains methods to deal with file paths
+fs			                         Contains classes, methods, and events to work with file I/O
+util			                       Contains utility functions that can be useful for programmers
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+You can load your core module, using the below code:
+
+var module = require('module_name');
+
+To include a module, use the require() function with the name of the module:
+
+var http = require('http');
+Now your application has access to the HTTP module
+
+----------------------------------------
+what are Local Modules
+----------------------------------------
+
+The local modules of Node.js are custom modules that are created locally by user/developer in the application. These modules can include various functionalities bundled into distinct files and folders which can be easily distributed in the Node.js  community using NPM.
+
+These modules are loaded in a similar way to core modules. Let show you, how to do it using a basic example.
+
+Create your custom/local module.js file
+-----------------------------------------------------------------
+
+var detail = {
+  name: function (name) {
+    console.log('Name: ' + name);
+  },
+  domain:function (domain) {
+    console.log('Domain: ' + domain);
+  }
+};
+ 
+module.exports = detail;
+
+[NOTE] The module.exports is a special object which is included in every JS file in the Node.js application by default.
+Use module.exports or exports to expose a function, object or variable as a module in Node.js.
+
+[ NOTE ] Must watch : // https://www.tutorialsteacher.com/nodejs/nodejs-local-modules
+
+Include your module file in your main application file.
+----------------------------------------------------------------------------------------
+var myLogModule = require('./Local_module.js');
+myLogModule.name('Edureka');
+myLogModule.domain('Education');
+
+Now you can execute these files using below command:
+
+node application.js
+
+----------------------------------------------
+what are External Modules
+----------------------------------------------
+
+You can use the external or 3rd party modules only by downloading them via NPM. These modules are generally developed 
+by other developers and are free to use. Few of the best external modules are express, react, gulp, mongoose, mocha etc.
+
+Globally Loading the 3rd party modules:
+-------------------------------------------------------------------
+npm install --g <module_name>
+
+Include your module file in your main application file:
+
+npm install --save <module_name>
+
+Note : when we print module then we will get this : 
+{
+  id: 'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_programs\\5 modules\\module2.js',
+  path: 'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_programs\\5 modules',
+  exports: {},
+  filename: 'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_programs\\5 modules\\module2.js',
+  loaded: false,
+  children: [],
+  paths: [
+    'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_programs\\5 modules\\node_modules',
+    'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_programs\\node_modules',
+    'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_modules',
+    'E:\\Infobeans_Madhovastika\\Node practice content\\node_modules',
+    'E:\\Infobeans_Madhovastika\\node_modules',
+    'E:\\node_modules'
+  ]
+}
+
+Here paths: [
+    'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_programs\\5 modules\\node_modules',
+    'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_programs\\node_modules',
+    'E:\\Infobeans_Madhovastika\\Node practice content\\node content\\node_modules',
+    'E:\\Infobeans_Madhovastika\\Node practice content\\node_modules',
+    'E:\\Infobeans_Madhovastika\\node_modules',
+    'E:\\node_modules'
+  ]
+
+  In the provided `module.paths` array, Node.js will search for modules in the following order:
+
+1. `E:\Infobeans_Madhovastika\Node practice content\node content\node_programs\5 modules\node_modules`
+2. `E:\Infobeans_Madhovastika\Node practice content\node content\node_programs\node_modules`
+3. `E:\Infobeans_Madhovastika\Node practice content\node content\node_modules`
+4. `E:\Infobeans_Madhovastika\Node practice content\node_modules`
+5. `E:\Infobeans_Madhovastika\node_modules`
+6. `E:\node_modules`
+
+Node.js will start searching for the required module in the first directory, and if the module is not found there, it will proceed to the next directory in the list until it either finds the module or exhausts all search paths.
+
+The order of paths in `module.paths` ensures that Node.js checks the local module directories first, moving up the directory structure towards the root directory, and then it checks the global module directories. This way, it prioritizes local modules over globally installed ones, allowing each project to manage its dependencies effectively.
+
+Node.js will start searching for modules in the first directory in the `module.paths` array, which is:
+
+```
+E:\Infobeans_Madhovastika\Node practice content\node content\node_programs\5 modules\node_modules
+```
+
+If the required module is not found in this directory, Node.js will proceed to the next directory in the list and continue searching. It will only move on to the `E:\node_modules` directory if the module is not found in any of the preceding directories.
+
+So, the search order is determined by the order of directories in the `module.paths` array, and Node.js will prioritize the earlier directories over the later ones.
+
+Note : if module is not found in E:\node_modules then what will happens : 
+If the required module is not found in any of the directories listed in the `module.paths` array, including the `E:\node_modules` directory, Node.js will throw a `ModuleNotFoundError` indicating that it was unable to locate the module.
+
+This error typically looks like:
+
+```
+Error: Cannot find module 'module_name'
+```
+
+Here, `'module_name'` would be the name of the module you were trying to require. This error is raised when Node.js has exhausted all the search paths in `module.paths` and hasn't found the module you're looking for.
+
+Common reasons for encountering this error include:
+
+1. **Module Not Installed:** The module you are trying to require might not be installed in any of the listed directories, both locally and globally.
+
+2. **Typo in Module Name:** There might be a typo in the module name specified in the `require` statement.
+
+3. **Incorrect Path:** If the module is meant to be local to your project and you're using a relative path in the `require` statement, the path might be incorrect.
+
+4. **Missing or Corrupted `node_modules`:** Sometimes, issues with the `node_modules` directory, such as missing or corrupted files, can also lead to this error.
+
+To resolve this issue, you would need to ensure that the required module is installed correctly in one of the directories listed in `module.paths`. This might involve reinstalling the module using `npm install`, verifying the module name, checking the relative path if applicable, and confirming that the required module is indeed accessible from the paths mentioned in `module.paths`.
