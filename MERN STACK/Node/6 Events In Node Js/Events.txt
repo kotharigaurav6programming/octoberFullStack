@@ -1,0 +1,159 @@
+// https://www.tutorialsteacher.com/nodejs/nodejs-eventemitter
+//https://www.w3schools.com/nodejs/nodejs_events.asp
+//https://www.w3schools.com/nodejs/ref_events.asp
+//https://www.geeksforgeeks.org/node-js-events/                                                                                                        --------------------
+                                                                                                            EVENTS
+                                                                                                        --------------------
+Node.js is perfect for event-driven applications.
+
+Events in Node.js
+-----------------------------
+Every action on a computer is an event. Like when a connection is made or a file is opened etc.
+Objects in Node.js can fire events.
+
+Each type of stream(stream is an object) is an Event emitter instance and throws several events at different times. 
+Following are some commonly used events:
+[ NOTE ] In case of stream, the name of this events(data,end, error,finish etc) are predefined, where as we can also creates custom events.
+                   
+1) Data:This event is fired when there is data available to read.
+
+2) End:This event is fired when there is no more data available to read.
+
+3) Error: This event is fired when there is any error receiving or writing data.
+
+4) Finish:This event is fired when all data has been flushed to underlying system.
+
+/*
+
+end and finish are the same event BUT on different types of Streams.
+
+stream.Readable fires ONLY end and NEVER finish
+stream.Writable fires ONLY finish and NEVER end
+
+*/
+
+like the readStream object fires events when opening and closing a file:
+
+Example : 
+var fs = require('fs');
+var readStream = fs.createReadStream('./demofile.txt');
+/*Write to the console when the file is opened:*/
+readStream.on('open', function () {
+  console.log('The file is open');
+});
+
+Events Module
+-------------------------
+Node.js has a built-in module(no need to install, already available), called "events", where you can create-, fire-, and listen for- your own(custom events) events. To include the built-in events module use the require() method. 
+
+Difference between Events and Callbacks:
+----------------------------------------------------------------------
+Events and Callbacks look similar but the their is a difference between them.
+/*  callback : see callback notes for callback */ 
+Event : Whenever an event gets fired, its listener function starts executing.
+
+[ NOTE ] Function : EventEmitter <-------Function Prototype
+                                               |---- we create object of this.
+
+Example : 
+step 1 : To include the built-in events module use the require() method.
+step 2 : create the EventEmitter Object
+step 3 : create event handler and assign event handlers to your own events with the EventEmitter object and its method
+step 4 : To fire an event, use the emit() method.
+
+/*
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+*/
+or
+/*
+var events = require('events');
+var eventEmitter = new events();
+*/
+or
+/*
+var event=require('events').EventEmitter;
+var eventEmitter=new event();
+*/
+
+//Create an event handler: (here myEventHandler is a listener)
+var myEventHandler = function () {
+  console.log('I hear a scream!');
+}
+
+//Assign the event handler to an event:
+eventEmitter.on('scream', myEventHandler);
+
+//Fire the 'scream' event:
+eventEmitter.emit('scream');
+-------------------------------------------------------------------------------------------------------------
+                                        EventEmitter Methods
+-------------------------------------------------------------------------------------------------------------
+Method	                                Description
+-------------------------------------------------------------------------------------------------------------
+addListener()	                      Adds the specified listener
+emit()	                                   Call all the listeners registered with the specified 
+                                            name
+listeners()	                            Returns an array of listeners with the specified name
+on()	                                      Adds the specified listener
+once()	                                  Adds the specified listener once. When the specified  
+                                           listener has been executed, the listener is removed
+removeAllListeners()	      Removes all listeners with the specified name, or ALL listeners if 
+                            no name is specified
+removeListener()	             Removes the specified listener with the specified name
+                                and many more etc.
+---------------------------------------------------------------------------------------------------------------
+
+Note : 
+There is no difference in .on() and .addListener() because .on and .addListener is an alias.
+
+In Node.js, the `on()`, `once()`, and `addListener()` methods are used to attach event handlers to EventEmitter objects. These methods are part of Node.js's built-in event module, and they serve similar purposes with slight differences:
+
+1. `on(event, listener)`:
+   - The `on()` method is used to add a listener function to an event.
+   - It allows you to attach multiple listeners to the same event, and all of them will be executed when the event is emitted.
+   - The listener will continue to respond to the event until it is removed using the `removeListener()` method.
+
+Example:
+```javascript
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+emitter.on('myEvent', () => {
+  console.log('Listener 1');
+});
+
+emitter.on('myEvent', () => {
+  console.log('Listener 2');
+});
+
+emitter.emit('myEvent'); // Both listeners will be executed.
+```
+
+2. `once(event, listener)`:
+   - The `once()` method is similar to `on()`, but it adds a one-time listener.
+   - The listener will be executed the first time the event is emitted and automatically removed afterward.
+
+Example:
+```javascript
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+emitter.once('myEvent', () => {
+  console.log('This listener will only run once');
+});
+
+emitter.emit('myEvent'); // Listener is executed.
+emitter.emit('myEvent'); // Listener is not executed again.
+```
+
+3. `addListener(event, listener)`:
+   - `addListener()` is an alias for the `on()` method. They are functionally equivalent, and you can use either of them to add event listeners.
+
+These methods are commonly used for handling asynchronous events in Node.js, such as handling HTTP requests, file I/O, or custom application-specific events.
+
+Note : 
+eventEmitter.addListener(event, listener)
+eventEmitter.on(event, listener)
+eventEmitter.once(event, listener)
+//https://www.geeksforgeeks.org/node-js-events/

@@ -1,16 +1,15 @@
 {
-  "name": "mynewapp",
+  "name": "myapp",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "author": "",
+  "description": "This is my first node example",
   "license": "ISC",
-  "description": "",
+  "author": "Gaurav kothari",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^5.1.0"
   }
 }

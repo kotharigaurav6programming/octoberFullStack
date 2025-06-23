@@ -33,7 +33,7 @@ Types of Event :
         |-- onchange
         |-- onfocus (input events)
         |-- onblur (input events)
-    d. Load Event
+    d. Load Event | Window Event
         |-- onload
         |-- onunload
     etc

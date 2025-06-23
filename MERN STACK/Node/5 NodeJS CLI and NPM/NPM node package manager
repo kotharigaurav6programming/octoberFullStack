@@ -321,7 +321,7 @@ The package.json is used for more than dependencies - like defining project prop
 
 package-lock.json: records the exact version of each installed package which allows you to re-install them. Future installs will be able to build an identical dependency tree.
 
-package.json: records the minimum version your app needs. If you update the versions of a particular package, the change is not going to be reflected here.
+package.json: records the minimum version your app needs.
 
 [ NOTE  ]We can say package as a module also.
 nodemon is a global module .
