@@ -1,0 +1,40 @@
+﻿                                                                                                    -------------------------------
+                                                                                                    What are streams ?                
+                                                                                                    -------------------------------
+Streams are one of the fundamental concepts that power Node.js applications.Streams are object in node that allows you to read data from a source and write data to a destination. 
+
+In other words, The Data Management done by streams will be faster as compared to files.Thats why , The concept of Streams are better to use for file handling.
+
+What makes streams unique, is that instead of a program reading a file into memory all at once like in the traditional way, streams read chunks of data piece by piece, processing its content without keeping it all in memory.
+
+This makes streams really powerful when working with large amounts of data, for example, a file size can be larger than your free memory space, making it impossible to read the whole file into the memory in order to process it. That’s where streams come to the rescue!
+
+Using streams to process smaller chunks of data, makes it possible to read larger files.
+
+Let’s take a “streaming” services such as YouTube or Netflix for example: these services don’t make you download the video and audio feed all at once. Instead, your browser receives the video as a continuous flow of chunks, allowing the recipients to start watching and/or listening almost immediately.
+
+Streams basically provide two major advantages compared to other data handling methods:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+1 ) Memory efficiency: you don’t need to load large amounts of data in memory before you are able to process it
+
+2) Time efficiency: it takes significantly less time to start processing data as soon as you have it, rather than having to wait with processing until the entire payload has been transmitted
+
+There are 4 types of streams in Node.js:  
+
+1) Writable: streams to which we can write data. For example, fs.createWriteStream() lets us write data to a file using streams.
+
+2) Readable: streams from which data can be read. For example: fs.createReadStream() lets us read the contents of a file.
+
+3) Duplex: streams that are both Readable and Writable. For example, net.Socket
+
+4) Transform: streams that can modify or transform the data as it is written and read. For example, in the instance of file-compression, you can write compressed data and read decompressed data to and from a file.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[ NOTE ] In a Node.js based HTTP server : 
+     request is a readable stream 
+     response is a writable stream
+
+The fs(File System) module can be used to read from and write to files using a stream interface.
+
+ Whenever you’re using Express you are using streams to interact with the client, also, streams are being used in every database connection driver that you can work with, because of TCP sockets, TLS stack and other connections are all based on Node.js streams.
+
+TCP sockets provide the foundational communication mechanism, while the TLS stack adds security measures to ensure that data remains confidential and unaltered during transmission. Together, they enable secure and reliable data exchange in modern networked applications.
