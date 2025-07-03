@@ -1,0 +1,12 @@
+    ---------------------------------------------------------------------------------------------------------------------------------
+    Working with the File System module of Node JS( Introduction to fs module )
+    ---------------------------------------------------------------------------------------------------------------------------------
+1) fs(File System) is one of the core modules of Node JS.
+2) It provides functions for interacting with the filesystem. 
+3) It is useful to  perform all file I/O  operations synchronously and asynchronously.
+
+Many of the methods in the fs module have two variants, synchronous and asynchronous. Synchronous methods end in *Sync, like readFileSync, for example, this is the synchronous way to read a file. Whereas the asynchronous method for reading the file is readFile. Synchronous methods can be used for performing file operations but the Node.js process will block until the I/O finishes. This means that Node won’t be able to execute any other code, it won’t accept any connections, it won’t trigger any call-backs or event, it will only wait till the I O operation is performed.
+
+Since fs module is already a part of core modules of Node we don't have to install it we can directly include using the following piece of code.
+
+const fs=require(‘fs’)
