@@ -1,6 +1,5 @@
 /*
     Static Keyword : 
-
     1. VARIABLE
     2. BLOCK
     3. FUNCTION
