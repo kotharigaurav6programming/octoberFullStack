@@ -1,43 +1,47 @@
 var http = require("http");
 var fs = require("fs");
 var {STATUS,TYPE}= require("./utils/utility.js");
+var url = require("url");
 var dotenv = require("dotenv");
 dotenv.config();
 
 var instance = http.createServer((request,response)=>{
-    response.writeHead(STATUS.SUCCESS,TYPE);
+    var requestedURL = url.parse(request.url).pathname;
     if(request.url=='/' || request.url=='/home'){
-        fs.readFile('home.html',(error,result)=>{
-            if(error)
-                console.log("Error : ",error);
-            else{
-                response.write(result);
-                response.end();
-            }
-        });
+        response.writeHead(STATUS.SUCCESS,TYPE);
+        var data = fs.readFileSync('home.html');
+        response.write(data);
+            response.end();
+
     }
     
-    else if(request.url=='/about'){
-        fs.readFile('about.html',(error,result)=>{
-            if(error)
-                console.log("Error : ",error);
-            else{
-                response.write(result);
-                response.end();
-            }
-        });
+    else if(requestedURL=='/about'){
+        response.writeHead(STATUS.SUCCESS,TYPE);
+        var data = fs.readFileSync('about.html','utf-8');
+        response.write(data);
+            response.end();
+
     }
     
-    else if(request.url=='/contact'){
-        fs.readFile('contact.html',(error,result)=>{
-            if(error)
-                console.log("Error : ",error);
-            else{
-                response.write(result);
-                response.end();
-            }
-        });
+    else if(requestedURL=='/contact'){
+        response.writeHead(STATUS.SUCCESS,TYPE);
+        var data = fs.readFileSync('contact.html','utf-8');
+        response.write(data);
+            response.end();
+
     }
+
+    else if(requestedURL.match('\.css$')){
+        response.writeHead(STATUS.SUCCESS,{'content-type':'text/css'});
+        var data = fs.createReadStream('style.css');
+        data.pipe(response);
+    }
+    else if(requestedURL.match('\.jpg$')){
+        response.writeHead(STATUS.SUCCESS,{'content-type':'image/jpg'});
+        var data = fs.createReadStream('31589722.jpg');
+        data.pipe(response);
+    }
+
 });
 instance.listen(process.env.PORT,()=>{
     console.log("Connection establish successfully");
