@@ -1,47 +1,49 @@
 var http = require("http");
 var fs = require("fs");
+var qs = require("querystring");
+var url = require('url');
 var {STATUS,TYPE}= require("./utils/utility.js");
-var url = require("url");
 var dotenv = require("dotenv");
 dotenv.config();
 
 var instance = http.createServer((request,response)=>{
-    var requestedURL = url.parse(request.url).pathname;
-    if(request.url=='/' || request.url=='/home'){
-        response.writeHead(STATUS.SUCCESS,TYPE);
-        var data = fs.readFileSync('home.html');
-        response.write(data);
-            response.end();
-
-    }
+    response.writeHead(STATUS.SUCCESS,TYPE);
     
-    else if(requestedURL=='/about'){
-        response.writeHead(STATUS.SUCCESS,TYPE);
-        var data = fs.readFileSync('about.html','utf-8');
+    const requestedURL = url.parse(request.url,true);
+    if(requestedURL.pathname=='/' || requestedURL.pathname=='/home'){
+        var data = fs.readFileSync("homeNew.html");
         response.write(data);
-            response.end();
-
     }
-    
-    else if(requestedURL=='/contact'){
-        response.writeHead(STATUS.SUCCESS,TYPE);
-        var data = fs.readFileSync('contact.html','utf-8');
+    else if(requestedURL.pathname=='/register'){
+        var data = fs.readFileSync("register.html");
         response.write(data);
-            response.end();
-
     }
-
-    else if(requestedURL.match('\.css$')){
-        response.writeHead(STATUS.SUCCESS,{'content-type':'text/css'});
-        var data = fs.createReadStream('style.css');
-        data.pipe(response);
-    }
-    else if(requestedURL.match('\.jpg$')){
-        response.writeHead(STATUS.SUCCESS,{'content-type':'image/jpg'});
-        var data = fs.createReadStream('31589722.jpg');
-        data.pipe(response);
-    }
-
+    else if(requestedURL.pathname=='/viewData' && request.method=='POST'){
+        // var data = requestedURL.query;
+        // response.write("<br>Username : "+data.username);
+        // response.write("<br>Email : "+data.email);
+        // response.write("<br>Password : "+data.password);
+        // response.write("<br>Address : "+data.address);
+        
+        var chunkData = '';
+        request.on('data',(chunk)=>{
+            chunkData+=chunk;
+            // console.log("inside data : "+chunkData);
+            
+        });
+        request.on('end',()=>{
+            var data = qs.parse(chunkData);
+            // console.log("data inside chunkData : ",data);
+            
+            response.write("<br>Username : "+data.username);
+            response.write("<br>Email : "+data.email);
+            response.write("<br>Password : "+data.password);
+            response.write("<br>Address : "+data.address);
+             response.end();    
+        });
+    }    
+ 
+   
 });
 instance.listen(process.env.PORT,()=>{
     console.log("Connection establish successfully");
