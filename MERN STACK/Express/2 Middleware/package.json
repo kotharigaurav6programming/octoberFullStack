@@ -1,15 +1,16 @@
 {
-  "name": "1-express-introduction",
+  "name": "2-middleware",
   "version": "1.0.0",
   "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "module",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start" : "nodemon app.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
   "dependencies": {
     "express": "^5.1.0",
     "nodemon": "^3.1.10"

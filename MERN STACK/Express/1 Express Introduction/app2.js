@@ -4,16 +4,16 @@ var app = express();
 app.get('/',(request,response)=>{
     response.send("Home <h1>Page</h1>");
 });
-app.post('/about',(request,response)=>{
+app.get('/about',(request,response)=>{
     response.send("<h1>About Page</h1>");
 });
-app.put('/contact',(request,response)=>{
+app.get('/contact',(request,response)=>{
     response.send("<h1>Contact Page</h1>");
 });
-app.delete('/services',(request,response)=>{
+app.get('/services',(request,response)=>{
     response.send("<h1>Services Page</h1>");
 });
-app.all('/faq',(request,response)=>{
+app.get('/faq',(request,response)=>{
     response.send("<h1>FAQ Page</h1>");
 });
 
