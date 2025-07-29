@@ -71,7 +71,7 @@ An Express application can use any of the below mentioned types of middleware:
 
 1) Application-level middleware : app.use
 
-2) Router-level middleware : router.use
+2) Router-level middleware : router.use (ex : adminRouter.use etc)
 
 3) Error handling middleware app.use((err,req,res,next)=>{})
 
