@@ -1,0 +1,45 @@
+when dealing with post method we use bodyparser.urlencoded and bodyparser.json method so is it replace by express.urlencoded and express.json() ? 
+
+Yes, exactly. In more recent versions of Express (4.16.0 and later), the `express.urlencoded()` and `express.json()` methods have been introduced, and they are recommended over using `body-parser` directly for these specific functionalities.
+
+Here's how you would typically use them:
+
+```javascript
+const express = require('express');
+
+const app = express();
+
+// Parse URL-encoded bodies (for form data)
+app.use(express.urlencoded({ extended: true }));
+
+// Parse JSON bodies
+app.use(express.json());
+
+// Example route that handles both form data and JSON data
+app.post('/example', (req, res) => {
+  // Access form data
+  const formData = req.body.formField;
+
+  // Access JSON data
+  const jsonData = req.body.jsonField;
+
+  // Log the data for demonstration purposes
+  console.log('Form Data:', formData);
+  console.log('JSON Data:', jsonData);
+
+  res.send('Data received successfully');
+});
+
+// ... rest of your Express app
+
+// Start the server
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
+
+As you can see, `express.urlencoded()` and `express.json()` essentially provide the same functionality as `body-parser`'s `urlencoded` and `json` middleware, respectively. Using these methods from the `express` module directly is considered more idiomatic and is the recommended approach in the latest versions of Express. It simplifies the process and makes the code more concise.
+
+bodyParser.urlencoded() returns middleware that parses incoming URL-encoded data in the request body and makes it accessible in the req.body object in your Express routes. Note that, in more recent versions of Express, it's recommended to use express.urlencoded() instead of body-parser.
+
+bodyParser.json() returns middleware that parses incoming JSON data in the request body and makes it accessible in the req.body object in your Express routes. Note that, in more recent versions of Express, it's recommended to use express.json() instead of body-parser.

@@ -1,0 +1,92 @@
+             Template Engine In ExpressJS
+   -------------------------------------------------
+What is template engine?
+------------------------------------------
+The Template Engine is used to merge HTML page with the data from your program. The engine is simple and powerful.
+At runtime, it replaces variables in a template file with actual values and transforms the template into an HTML file sent to the client.
+(Template pages are UI pages, which are capable to store both client side as well as server side code.)
+
+For Eg : Welcome <%= username %>
+Here username is a variable.It will replace the username with the value received from the backend. Say username variable 
+contains  “Gaurav"  value  then the output will be:
+
+Welcome Gaurav
+
+There are number of template engines available some of them are given below:-
+
+1) EJS (Embedded JavaScript)
+2) Jade(pug)
+3) Vash
+4) Mustache
+5) Dust.js
+6) Nunjucks
+7) Handlebars
+8) ATPL
+9) HAML
+
+Here, we are going to learn about EJS Template Engine. EJS Stands for Embedded JavaScript.
+
+HOW TO USE TEMPLATE ENGINE
+-------------------------------------------------------
+1) First Install EJS into your project using NPM as below.
+
+npm install ejs --save or npm install ejs
+
+2) Create a folder named  “views”  in project’s root directory Because by default Express.js searches all the views(templates) in the views folder under the root folder. If you don’t want your folder to be named as views you can change name using  views property in express.
+eg : the name of your folder is myviews then in our main file in this case app.js we write  app.set(‘views’,'myviews'); 
+
+we will also set the view engine as follows,for  sending templates to frontend
+
+app.set("view engine","ejs");
+
+app.set(name, value) : You may store any value that you want, but certain names can be used to configure the behavior 
+of the server. Example views, view engine , view cache etc        https://expressjs.com/en/api.html#app.set
+
+All the templates file are saved with template engine’s extension and in views folder. Here we are using EJS so all templates
+are saved with .ejs extension in views folder.
+
+USING TEMPLATE ENGINE
+--------------------------------------------
+EJS files are simple to write because in this file we write simple HTML and write logic, backend variables between these tags:
+
+<% %>(to write logics)
+<%= %>( when we want to display content use this)
+<%- %>(when we want to use partials)
+
+partials bole to code ko break kar k lagana. like header break kar diya footer break kar diya or dusre pages par laga diya etc.
+
+-----------------------------------------------------------------------------------------------
+[Note] render meaning : prastut karna.
+
+ [Note]
+ it's rendered HTML string(HTML written in double quotes.)
+ "<p><strong>hello user how are you</strong></p><div>bye user</div>"
+
+response.render(view [, locals] [, callback]) method :  Renders a view and sends the rendered HTML string to the client.
+
+ Optional parameters:
+locals, an object whose properties define local variables for the view.
+callback, a callback function. If provided, the method returns both the possible error and rendered string, but does not 
+perform an automated response. When an error occurs, the method invokes next(err) internally.
+
+The view argument is a string that is the file path of the view file to render. This can be an absolute path, or a path relative 
+to the views setting. If the path does not contain a file extension, then the view engine setting determines the file extension.
+
+/*
+An absolute or full path points to the same location in a file system, regardless(parwah kiye bina) of the current working 
+directory. By contrast, a relative path starts from some given working directory, avoiding the need to provide the full 
+absolute path.
+*/
+
+ // send the rendered view to the client
+res.render('index')
+
+// if a callback is specified, the rendered HTML string has to be sent explicitly
+res.render('index', function (err, html) {
+  res.send(html)
+})
+
+// pass a local variable to the view
+res.render('user', { name: 'Tobi' }, function (err, html) {
+  // ...
+})

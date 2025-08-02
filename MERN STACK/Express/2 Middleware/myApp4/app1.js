@@ -1,13 +1,14 @@
 import express from 'express';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import bodyParser from 'body-parser';
 const __fileName = fileURLToPath(import.meta.url);
 const __dirName = path.dirname(__fileName);
 
 var app = express();
-// BuiltIn middleware
-app.use(express.urlencoded({extended:true}));
-app.use(express.json());
+// Third party middleware
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 app.get("/",(request,response)=>{
     response.sendFile(__dirName+'/index.html');

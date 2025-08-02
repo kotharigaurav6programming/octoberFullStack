@@ -1,0 +1,13 @@
+res.redirect and res.render are two ways to handle responses in Express.js.
+
+res.redirect
+------------
+The res.redirect method sends a response to the client instructing it to redirect to a different URL. The client sends a new request to the specified URL, and the server responds after processing this request. This method is often used when you want to move the user to another page after completing actions such as login, sign up, form submission, etc.
+res.redirect('/some-url');
+
+res.render
+-----------
+The res.render method is used to generate HTML on the server and send it to the client. It mainly generates HTML code dynamically using a template engine (e.g., EJS, Pug, Handlebars, etc.) and sends it to the client by rendering the template file. This method constructs the page on the server side and sends it, rather than changing the content of the page on the client side.
+ res.render('view', { data: data });
+ 
+In summary, res.redirect instructs the client to redirect to another URL, while res.render generates HTML on the server and delivers it to the client.

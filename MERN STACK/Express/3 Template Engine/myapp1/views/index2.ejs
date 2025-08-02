@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% bookDetails.forEach((obj,index)=>{ %>
+        <center>
+        <h2>BookName : <%= obj.bookName %></h2>
+        <h2>Author : <%= obj.author %></h2>
+        <h2>Published On : <%= obj.publishedOn %></h2>
+        <hr width="300">
+        </center>
+    <% }) %>
+</body>
+</html>
