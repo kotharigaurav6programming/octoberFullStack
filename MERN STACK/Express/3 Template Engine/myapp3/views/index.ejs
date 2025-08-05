@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/servicesstyle.css">
+  <style>
+    #demoNew {
+      background-color: whitesmoke;
+      color: black;
+      font-family: candara;
+      margin: 4%;
+      font-size: 15px;
+    }
+
+    @media screen and (max-width:767px) {
+      #demo h2 {
+        font-size: 6vw;
+      }
+
+      #demo p {
+        font-size: 3.5vw;
+      }
+
+      .row h1,.row h2{
+        font-size: 5vw;
+      } 
+      .row img{
+        padding-left: 30%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid" style="background-color: whitesmoke;">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#" style="color: black;">
+          <span class="glyphicon glyphicon-king text-primary"></span>
+          <span class="text-primary"><b>EPSON</b></span></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#" style="color: black;">
+              <span class="glyphicon glyphicon-home"></span>
+              Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="#" style="color: black;">
+              <span class="glyphicon glyphicon-globe"></span>
+              Services</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false" style="color: black;">
+              <span class="glyphicon glyphicon-glass"></span>
+              Product <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>
+            Search</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" style="color: black;" data-toggle="modal" data-target="#myModal">
+              <span class="glyphicon glyphicon-log-in"></span>
+              SignIn</a></li>
+
+          <!-- modal starts -->
+
+          <!-- Button trigger modal -->
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                      aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Login Form</h4>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- modal starts -->
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false" style="color: black;">
+              <span class="glyphicon glyphicon-user"></span>
+              Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div style="margin-top: -22px;" id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        
+        <img src="images/c07e008aa342501619935cf070ba56f9.jpg" alt="...">
+        <div class="carousel-caption">
+        </div>
+
+      </div>
+      <div class="item">
+        <img src="images/c07e008aa342501619935cf070ba56f9.jpg" alt="...">
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/c07e008aa342501619935cf070ba56f9.jpg" alt="...">
+        <div class="carousel-caption">
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div style="padding: 40px;" id="demo" class="jumbotron">
+    <h2>EPSON World</h2>
+    <p align="justify">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quae quam beatae natus itaque ea deleniti maiores
+      delectus possimus ratione repudiandae, aspernatur minima neque, omnis necessitatibus quibusdam expedita alias
+      nihil non repellendus assumenda quod dolore consequuntur. Esse, vitae! Minus tenetur facilis assumenda molestiae
+      magni dolores maxime nesciunt quibusdam doloribus ipsam.
+    </p>
+    <button class="btn btn-primary">
+      <span class="glyphicon glyphicon-book"></span>
+      Get Quote</button>
+    <button class="btn btn-danger">
+      <span class="glyphicon glyphicon-envelope"></span>
+      Get Enquiry</button>
+  </div>
+
+  <!-- marquee section starts -->
+  <div class="row">
+    <marquee>
+      <img src="images/logo1.jpg" alt="">
+      <img src="images/logo2.jpg" alt="">
+      <img src="images/logo3.jpg" alt="">
+      <img src="images/logo1.jpg" alt="">
+      <img src="images/logo2.jpg" alt="">
+      <img src="images/logo3.jpg" alt="">
+    </marquee>
+  </div>
+  <!-- marquee section ends -->
+  <!-- section starts -->
+
+  <!-- section ends -->
+  <div class="row">
+    <div id="demoNew" class="col-sm-5 col-md-5 col-lg-2">
+      <div class="row">
+        <img src="images/2-01.jpg" style="padding: 0px;height:30vh;" class="col-xs-12" alt="">
+      </div>
+      <h3>Heading 1</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus quam tenetur temporibus consectetur omnis
+        natus? Laboriosam commodi aliquam hic molestiae?
+      </p>
+    </div>
+    <div id="demoNew" class="col-sm-5 col-md-5 col-lg-2 ">
+      <div class="row">
+        <img src="images/2-01.jpg" style="padding: 0px;height:30vh;" class="col-xs-12" alt="">
+      </div>
+      <h3>Heading 2</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus quam tenetur temporibus consectetur omnis
+        natus? Laboriosam commodi aliquam hic molestiae?
+      </p>
+    </div>
+    <div id="demoNew" class="col-sm-5 col-md-5 col-lg-2 ">
+      <div class="row">
+        <img src="images/2-01.jpg" style="padding: 0px;height:30vh;" class="col-xs-12" alt="">
+      </div>
+      <h3>Heading 3</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus quam tenetur temporibus consectetur omnis
+        natus? Laboriosam commodi aliquam hic molestiae?
+      </p>
+    </div>
+    <div id="demoNew" class="col-sm-5 col-md-5 col-lg-2 ">
+      <div class="row">
+        <img src="images/2-01.jpg" style="padding: 0px;height:30vh;" class="col-xs-12" alt="">
+      </div>
+      <h3>Heading 4</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus quam tenetur temporibus consectetur omnis
+        natus? Laboriosam commodi aliquam hic molestiae?
+      </p>
+    </div>
+
+  </div>
+
+<div class="row" style="background-color: lightgrey;">
+  <br>
+  <center>
+    <h1>
+      Declaration Of Trust
+    </h1>
+    <br>
+  </center>
+  <div id="carousel-example-generic" class="carousel slide" style="padding: 3%; background-color: white;" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div  class="carousel-inner" role="listbox">      
+      <div class="item active">
+        <div class="row" style="margin:auto;padding: 3% 3% 3% 10%;text-align:justify;">
+          <div class="col-xs-12 col-lg-3">
+            <img src="images/user.png" style="height:25vh" alt="">
+          </div>
+          <div class="col-xs-12 col-lg-9">
+            <h2>Andrew Anderson | AIR-1 </h2>
+          <small>Batch 2025 | IIT</small><br>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam laborum rerum necessitatibus voluptatum debitis optio adipisci nesciunt, quasi dolor neque quas quo fugit aut autem in quos fuga cupiditate atque? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dignissimos accusamus sint dolorum quis inventore pariatur iste ad ipsum nesciunt.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="col-lg-12" style="margin:auto;padding: 3% 3% 3% 10%;text-align:justify;">
+          <div class="col-xs-12 col-lg-3">
+            <img src="images/user.png" style="height:25vh" alt="">
+          </div>
+          <div class="col-xs-12 col-lg-9">
+            <h2>Andrew Anderson | AIR-1 </h2>
+          <small>Batch 2025 | IIT</small><br>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam laborum rerum necessitatibus voluptatum debitis optio adipisci nesciunt, quasi dolor neque quas quo fugit aut autem in quos fuga cupiditate atque? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dignissimos accusamus sint dolorum quis inventore pariatur iste ad ipsum nesciunt.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="col-lg-12" style="margin:auto;padding: 3% 3% 3% 10%;text-align:justify;">
+          <div class="col-xs-12 col-lg-3">
+            <img src="images/user.png" style="height:25vh" alt="">
+          </div>
+          <div class="col-xs-12 col-lg-9">
+            <h2>Andrew Anderson | AIR-1 </h2>
+          <small>Batch 2025 | IIT</small><br>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam laborum rerum necessitatibus voluptatum debitis optio adipisci nesciunt, quasi dolor neque quas quo fugit aut autem in quos fuga cupiditate atque? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dignissimos accusamus sint dolorum quis inventore pariatur iste ad ipsum nesciunt.
+          </p>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</div>  
+<div class="container bootstrap snippets bootdey">
+<section id="services" class="current">
+    <div class="services-top">
+        <div class="container bootstrap snippets bootdey">
+            <div class="row text-center">
+                <div class="col-sm-12 col-md-12 col-md-12">
+                    <h2>What We Offer</h2>
+                    <h2 style="font-size: 60px;line-height: 60px;margin-bottom: 20px;font-weight: 900;">Our Services</h2>
+                    <p>Our <span class="highlight">experienced</span> and <span class="highlight">dedicated</span> staff provide these services with a smile.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-sm-12 col-md-12 col-md-10">
+                    <div class="services-list">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-md-4">
+                                <div class="service-block" style="visibility: visible;">
+                                    <div class="ico fa fa-magic highlight"></div>
+                                    <div class="text-block">
+                                        <div class="name">Web Design</div>
+                                        <div class="info">Beauty and function</div>
+                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-md-4">
+                                <div class="service-block" style="visibility: visible;">
+                                    <div class="ico fa fa-code highlight"></div>
+                                    <div class="text-block">
+                                        <div class="name">Development/Coding</div>
+                                        <div class="info">Quality code that lasts</div>
+                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-md-4">
+                                <div class="service-block" style="visibility: visible;">
+                                    <div class="ico fa fa-pencil highlight"></div>
+                                    <div class="text-block">
+                                        <div class="name">Copy Writing</div>
+                                        <div class="info">Words that tell your story</div>
+                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-md-4">
+                                <div class="service-block" style="visibility: visible;">
+                                    <div class="ico fa fa-bullhorn highlight"></div>
+                                    <div class="text-block">
+                                        <div class="name">SEO/PPCM</div>
+                                        <div class="info">Converting users to customers</div>
+                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-md-4">
+                                <div class="service-block" style="visibility: visible;">
+                                    <div class="ico fa fa-eye highlight"></div>
+                                    <div class="text-block">
+                                        <div class="name">Branding/Identity</div>
+                                        <div class="info">Leave a lasting impression</div>
+                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-md-4">
+                                <div class="service-block" style="visibility: visible;">
+                                    <div class="ico fa fa-umbrella highlight"></div>
+                                    <div class="text-block">
+                                        <div class="name">Strategy/Planning</div>
+                                        <div class="info">Thinking beyond tomorrow</div>
+                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>       
+
+</body>
+
+</html>
