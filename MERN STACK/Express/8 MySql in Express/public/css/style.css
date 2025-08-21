@@ -1,0 +1,31 @@
+body{
+    padding: 30px;
+    background-color: teal;
+    font-family: candara;
+}
+input[type='email'],input[type='password'],input[type='text']{
+    height: 30px;
+    width: 300px;
+    font-size: 17px;
+    margin: 5px;
+}
+input[type='submit'],input[type='reset']{
+    height: 35px;
+    width: 305px;
+    font-size: 17px;
+    margin: 5px;
+    background-color: black;
+    color:white;
+    border-width: 0px;
+}
+h1,h2,blockquote{
+    color:white;
+}
+blockquote{
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    font-size: 19px;
+    color:white;
+}
