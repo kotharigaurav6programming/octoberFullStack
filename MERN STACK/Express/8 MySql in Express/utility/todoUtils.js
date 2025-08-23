@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
 import con from '../connection/dbConfig.js';
 dotenv.config();
-export const createDatabase = (next)=>{
+export const createToDoDatabase = (next)=>{
     try{
-        const query = `select count(*) as exist from information_schema.tables where table_schema='${process.env.DB_NAME}' and table_name='${process.env.TABLE_NAME}'`;
+        const query = `select count(*) as exist from information_schema.tables where table_schema='${process.env.DB_NAME}' and table_name='${process.env.TODO_TABLE_NAME}'`;
         con.query(query,(error,result)=>{
             if(error){
                 console.log("error while checking database and table");
@@ -27,13 +27,13 @@ export const createDatabase = (next)=>{
                                 console.log("Error while selecting database");
                                 next(error);
                             }else{
-                                const query = `create table if not exists user(userid int primary key auto_increment,username varchar(45) not null,email varchar(45) not null,password varchar(45) not null,address varchar(45) not null,adminVerify tinyint not null default 0,block tinyint not null default 0)`;
+                                const query = `create table if not exists todo(todoid int primary key auto_increment,userid int not null,description varchar(500) not null,priority int not null,date varchar(45) not null,time varchar(45) not null,status tinyint not null default 1,foreign key (userid) references user(userid) on delete cascade on update cascade)`;
                                 con.query(query,(error,result)=>{
                                     if(error){
                                         console.log("Error while creating table : ",error);
                                         next(error);
                                     }else{
-                                        console.log("Database and table created successfully");
+                                        console.log("Database and todo table created successfully");
                                         next();
                                     }
                                 });

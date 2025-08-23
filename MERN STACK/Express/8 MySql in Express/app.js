@@ -2,9 +2,23 @@ import express from 'express';
 import dotenv from 'dotenv';
 import expressSession from 'express-session';
 import { createDatabase } from './utility/utils.js';
+import { createAdminDatabase } from './utility/adminUtils.js';
+import { createToDoDatabase } from './utility/todoUtils.js';
 dotenv.config();
 var app = express();
-app.use(createDatabase());
+createDatabase((err) => {
+    if (err) throw err;
+    console.log("Database ready");
+});
+createAdminDatabase((err) => {
+    if (err) throw err;
+    console.log("Admin Database ready");
+});
+createToDoDatabase((err) => {
+    if (err) throw err;
+    console.log("ToDo Database ready");
+});
+
 app.set("views","views");
 app.set("view engine","ejs");
 
