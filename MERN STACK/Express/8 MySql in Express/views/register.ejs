@@ -10,30 +10,34 @@
     <%- include('headerSection.ejs') %>
     <h1>Registration Form</h1>
     <blockquote>
-        <form action="">
+        <form action="/user/addUser" method="post">
             <input
                 type="text"
                 name="username"
                 placeholder="Enter Username"
                 id="username"
+                required
             > <br>
             <input
                 type="email"
                 name="email"
                 placeholder="Enter Email"
                 id="email"
+                required
             > <br>
             <input
                 type="password"
                 name="password"
                 placeholder="Enter Password"
                 id="password"
+                required
             > <br>
             <input
                 type="text"
                 name="address"
                 placeholder="Enter Address"
                 id="address"
+                required
             > <br>
             <input
                 type="submit"
