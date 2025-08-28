@@ -5,6 +5,7 @@ import { createDatabase } from './utility/utils.js';
 import { createAdminDatabase } from './utility/adminUtils.js';
 import { createToDoDatabase } from './utility/todoUtils.js';
 import userRouter from './router/userRouter.js';
+import adminRouter from './router/adminRouter.js';
 dotenv.config();
 var app = express();
 createDatabase((err) => {
@@ -27,7 +28,13 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static('public'));
 app.use(expressSession({secret:process.env.SECRET,resave:true,saveUninitialized:true}));
+
 app.use('/user',userRouter);
+app.use('/admin',adminRouter);
+
+app.get('/adminLogin',(request,response)=>{
+    response.render("adminLogin.ejs");
+});
 
 app.get('/',(request,response)=>{
     response.render("index.ejs");

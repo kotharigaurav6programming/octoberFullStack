@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('adminHeaderSection.ejs') %>
+    <h2>Welcome <%= email %></h2>
+    <blockquote>
+        <% if(result.length==0){%>
+            <h3>No Record Found</h3>    
+        <%}else{%>
+            <h3>User Record</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <th>S.No</th>
+                    <th>UserId</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Address</th>
+                    <th>AdminVerify</th>
+                    <th>Block</th>
+                </tr>
+                <% result.forEach((userObj,index)=>{%>
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= userObj.userid %></td>
+                        <td><%= userObj.username %></td>
+                        <td><%= userObj.email %></td>
+                        <td><%= userObj.password %></td>
+                        <td><%= userObj.address %></td>
+                        <td>
+                            <% if(userObj.adminVerify==0){%>
+                                <a href="" style="color:red">Verify</a>    
+                            <%}else{%>
+                                <b style="color:black">Verified</b>
+                            <%} %>
+                        </td>
+                        <td>
+                         <% if(userObj.block==0){%>
+                                <a href="" style="color:red">Block</a>    
+                            <%}else{%>
+                                <a href="" style="color:purple">UnBlock</a>    
+                            <%} %>
+                        </td>
+                    </tr>
+                <%}) %>
+            </table>
+        <%} %>
+    </blockquote>
+</body>
+</html>

@@ -1,73 +1,71 @@
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
-const con = mysql.createConnection({
-    host:process.env.HOST,
-    user : process.env.USER,
-    password : process.env.PASSWORD,
-    port : process.env.DB_PORT
-});
 
-var query = `select count(*) as exist from information_schema.tables where table_schema='${process.env.DB_NAME}'`
+async function myFun(){
+  const con = mysql.createConnection({
+      host:process.env.HOST,
+      user : process.env.USER,
+      password : process.env.PASSWORD,
+      port : process.env.DB_PORT
+  });
+  return new Promise((resolve,reject)=>{
+    var query = `select count(*) as exist from information_schema.tables where table_schema='${process.env.DB_NAME}'`;
+    con.query(query,(error,result)=>{
+      if(error) 
+        reject(error);
+      if(result[0].exist>0){
+        con.changeUser({database:process.env.DB_NAME},(error)=>{
+          if(error)
+            reject(error);
+        })
+        resolve(con);
+      }else
+        resolve(con);
+    });
+  });
+}
 
-let conNew;
-con.query(query,(error,result)=>{
-    if(error)
-        console.log("Error occured");
-    else{
-        if(result[0].exist>0){
-            conNew = mysql.createConnection({
-                host:process.env.HOST,
-                user : process.env.USER,
-                password : process.env.PASSWORD,
-                database : process.env.DB_NAME,
-                port : process.env.DB_PORT
-            });
-        }else
-            conNew = con
-    }
-});
+const res = await myFun();
+export default res;
 
-console.log("--------> "+conNew);
 
-conNew.connect((error)=>{
-    if(error)
-        console.log("Error : ",error);
-    else 
-        console.log("Connection established successfully for database");
-});
 
-export default conNew;
+
+
+
+
+
+
+
+
 //--------------------------------------------------------
 
-// const mysql = require('mysql');
+// async function myFun1() {
+//   const con = mysql.createConnection({
+//     host: process.env.HOST,
+//     user: process.env.USER,
+//     password: process.env.PASSWORD,
+//     port: process.env.DB_PORT
+//   });
 
-// // Initial connection without a database
-// let connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'your_password'
-// });
-// // Connect to the server
-// connection.connect((err) => {
-//   if (err) throw err;
-//   console.log('Connected to MySQL server.');
+//   return new Promise((resolve, reject) => {
+//     const query = `SELECT COUNT(*) AS exist FROM information_schema.tables WHERE table_schema='${process.env.DB_NAME}'`;
 
-//   // Close the current connection
-//   connection.end(() => {
-//     console.log('Initial connection closed.');
+//     con.query(query, (error, result) => {
+//       if (error) return reject(error);
 
-//     // Create a new connection with the desired database
-//     connection = mysql.createConnection({
-//       host: 'localhost',
-//       user: 'root',
-//       password: 'your_password',
-//       database: 'your_database_name'
-//     });
-
-//     connection.connect((err) => {
-//       if (err) throw err;
-//       console.log('Connected to the new database.');
+//       if (result[0].exist > 0) {
+//         con.changeUser({ database: process.env.DB_NAME }, (err) => {
+//           if (err) return reject(err);
+//           resolve(con);
+//         });
+//       } else {
+//         resolve(con);
+//       }
 //     });
 //   });
-// });
+// }
+
+// const res1 = await myFun1();
+// export default res1;
