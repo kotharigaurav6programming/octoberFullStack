@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -35,16 +40,16 @@
                         <td><%= userObj.address %></td>
                         <td>
                             <% if(userObj.adminVerify==0){%>
-                                <a href="" style="color:red">Verify</a>    
+                                <a href="/admin/adminVerifyUser?email=<%=userObj.email%>" style="color:#234567">Verify</a>    
                             <%}else{%>
                                 <b style="color:black">Verified</b>
                             <%} %>
                         </td>
                         <td>
                          <% if(userObj.block==0){%>
-                                <a href="" style="color:red">Block</a>    
+                                <a href="/admin/adminBlockUser?email=<%=userObj.email%>" style="color:#234567">Block</a>    
                             <%}else{%>
-                                <a href="" style="color:purple">UnBlock</a>    
+                                <a href="" style="color:black">UnBlock</a>    
                             <%} %>
                         </td>
                     </tr>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
+    
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('userHeaderSection.ejs') %>
+    <h2>Welcome <%= email %></h2>
+<blockquote>
+    <h2>Add ToDo Task</h2>
+    <%=message%>
+        <form action="/user/addToDoTask" method="post">
+            <input
+                type="text"
+                name="description"
+                placeholder="Enter Description"
+                id="description"
+                required
+            > <br>
+            <select name="priority" id="priority">
+                <option value="">Select Priority</option>
+                <option value="High">High</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Medium">Medium</option>
+            </select><br>
+            <input
+                type="submit"
+                value="Add ToDo"
+            > <br>
+            <input
+                type="reset"
+                value="Reset"
+            > <br>
+        </form>
+    </blockquote>
+</body>
+</html>

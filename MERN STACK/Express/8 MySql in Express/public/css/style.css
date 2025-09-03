@@ -3,7 +3,7 @@ body{
     background-color: teal;
     font-family: candara;
 }
-input[type='email'],input[type='password'],input[type='text']{
+input[type='email'],input[type='password'],input[type='text'],select{
     height: 30px;
     width: 300px;
     font-size: 17px;

@@ -23,6 +23,11 @@ createToDoDatabase((err) => {
 
 app.set("views","views");
 app.set("view engine","ejs");
+app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+    next();
+});
+
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -33,14 +38,14 @@ app.use('/user',userRouter);
 app.use('/admin',adminRouter);
 
 app.get('/adminLogin',(request,response)=>{
-    response.render("adminLogin.ejs");
+    response.render("adminLogin.ejs",{message:""});
 });
 
 app.get('/',(request,response)=>{
     response.render("index.ejs");
 });
 app.get('/login',(request,response)=>{
-    response.render("login.ejs");
+    response.render("login.ejs",{message:""});
 });
 app.get('/register',(request,response)=>{
     response.render("register.ejs");
