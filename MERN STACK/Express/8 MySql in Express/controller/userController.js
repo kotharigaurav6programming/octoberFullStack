@@ -44,7 +44,7 @@ export const userLoginController = (request,response)=>{
                 }else{
                     request.session.email=request.body.email;
                     request.session.save();
-                    response.render("userHome.ejs",{email:request.body.email});
+                    response.render("userHome.ejs",{message:"",status:"",email:request.body.email});
                 }
             }
         });
@@ -88,5 +88,70 @@ export const addToDoTaskController = (request,response)=>{
         });       
     }catch(error){
         console.log("Error in addToDoTaskController : ",error);
+    }
+}
+
+export const viewToDoListController = (request,response)=>{
+    try{
+        const query = "select * from user where email=?";
+        const value = [request.session.email];
+        con.query(query,value,(error,result)=>{
+            if(error)
+                throw error;
+
+            const userid = result[0].userid;
+            const query = "select * from todo where userid = ?";
+            const value = [userid];
+            con.query(query,value,(error,result)=>{
+                if(error)
+                    throw error;
+
+                //console.log(result);
+                response.render("userViewToDoList.ejs",{email:request.session.email,result:result});    
+            });
+        });
+
+    }catch(error){
+        console.log("Error in viewToDoListController : "+error);
+    }
+}
+
+export const updateFormController = (request,response)=>{
+    try{
+        const query = "select * from user where email = ?";
+        const value = [request.session.email];
+        con.query(query,value,(error,result)=>{
+            if(error)
+                throw error;
+            response.render("updateForm.ejs",{email:request.session.email,userObj:result[0]});
+        });
+
+    }catch(error){
+        console.log("Error in updateFormController : ",error);
+    }    
+}
+
+export const updateUserController = (request,response)=>{
+    try{
+        var values = [
+            request.body.username,
+            request.body.password,
+            request.body.address,
+            request.body.email
+        ]
+        const query = 'update user set username=?,password=?,address=? where email=?';
+        con.query(query,values,(error,result)=>{
+            if(error){
+                console.log("Error while updating user : "+error);
+                response.render("login.ejs",{message:message.ERROR,status:""});                
+            }
+            else{
+                console.log("Data Updated successfully");
+                response.render("userHome.ejs",{message:"Profile updated successfully",status:status.SUCCESS,email:request.session.email});
+            }
+        });
+    }catch(error){
+        console.log("Error : "+error);
+        response.render("login.ejs",{message:message.ERROR,status:status.ERROR});
     }
 }

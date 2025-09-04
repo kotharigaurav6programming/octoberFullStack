@@ -29,3 +29,11 @@ a{
     font-size: 19px;
     color:white;
 }
+button{
+    height:30px;
+    width: 100px;
+    color:white;
+    border-width: 0px;
+    padding: 2px;
+
+}

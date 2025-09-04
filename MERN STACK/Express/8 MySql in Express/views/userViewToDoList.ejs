@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
+    
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('userHeaderSection.ejs') %>
+    <h2>Welcome <%= email %></h2>
+    <blockquote>
+        <% if(result.length==0){%>
+            <h3>No Record Found</h3>    
+        <%}else{%>
+            <h3>ToDo List</h3>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tr>
+                    <th>S.No</th>
+                    <th>ToDoId</th>
+                    <th>Description</th>
+                    <th>Priority</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+                <% result.forEach((toDoObj,index)=>{%>
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= toDoObj.todoid %></td>
+                        <td><%= toDoObj.description %></td>
+                        <td>
+                            <%if(toDoObj.priority==1){%>
+                                <button style="background-color: red;">High</button>    
+                            <%}else if(toDoObj.priority==2){ %>
+                                <button style="background-color: orange;">Moderate</button>    
+                            <%}else if(toDoObj.priority==3){ %>
+                                <button style="background-color: green;">Medium</button>    
+                            <%}%>
+                        </td>
+                        <td><%= toDoObj.date %></td>
+                        <td><%= toDoObj.time %></td>
+                        <td>
+                            <% if(toDoObj.status==1){%>
+                                <a href="" style="color:#234567">Pending</a>    
+                            <%}else{%>
+                                <b style="color:black">Finished</b>
+                            <%} %>
+                        </td>
+                    </tr>
+                <%}) %>
+            </table>
+        <%} %>
+    </blockquote>
+</body>
+</html>

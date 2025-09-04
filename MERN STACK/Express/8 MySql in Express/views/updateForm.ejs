@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (()=>{
+            window.history.forward();
+        })();
+    </script>
+    
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('userHeaderSection.ejs') %>
+    <h2>Welcome <%= email %></h2>
+    <h2>Update Profile</h2>
+    <blockquote>
+        <form action="/user/updateUser" method="post">
+            <input
+                type="text"
+                name="username"
+                placeholder="Enter Username"
+                id="username"
+                value="<%= userObj.username %>"
+                required
+            > <br>
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                id="email"
+                readonly
+                value="<%= userObj.email %>"
+                required
+            > <br>
+            <input
+                type="text"
+                name="password"
+                placeholder="Enter Password"
+                id="password"
+                value="<%= userObj.password %>"
+                required
+            > <br>
+            <input
+                type="text"
+                name="address"
+                placeholder="Enter Address"
+                id="address"
+                value="<%= userObj.address %>"
+                required
+            > <br>
+            <input
+                type="submit"
+                value="Update"
+            > <br>
+            <input
+                type="reset"
+                value="Reset"
+            > <br>
+        </form>
+    </blockquote>
+</body>
+</html>
