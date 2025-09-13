@@ -1,5 +1,5 @@
 import express from 'express';
-import { DataTypes, INTEGER, Sequelize } from 'sequelize';
+import { DataTypes, Sequelize } from 'sequelize';
 var app = express();
 
 const sequelize = new Sequelize(
@@ -60,6 +60,7 @@ student.sequelize.sync().then(() => {
     });
      */
 
+    /*
     var studentPayload = [{
         name: "Andrew Anderson",
         email: "andrew@gmail.com",
@@ -82,8 +83,66 @@ student.sequelize.sync().then(() => {
     }).catch((error) => {
         console.log("Error while inserting data into database : ", error);
     });
+    */
 
+    /*
+    student.findOne().then((result)=>{
+        // console.log(result.get({plain:'text'}));
+         console.table(result.dataValues);
+    }).catch((error) => {
+        console.log("Error while fetching data: ", error);
+    });
+    */
 
+    /*
+    student.findAll().then((result)=>{
+        // console.log(result);
+        for(var i=0;i<result.length;i++){
+            //console.log(result[i].dataValues);
+            console.table(result[i].dataValues);   
+        }
+    }).catch((error) => {
+        console.log("Error while fetching data: ", error);
+    });
+    */
+
+    /*
+    student.findOne({
+        where :{
+            sid:1
+        }
+    }).then((result)=>{
+         console.table(result.dataValues);
+    }).catch((error) => {
+        console.log("Error while fetching data: ", error);
+    });
+    */
+/*
+    student.destroy({
+        where :{
+            sid:1
+        }
+    }).then((result)=>{
+        console.log("Data deleted successfully");
+        
+    }).catch((error) => {
+        console.log("Error while deleting data: ", error);
+    });
+  */
+ 
+    student.update({
+        name:"Andy",
+        address : "Indore Mp"
+    },{
+        where :{
+            sid:3
+        }
+    }).then((result)=>{
+         console.table("Data updated successfully");
+    }).catch((error) => {
+        console.log("Error while updating data: ", error);
+    });
+    
 }).catch((error) => {
     console.log("Error occured while dealing with table : ", error);
 });
