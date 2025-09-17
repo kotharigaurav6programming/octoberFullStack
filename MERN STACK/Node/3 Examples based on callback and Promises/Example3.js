@@ -13,7 +13,7 @@ function operation(a,b,task,callback){
         case "modulus" : res = a%b;
                             break;
         default : res = "Invalid";
-                    break;
+                            break;
     }
     callback(res);
 }

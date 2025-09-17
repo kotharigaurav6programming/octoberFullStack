@@ -1,7 +1,7 @@
-import { DataTypes, Sequelize } from 'sequelize';
+import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize(
-    'oct_seq1',
+    'oct_seq',
     'root',
     'root',
     {
