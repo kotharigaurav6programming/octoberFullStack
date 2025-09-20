@@ -1,0 +1,131 @@
+1. show dbs;
+2. use octdb1;
+3. use octdb2;
+4. db
+5. db.dropDatabase();
+6. db.createCollection("EmployerNew");
+7. db.createCollection("Employer");
+8. show collections;
+9. db.EmployerNew.drop();
+10. show collections;
+11. db.Employer.insert({
+    name:"Andrew Anderson",
+    email:"andrew@gmail.com",
+    salary : 50000,
+    age : 34,
+    adress : "Indore"
+});
+12. db.Employer.insertOne({
+    name:"Peter Parker",
+    email:"andrew@gmail.com",
+    salary : 25000,
+    age : 50,
+    adress : "Indore"
+});
+13. db.Employer.find();
+14. db.Employer.insertMany([{
+    _id:101,
+    name:"Simon Sim",
+    email:"simon@gmail.com",
+    salary : 2500,
+    age : 20,
+    adress : "Ujjain"
+},{
+    _id:102,
+    name:"Jack Jackson",
+    email:"jack@gmail.com",
+    salary : 90000,
+    age : 23,
+    adress : "Bhopal"
+},{
+    _id:103,
+    name:"Mathew Math",
+    email:"mathew@gmail.com",
+    salary : 125000,
+    age : 45,
+    adress : "Indore"
+},{
+    _id:104,
+    name:"Andy",
+    email:"andy@gmail.com",
+    salary : 5000,
+    age : 24,
+    adress : "Ujjain"
+},]); 
+
+15. db.Employer.bulkWrite([{
+    insertOne:{
+        _id:105,
+        name:"Simran",
+        email:"simran@gmail.com",
+        salary : 23000,
+        age : 24,
+        adress : "Indore"
+    }
+}]);
+
+db.Employer.bulkWrite([{
+    insertOne:{
+        _id:106,
+        name:"Simran1",
+        email:"simran1@gmail.com",
+        salary : 23000,
+        age : 24,
+        adress : "Indore"
+    }
+},{
+    insertOne:{
+        _id:107,
+        name:"Simran2",
+        email:"simran2@gmail.com",
+        salary : 23000,
+        age : 24,
+        adress : "Indore"
+    }
+},{
+    insertOne:{
+        _id:108,
+        name:"Simran3",
+        email:"simran3@gmail.com",
+        salary : 23000,
+        age : 24,
+        adress : "Indore"
+    }
+}]);
+
+16. db.Employer.find();
+17. db.Employer.insertOne({
+    name:"John Deo",
+    email:"john@gmail.com",
+    city:"Indore"
+});
+18. db.Employer.find(Select_criteria);
+    db.Employer.find({email:"andrew@gmail.com"});
+19. db.Employer.find({email:"andrew@gmail.com",salary:25000});
+20. db.Employer.update({
+        name:"Peter Parker"
+    },{
+        $set:{
+            email : "peter@gmail.com"
+        }
+    });
+21.  db.Employer.update({},{
+        $set:{
+            state : "Madhya Pradesh"
+        }
+    });
+22. db.Employer.updateMany({},{
+        $set:{
+            state : "Madhya Pradesh"
+        }
+    });
+23.db.Employer.update({},{
+        $unset:{
+            state : ""
+        }
+    });
+24. db.Employer.update({},{
+        $unset:{
+            state : ""
+        }
+    },{multi:true});
