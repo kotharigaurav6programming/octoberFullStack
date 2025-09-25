@@ -225,3 +225,163 @@ db.Employer.bulkWrite([{
 53. db.Employer.find().sort({salary:-1}).toArray()[0].name;
 54. db.Employer.find().sort({salary:-1}).toArray()[0].salary;
 55. db.Employer.find({},{name:1,salary:1}).sort({salary:-1}).toArray()[0];
+56. db.Employer.find({
+    salary :{
+        $ne : db.Employer.find().sort({salary:-1}).toArray()[0].salary
+    }
+}).sort({salary:-1}).toArray()[0].salary;
+
+57. db.Employer.find({
+    salary : db.Employer.find({
+    salary :{
+        $ne : db.Employer.find().sort({salary:-1}).toArray()[0].salary
+    }
+}).sort({salary:-1}).toArray()[0].salary
+},{name : 1,salary:1,_id:0});
+
+58. db.Employer.find({
+    salary : {
+        $lt : db.Employer.find({
+                salary :{
+                    $ne : db.Employer.find().sort({salary:-1}).toArray()[0].salary
+                }
+            }).sort({salary:-1}).toArray()[0].salary
+    }
+}).sort({salary : -1}).toArray()[0].salary; 
+
+59. db.Employer.find({
+    $nor : [
+        {
+            salary:{
+                $gte : 50000
+            }
+        },{
+            age : {
+                $lte : 30
+            }
+        }
+    ]
+});
+
+60. db.Employer.find({
+            salary:{ 
+                $not : {
+                    $gte : 50000
+                }
+            }
+    });
+
+61. db.Employer.aggregate([
+    {
+        $group:{
+            _id:""
+        }
+    }
+]);
+
+62. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name"
+        }
+    }
+]);
+
+63. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            total_entries:{$sum:1}
+        }
+    }
+]);
+
+64. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            total_salary:{$sum:"$salary"}
+        }
+    }
+]);
+
+65. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            min_salary:{$min:"$salary"}
+        }
+    }
+]);
+
+66. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            max_salary:{$max:"$salary"}
+        }
+    }
+]);
+
+67. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            avg_salary:{$avg:"$salary"}
+        }
+    }
+]);
+
+68. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            salary:{$first:"$salary"}
+        }
+    }
+]);
+
+69. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            salary:{$last:"$salary"}
+        }
+    }
+]);
+
+70. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name"
+        }
+    },{$limit:3}
+]);
+
+71. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name"
+        }
+    },{$skip:3}
+]);
+
+72. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name"
+        }
+    },{$count:"name"}
+]);
+
+73. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name"
+        }
+    },{$sort:{salary:1}}
+]);
+
+74. db.Employer.aggregate([
+    {$sort:{name:1}}
+]);
