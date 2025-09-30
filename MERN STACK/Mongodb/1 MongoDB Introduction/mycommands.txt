@@ -385,3 +385,122 @@ db.Employer.bulkWrite([{
 74. db.Employer.aggregate([
     {$sort:{name:1}}
 ]);
+
+75. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name"
+        }
+    },{
+        $project:{
+            name:"$_id"
+        }
+    }
+]);
+
+76. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name"
+        }
+    },{
+        $project:{
+            name:"$_id",
+            _id:0
+        }
+    }
+]);
+
+77. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            salary:{$sum:"$salary"}
+        }
+    },{
+        $project:{
+            name:"$_id",
+            salary:1,
+            _id:0
+        }
+    }
+]);
+
+78. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"",
+            salary:{$sum:"$salary"}
+        }
+    },{
+        $project:{
+            name:"$_id",
+            salary:1,
+            _id:0
+        }
+    }
+]);
+
+79. db.Employer.aggregate([
+    {
+        $group:{
+            _id:"$name",
+            salary:{$sum:"$salary"}
+        }
+    },{
+        $match:{
+            salary:{
+                $gt : 50000
+            }
+        }
+    }
+]);
+
+80. db.Employer.insertOne({name:"T-Shirt",sizes:["small","medium","large"]});
+    db.Employer.aggregate([{$unwind : "$sizes"}]);
+
+81. db.createCollection("Product");
+db.createCollection("Category");
+db.Product.insertMany([{
+    name: "Fairness Cream",
+    price : 456.23,
+    quantity : 100,
+    category_id : 101
+},{
+    name: "Fan",
+    price : 4256.23,
+    quantity : 10,
+    category_id : 102
+},{
+    name: "Table",
+    price : 1456.23,
+    quantity : 1400,
+    category_id : 103
+}]);
+
+db.Category.insertMany([
+    {
+        category_name : "Cosmetics",
+        cat_id:101
+    },{
+        category_name : "Electronics",
+        cat_id:102
+    },{
+        category_name : "Furniture",
+        cat_id:103
+    }
+]);
+
+db.Product.aggregate([{
+    $lookup:{
+        from:"Category",
+        foreignField:"cat_id",
+        localField:"category_id",
+        as:"Product Details"
+    }
+}]);
+
+82. db.Employer.getIndexes();
+83. db.Employer.createIndex({address:1});
+84. db.Employer.insertOne({name:"democheck",expireEntryAt:new Date()});
+85. db.Employer.createIndex({expireEntryAt:1},{expireAfterSeconds:10});
