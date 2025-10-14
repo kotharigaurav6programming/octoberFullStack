@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            height:50px;
+            width: 300px;
+        }
+        input[type="text"],input[type="file"],input[type="email"],input[type="password"]{
+            height: 30px;
+            width:300px;
+            font-size: 17px;
+            margin: 5px;
+        }
+        input[type="submit"],input[type="reset"]{
+            height: 35px;
+            width:305px;
+            font-size: 17px;
+            background-color: #234567;
+            color:white;
+            border-width: 0px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <%-include('./profileHeader.ejs')%>
+    <blockquote>
+        <center>
+        <h2>AddProduct</h2>
+        <%=message%>
+        <form action="/user/addProduct" method="post" enctype="multipart/form-data">
+            <input 
+                type="email"
+                placeholder="Enter Email"
+                name="email"
+                id="email"
+                readonly
+                value="<%=email%>"
+            > <br>
+            <textarea
+                placeholder="Enter Description"
+                name="description"
+                id="description"
+                required
+            ></textarea> <br>
+            <input 
+                type="file"
+                name="profileOne"
+                id="profileOne"
+                multiple
+                required
+            > <br>
+            <input 
+                type="file"
+                name="profileTwo"
+                id="profileTwo"
+                multiple
+                required
+            > <br>
+            <input 
+                type="submit"
+                value="AddProduct"
+            ><br>
+            <input 
+                type="reset"
+                value="Reset"
+            > 
+            <br>
+        </form>        
+        </center>
+    </blockquote>
+</body>
+</html>

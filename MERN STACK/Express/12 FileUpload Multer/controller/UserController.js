@@ -70,27 +70,15 @@ export const loginController = async (request,response)=>{
 
 export const addProductController = async(request,response)=>{
     try{
-        // const res1 = request.body;
-        // const res2 = request.files;
-        // const res3 = request.files.profile;
-        // console.log("res1 : ",res1);
-        // console.log("res2 : ",res2);
-        // console.log("res3 : ",res3);
-        
-        const filename = request.files.profile;
-        const fileName = new Date().getTime()+filename.name;
-        const pathName = path.join(__dirname+'/public/images/'+fileName).replace("\\controller",'');
-        // console.log(pathName);
-        filename.mv(pathName,async(error)=>{
-            if(error){
-                console.log("Error occured while uploading file : ",error);
-            }else{
-                request.body.profile = fileName;
-                const res = await productSchema.create(request.body);
-                console.log("res : ",res);
-                response.render("addProduct.ejs",{email:request.session.email,message:"Product Added successfully"});
-            }
-        });
+        const data = request.files;
+        console.log(data);
+        request.body.profileOne = request.files['profileOne'][0].filename;
+        request.body.profileTwo = request.files['profileTwo'][0].filename;
+
+        const res = await productSchema.create(request.body);
+        console.log("res : ",res);
+        response.render("addProduct.ejs",{email:request.session.email,message:"Product Added successfully"});
+         
     }catch(error){
         console.log("Error while adding product : ",error);
     }

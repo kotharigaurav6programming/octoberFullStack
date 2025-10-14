@@ -1,6 +1,16 @@
 import express from 'express';
 import { addUserController,verifyEmailController,loginController, addProductController,viewProductController } from '../controller/UserController.js';
+import multer from 'multer';
 var userRouter = express.Router();
+
+const storage = multer.diskStorage({
+    destination : './public/images/',
+    filename : (request,fileObj,callback)=>{
+        callback(null,new Date().getTime()+fileObj.originalname);
+    } 
+});
+
+const uploads = multer({storage:storage});
 
 userRouter.get("/",(request,response)=>{
     response.render("index.ejs");
@@ -20,7 +30,7 @@ userRouter.get("/profileHome",(request,response)=>{
 userRouter.get("/addProduct",(request,response)=>{
     response.render("addProduct.ejs",{email:request.session.email,message:""});
 });
-userRouter.post("/addProduct",addProductController);
+userRouter.post("/addProduct",uploads.fields([{name:'profileOne',maxCount:100},{name:'profileTwo',maxCount:100}]),addProductController);
 userRouter.get("/viewProduct",viewProductController);
 
 export default userRouter;

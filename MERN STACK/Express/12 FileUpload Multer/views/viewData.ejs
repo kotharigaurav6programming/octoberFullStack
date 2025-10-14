@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('./profileHeader.ejs')%>
+    <blockquote>
+        <center><h3>Welcome <%=email%></h3></center>
+        <%if(data.length==0){%>
+            No Data Found
+        <%}else{%>
+        <table border="1" align="center" cellspacing="0" cellpadding="8">
+            <caption><h2>View Data</h2></caption>
+            <tr>
+                <th>S.No</th>
+                <th>EmailId</th>
+                <th>Description</th>
+                <th>Image1</th>
+                <th>Image2</th>
+            </tr>
+            <%data.forEach((obj,index)=>{%>
+                <tr>
+                    <td><%= index+1 %></td>
+                    <td><%= obj.email %></td>
+                    <td><%= obj.description %></td>
+                    <td>
+                        <a download href="/images/<%=obj.profileOne%>">
+                            <img src="/images/<%=obj.profileOne%>" height="75" width="120" alt="">
+                        </a>
+                    </td>
+                    <td>
+                        <a download href="/images/<%=obj.profileTwo%>">
+                            <img src="/images/<%=obj.profileTwo%>" height="75" width="120" alt="">
+                        </a>
+                    </td>
+                </tr>
+            <%})%>
+        </table>
+        <%}%>
+    </blockquote>
+</body>
+</html>

@@ -70,27 +70,23 @@ export const loginController = async (request,response)=>{
 
 export const addProductController = async(request,response)=>{
     try{
-        // const res1 = request.body;
-        // const res2 = request.files;
-        // const res3 = request.files.profile;
-        // console.log("res1 : ",res1);
-        // console.log("res2 : ",res2);
-        // console.log("res3 : ",res3);
-        
-        const filename = request.files.profile;
-        const fileName = new Date().getTime()+filename.name;
-        const pathName = path.join(__dirname+'/public/images/'+fileName).replace("\\controller",'');
-        // console.log(pathName);
-        filename.mv(pathName,async(error)=>{
-            if(error){
-                console.log("Error occured while uploading file : ",error);
-            }else{
-                request.body.profile = fileName;
-                const res = await productSchema.create(request.body);
-                console.log("res : ",res);
-                response.render("addProduct.ejs",{email:request.session.email,message:"Product Added successfully"});
-            }
-        });
+        const data = request.files;
+        var arr1 = [];
+        var arr2 = [];
+        console.log(data);
+        for(let i=0;i<request.files['profileOne'].length;i++){
+            arr1.push(request.files['profileOne'][i].filename);
+        }
+        for(let i=0;i<request.files['profileTwo'].length;i++){
+            arr2.push(request.files['profileTwo'][i].filename);
+        }
+        request.body.profileOne = arr1;
+        request.body.profileTwo = arr2;        
+
+        const res = await productSchema.create(request.body);
+        console.log("res : ",res);
+        response.render("addProduct.ejs",{email:request.session.email,message:"Product Added successfully"});
+         
     }catch(error){
         console.log("Error while adding product : ",error);
     }
