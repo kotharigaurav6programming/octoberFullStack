@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="email"],input[type="password"]{
+            height: 30px;
+            width:300px;
+            margin: 5px;
+            font-size: 18px;
+        }
+        input[type="submit"],input[type="reset"]{
+            height: 35px;
+            width:305px;
+            border-width: 0px;
+            margin: 5px;
+            font-size: 18px;
+            background-color: #234567;
+            color:white;
+        }
+        
+    </style>
+</head>
+<body>
+    <%- include('./header.ejs')%>
+    <blockquote>
+        <h2>Login Page</h2>
+        <form action="/login" method="post">
+            <input 
+                type="email"
+                placeholder="Enter Email"
+                name="email"
+                id="email"
+                required
+            > <br>
+            <input 
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                id="password"
+                required
+            > <br>
+            <input 
+                type="submit"
+                value="Login"
+            > <br>
+            <input 
+                type="reset"
+                value="Reset"
+            >
+        </form>
+    </blockquote>
+</body>
+</html>
