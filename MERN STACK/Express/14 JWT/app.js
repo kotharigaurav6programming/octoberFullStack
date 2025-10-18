@@ -4,12 +4,15 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import indexRouter from './router/indexRouter.js';
+import cookieParser from 'cookie-parser';
 // import crypto from 'crypto';
 dotenv.config();
 var app = express();
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 app.set("views","views");
 app.set("view engine","ejs");
-
+app.use(cookieParser());
 // const SECRET_KEY = crypto.randomBytes(32).toString('Hex');
 // console.log(SECRET_KEY);
 
