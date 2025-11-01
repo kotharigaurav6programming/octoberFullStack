@@ -1,5 +1,5 @@
 {
-  "name": "5-css-in-react",
+  "name": "6-website-in-reactjs-through-css",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,8 +14,7 @@
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-scripts": "^5.0.1",
-    "styled-components": "^6.1.19"
+    "react-scripts": "^5.0.1"
   },
   "browserslist": {
     "production": [

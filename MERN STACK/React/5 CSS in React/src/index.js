@@ -31,11 +31,28 @@ import {createRoot} from "react-dom/client";
 //     </div>)
 // }
 
+/*
 import './style.css';
 function MyComponent(){
     return(<div id="demo1" className="demo2">
         This is an example of Css in React Js
     </div>)
 }
+*/
 
-createRoot(document.getElementById("root")).render(<MyComponent/>);
+import styled from 'styled-components';
+const MyParagraph = styled.p`
+    background-color:#234567;
+    color:white;
+    font-family:cursive;
+    font-size:20px;
+`;
+const data = <MyParagraph>
+    <div><h1>Styled Component Example</h1></div>
+    <div>
+        <h3>
+            This is an example of styled component
+        </h3>
+    </div>
+</MyParagraph>
+createRoot(document.getElementById("root")).render(data);

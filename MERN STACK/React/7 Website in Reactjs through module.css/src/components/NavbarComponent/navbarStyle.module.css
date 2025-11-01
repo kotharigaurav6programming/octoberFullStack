@@ -1,0 +1,38 @@
+.nav{
+    top:0;
+    position: sticky;
+    height:50px;
+    background-color: black;
+}
+.nav ul{
+    padding-top: 10px;
+    list-style: none;
+}
+.nav ul li{
+    display: inline;
+}
+.nav ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 23px;
+    font-family: candara;
+    margin-left:55px;
+}
+.nav ul li a:hover{
+    color:orange;
+}
+.nav ul li ul{
+    display: none;
+}
+.nav ul li:hover ul{
+    display: block;
+    position: absolute;
+    width: 160px;
+    margin-left: 405px;
+    background-color: black;
+    border-radius: 0px 0px 20px 20px;
+}
+.nav ul li ul li{
+    margin-left: -45px;
+    line-height: 40px;
+}

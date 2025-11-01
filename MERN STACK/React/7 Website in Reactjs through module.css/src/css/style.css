@@ -1,0 +1,229 @@
+*{
+    margin: 0px;
+}
+#container{
+    height:auto;
+    width: 95%;
+    margin: auto;
+}
+#content{
+    height:210px;
+    background-color: lightyellow;
+}
+#content{
+    padding: 50px;
+    font-family: candara;
+}
+#content p{
+    font-size: 20px;
+    text-align: justify;
+}
+#box{
+    height: 400px;
+    /* background-color: green; */
+    padding: 30px;
+}
+#innerbox{
+    height: 400px;
+    width: 250px;
+    background-color: white;
+    float: left;
+    margin-left: 30px;
+}
+#boximg{
+    height: 200px;
+    width: 250px;   
+}
+#innerbox h2,p{
+    font-family: candara;
+    margin:5px;
+    text-align: justify;
+}
+#innerbox button{
+    background-color: black;
+    color:white;
+    height: 35px;
+    width: 250px;
+    border-style: none;
+    border-radius: 10px;
+}
+#newsletter{
+    height: 140px;
+    background-color: black;
+    padding: 40px;
+    color:white;
+    font-family: candara;
+    text-align: center;
+}
+#newsletter input[type='email']{
+    height: 50px;
+    width: 500px;
+    outline: 0px;
+    font-size: 18px;
+    text-align: center;
+}
+#newsletter input[type='submit']{
+    height: 55px;
+    width: 200px;
+    border-width: 0px;
+    font-size: 18px;
+    background-color: orange;
+    color:white;
+}
+#about{
+    height: 500px;
+    padding: 60px;
+    /* background-color: green; */
+}
+#about1{
+    height: 400px;
+    width: 400px;
+    /* background-color: red; */
+    float: left;
+    margin: 10px;
+    border-radius: 50%;
+}
+#aboutImg{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+}
+#about2{
+    height: 400px;
+    width: 590px;
+    /* background-color: red; */
+    float: left;
+    margin: 10px; 
+    font-family: candara;
+    padding: 20px;
+}
+#about2 p{
+    font-size: 18px;
+}
+#contact{
+    padding: 60px;
+    height: 500px;
+    background-color: whitesmoke;
+    font-family: candara;
+}
+#contact1,#contact2,#contact3{
+    height: 380px;
+    width: 190px;
+    background-color: lightgray;
+    padding: 20px;
+    margin: 10px;
+    float: left;
+    font-family: candara;
+    font-size: 18px;
+}
+#contact4{
+    height: 420px;
+    width: 300px;
+    /* background-color: red; */
+    margin: 10px;
+    float: left;
+}
+#contact1 a,#contact2 a,#contact3 a{
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+    line-height: 40px;
+}
+iframe{
+    height: 420px;
+    width: 300px;
+}
+#footer{
+    padding:10px;
+    font-family: candara;
+    font-size:18px;
+}
+#account{
+    height: auto;
+    width: 330px;
+    background-color: whitesmoke;
+    margin: auto;
+    margin-top: 70px;
+}
+#account button{
+    font-family: candara;
+    height: 50px;
+    width: 165px;
+    font-size: 16px;
+    float: left;
+    border-width: 0px;
+}
+#on{
+    color:white;
+    background-color: black;
+}
+#off{
+    background-color:lightgrey;
+    color: black;
+}
+#space{
+    height: 80px;
+}
+input[type='email'],input[type='password'],input[type='text']{
+    height: 30px;
+    width: 260px;
+    margin-left: 32px;
+    margin-top: 5px;
+    outline: 0px;
+    font-size: 16px;
+    font-family: candara;
+    text-align: center;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-color: black;
+    background-color: transparent;
+    
+}
+input[type='checkbox']{
+    margin-left: 32px;
+    margin-top: 5px;
+}
+#remember{
+    font-size: 16px;
+    font-family: candara;
+}
+input[type='submit'],input[type='reset']{
+    height: 35px;
+    width: 267px;
+    border-radius: 5px;
+    background-color: black;
+    color:white;
+    font-size: 17px;
+    font-family: candara;
+    border-width: 0px;
+    margin-left: 32px;
+    margin-top: 5px;
+}
+
+#link{
+    text-decoration: none;
+    font-family: candara;
+    font-size: 16px;
+    color:darkslategrey;
+}
+#imageSection{
+    height: 280px;
+    width: 254px;
+    float: left;
+    margin: 20px;
+    margin-top: 100px;
+    overflow: hidden;
+}
+#sectionImage{
+    height: 280px;
+    width: 254px;
+}
+#sectionImage:hover{
+    transition: 2s;
+    /* transform: scale(1.1); */
+    /* transform: scaleY(1.2); */
+    /* transform: rotate(360deg); */
+    border-radius: 50%;
+    transform: scaleX(-1);
+}

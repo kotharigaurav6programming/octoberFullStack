@@ -1,0 +1,15 @@
+.header{
+    padding: 8px;
+    height: 70px;
+}
+.logo{
+    height:70px;
+}
+.heading{
+    font-weight: bolder;
+    position: absolute;
+    font-size:35px;
+    margin-left: 20px;
+    margin-top: 13px;
+    font-family: candara;
+}
