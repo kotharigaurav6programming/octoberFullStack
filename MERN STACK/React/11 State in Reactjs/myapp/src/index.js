@@ -7,25 +7,18 @@ import reportWebVitals from './reportWebVitals';
 class AppDemo extends React.Component{
   state = {
     age : 0,
-    name : "",
+    username : "",
     obj : {}
   }
   getData = (event)=>{
     const {name,value} = event.target;
-    console.log("name : ",name);
-    console.log("value : ",value);
-    this.setState({
-      obj : {
-          ...this.state.obj,
-          [name] : value 
-      }
-    });
+    this.state[name] = value;
   }
   handleSubmit = ()=>{
     this.setState({
       obj : {
         age : this.state.age,
-        name : this.state.name
+        username : this.state.username
       }
     });
   }
@@ -52,7 +45,8 @@ class AppDemo extends React.Component{
           onClick={this.handleSubmit}
         />
         <br/>
-        <h2>{this.state.obj.name ? `Name : ${this.state.name}`: ""}</h2>
+       
+        <h2>{this.state.obj.username ? `Name : ${this.state.username}`: ""}</h2>
         <h2>{this.state.obj.age ? `Age : ${this.state.age}`: ""}</h2>
       </>);
   }
