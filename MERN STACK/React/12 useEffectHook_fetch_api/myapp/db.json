@@ -1,0 +1,46 @@
+{
+  "profile": [
+    {
+      "id": "d4df",
+      "username": "Andrew Anderson",
+      "email": "andrew@gmail.com",
+      "address": "Indore Madhya Pradesh",
+      "password": "12345678"
+    },
+    {
+      "id": "fdfb",
+      "username": "Mathew Markson",
+      "email": "mathew@gmail.com",
+      "address": "indore",
+      "password": "123456789"
+    },
+    {
+      "id": "9563",
+      "username": "Simon Sim",
+      "email": "simon@gmail.com",
+      "password": "234567",
+      "address": "indore"
+    },
+    {
+      "id": "9b5f",
+      "username": "demo",
+      "email": "demo@gmail.com",
+      "password": "123",
+      "address": "indore"
+    },
+    {
+      "id": "f4c9",
+      "username": "demo",
+      "email": "demoupdate@gmail.com",
+      "address": "indore",
+      "password": "2345"
+    },
+    {
+      "id": "a58a",
+      "username": "demo",
+      "email": "demoupdate@gmail.com",
+      "address": "indore",
+      "password": "3456"
+    }
+  ]
+}
