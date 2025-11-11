@@ -1,0 +1,11 @@
+Routing :  Routing means giving path
+ Want to show components on different page (having different links) is basically routing is.
+
+Install routing package
+npm install react-router-dom
+
+import package by : 
+import {BrowserRouter as Router, Route,Link} from react-router-dom
+Here we use "as" simply for writing BrowserRouter in short form and that short form we write it Router . Router name which we have given here is userdefined.
+
+https://blog.logrocket.com/creating-navbar-react/

@@ -1,4 +1,4 @@
-CSS
+CSS (Hakon Wium Lie invented CSS)
 ---
 1. Full form of CSS is CASCADING STYLE SHEET.
 
@@ -18,6 +18,12 @@ CSS
 Out of this three CSS, Priority goes to inline CSS, but the recommended approach is to use External CSS.
 
 7. Currently CSS3 is going in the market.
+8. We have several color codes in CSS to put colors on our web page.
+9. We have several ways to implement units in CSS.
+10. We have the concept of BOX MODEL in css (Which includes margin, border and padding)
+11. We have flexbox abd grid system functionality in CSS
+12. CSS comes to overcome the limitations of HTML
+13. CSS is dependent on HTML 
 
 HW : difference between css and css3
 
