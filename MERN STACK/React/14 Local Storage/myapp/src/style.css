@@ -1,0 +1,17 @@
+input[type="text"],input[type="email"],input[type="password"]{
+    height: 30px;
+    width: 300px;
+    font-size: 17px;
+    font-family: cursive;
+    margin: 4px;
+}
+
+input[type="submit"],input[type="reset"]{
+    height: 35px;
+    width: 305px;
+    margin: 4px;
+    border-width: 0px;
+    font-family: cursive;
+    color:white;
+    background-color: #000000;
+}
