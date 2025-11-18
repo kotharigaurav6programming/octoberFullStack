@@ -1,4 +1,5 @@
 function Home(){
+    localStorage.setItem("navShow","null");
     return(<>
         <blockquote>
             <h2>Home Page</h2>

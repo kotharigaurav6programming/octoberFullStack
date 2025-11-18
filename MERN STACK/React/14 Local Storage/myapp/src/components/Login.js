@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../style.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 function Login(){
+    localStorage.setItem("navShow","login");
     const [userObj,setUserObj] = useState({});
     const navigate = useNavigate();
     const location = useLocation();

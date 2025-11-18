@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../style.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 function Register(){
+    localStorage.setItem("navShow","register");
     const [userObj,setUserObj] = useState({});
     const navigate = useNavigate();
     // console.log(navigate);
