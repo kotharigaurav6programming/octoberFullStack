@@ -1,0 +1,23 @@
+The useCallback hook is used when you have a component in which the child is rerendering again and again without need.
+
+Pass an inline callback and an array of dependencies. useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed.
+
+A memoized function "remembers" the results corresponding to some set of specific inputs.
+
+we are going to see how to optimize a React application by passing a memoized function.
+
+"This hook is used to optimize a React application by returning a memoized function, which helps to prevent unnecessary re-creation of the function. This hook stores the cached version of the function and only updates (recreates) the function if the passed dependencies change."
+
+Syntax
+const memoizedCallback = useCallback(() => {doSomething(a, b); }, [a, b],);
+Here, doSomething() function will only be called again on the next re-render if the values of a or b changes; otherwise only the cached version of the function is passed.
+
+Note: useCallback(fn, []) is the same as useMemo(() => fn, []).
+
+Remember
+
+useCallback returns a memoized version of a callback.
+
+useCallback accepts as arguments a callback and a dependencies array.
+
+The callback only changes if one of the dependencies has changed.
