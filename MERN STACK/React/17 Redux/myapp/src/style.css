@@ -1,0 +1,50 @@
+#header{
+    height:100px;
+    padding:20px;
+    background-color: black;
+    color:white;
+}
+#box{
+    height:480px;
+    float: left;
+}
+#leftSection{
+    float: left;
+    width: 200px;
+    padding: 30px;
+    background-color: teal;
+    color:white;
+    font-size: 18px;
+    height:420px;
+}
+#rightSection{
+    float: left;
+    width: 935px;
+    background-color: darkslategrey;
+    color:white;
+    font-size: 18px;
+    padding:30px;
+    height: 420px;
+}
+input[type="text"]{
+    height: 30px;
+    width:300px;
+    font-size: 18px;
+    margin: 10px;
+}
+input[type="submiit"],button{
+    height: 35px;
+    width:200px;
+    font-size: 18px;
+    margin: 10px;
+    background-color: black;
+    color:white;
+    border-width: 0px;
+}
+#footer{
+    height:40px;
+    padding: 10px;
+    background-color: black;
+    clear: both;
+    color:white;
+}
