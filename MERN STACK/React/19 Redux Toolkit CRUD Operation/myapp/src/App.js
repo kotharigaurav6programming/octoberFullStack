@@ -6,7 +6,7 @@ import Header from './components/Header.js';
 import Home from './components/Home.js';
 import AddUser from './components/AddUser.js';
 import ViewUsers from './components/ViewUsers.js';
-
+import UpdateForm from './components/UpdateForm.js';
 function App() {
   return (<blockquote>
     <Router>
@@ -16,6 +16,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/addUser" element={<AddUser/>}/>
         <Route path="/viewUsers" element={<ViewUsers/>}/>
+        <Route path="/updateForm" element={<UpdateForm/>}/>
       </Routes>
     </Router>
   </blockquote>);

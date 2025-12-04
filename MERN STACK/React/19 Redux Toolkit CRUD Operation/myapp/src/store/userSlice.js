@@ -11,15 +11,28 @@ const userSlice = createSlice({
     initialState,
     reducers:{
         addUser : (state,action)=>{
-            console.log(action);
-            state.userArray = [...state.userArray,action.payload]
-            console.log(state.userArray); 
+            // console.log(action);
+            if(state.index==-1){
+                state.userArray = [...state.userArray,action.payload]
+                console.log(state.userArray); 
+            }else{
+                state.userArray.splice(state.index,1,action.payload);
+                state.userArray=[...state.userArray];
+                state.index=-1;
+            }
         },
         deleteUser : (state,action)=>{
-
+            state.userArray.splice(action.payload,1);
+            state.userArray = [...state.userArray];
+        },
+        updateUser : (state,action)=>{
+            console.log(action);
+            
+            state.userObj = action.payload.obj;
+            state.index = action.payload.index;
         }
     }
 });
 
-export const {addUser,deleteUser} = userSlice.actions;
+export const {addUser,deleteUser,updateUser} = userSlice.actions;
 export default userSlice.reducer;
