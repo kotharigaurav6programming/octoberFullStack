@@ -23,3 +23,92 @@
     margin-top: 15px;
     margin-left: 10px;
 }
+#nav{
+    height: 60px;
+    background-color: black;
+    color:white;
+}
+#navOp{
+    color:white;
+    font-size: 22px;
+    text-decoration: none;
+    margin-left: 40px;
+}
+#navOp:hover{
+    color:orange;
+}
+#section{
+    margin-top: 20px;
+    position: absolute;
+}
+#home{
+    height: 400px;
+    /* background-color: red; */
+}
+#bannerId{
+    height: 400px;
+    width: 100%;
+}
+#homeBottom{
+    padding: 20px;
+    line-height: 25px;
+    text-align: justify;
+}
+#donorLeft{
+    width: 50%;
+    padding: 5%;
+    float: left;
+    /* background-color: red; */
+ height: 410px;
+}
+#donorRight{
+    width: 30%;
+    padding: 5%;
+    float: left;
+    /* background-color: green; */
+    height: 410px;
+}
+#donorLogin{
+    height: 100%;
+    width: 100%;
+}
+select,input[type="text"],input[type="email"],input[type="password"]{
+    height: 30px;
+    width: 300px;
+    margin: 5px;
+    font-size: 18px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 2px;
+    outline: 0px;
+    border-bottom-color: black;
+}
+textarea{
+    height: 40px;
+    width: 300px;
+    margin: 5px;
+    font-size: 18px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 2px;
+    outline: 0px;
+    border-bottom-color: black;
+}
+input[type="submit"],input[type="reset"]{
+    height: 35px;
+    width: 305px;
+    border-width: 0px;
+    background-color: black;
+    color:white;
+    font-size: 17px;
+    margin: 5px;
+    border-radius: 10px;
+}
+#registrationLink{
+    color: black;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 16px;
+}
