@@ -8,6 +8,7 @@ import cors from 'cors';
 import adminRouter from "./router/adminRouter.js";
 import ngoRouter from "./router/ngoRouter.js";
 import donorRouter from "./router/donorRouter.js";
+import mongoose from "mongoose";
 dotenv.config();
 var app = express();
 mongoose.connect(url);

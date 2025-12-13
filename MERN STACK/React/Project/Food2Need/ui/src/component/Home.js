@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {createRoot} from 'react-dom/client';
 import banner from '../images/banner.jpg';
+import { useDispatch } from 'react-redux';
+import { resetMessage } from '../store/donorSlice.js';
 function Home(){
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(resetMessage(''));
+    });
     return (<div>
         <div id="home">
             <img src={banner} id="bannerId" alt="Banner"/>

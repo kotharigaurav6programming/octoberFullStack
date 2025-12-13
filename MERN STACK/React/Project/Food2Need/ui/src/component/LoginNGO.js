@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {createRoot} from 'react-dom/client';
 import loginDonor from '../images/donorLogin.jpg'
 import { Link } from 'react-router-dom';
+import { resetMessage } from '../store/donorSlice.js';
+import { useDispatch } from 'react-redux';
+
 function LoginNGO(){
+        const dispatch = useDispatch();
+        useEffect(()=>{
+            dispatch(resetMessage(''));
+        });
     const getData = (event)=>{
 
     }

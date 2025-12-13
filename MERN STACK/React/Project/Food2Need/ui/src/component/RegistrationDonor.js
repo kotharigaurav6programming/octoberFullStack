@@ -1,10 +1,30 @@
-import React from 'react';
-import {createRoot} from 'react-dom/client';
+import React, { useEffect, useState } from 'react';
+import {useDispatch} from 'react-redux';
 import loginDonor from '../images/donorLogin.jpg'
-import { Link } from 'react-router-dom';
-function RegistrationDonor(){
-    const getData = (event)=>{
+import { Link, useNavigate } from 'react-router-dom';
+import { donorRegistrationThunk } from '../store/donorSlice.js';
+import { resetMessage } from '../store/donorSlice.js';
 
+function RegistrationDonor(){
+    const [donorData,setDonorData] = useState({});
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+        useEffect(()=>{
+            dispatch(resetMessage(''));
+        });
+    
+    const getData = (event)=>{
+        const {name,value} = event.target;
+        setDonorData({
+            ...donorData,
+            [name]:value
+        });
+    }
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        dispatch(donorRegistrationThunk(donorData));
+        navigate("/donorLogin");
+        event.target.reset();
     }
     return (<div>
         <div id="donorLeft">
@@ -12,7 +32,7 @@ function RegistrationDonor(){
         </div>
         <div id="donorRight">
             <h2>Donor Registration</h2> <br/>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder='Enter Username'

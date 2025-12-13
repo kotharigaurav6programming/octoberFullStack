@@ -2,7 +2,9 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 import loginDonor from '../images/donorLogin.jpg'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 function LoginDonor(){
+    const donorObj = useSelector(state=> state.donor);
     const getData = (event)=>{
 
     }
@@ -12,6 +14,7 @@ function LoginDonor(){
         </div>
         <div id="donorRight">
             <h2>Donor Login</h2> <br/>
+            {donorObj.message}
             <form>
                 <input
                     type="email"
