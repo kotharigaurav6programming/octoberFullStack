@@ -9,6 +9,8 @@ import LoginNGO from './component/LoginNGO.js';
 import LoginAdmin from './component/LoginAdmin.js';
 import RegistrationDonor from './component/RegistrationDonor.js';
 import RegistrationNGO from './component/RegistrationNGO.js';
+import DonorHome from './component/DonorHome.js';
+
 function App() {
   return (<div id="container">
     <Header/>
@@ -21,6 +23,7 @@ function App() {
           <Route path="/ngoLogin" element={<LoginNGO/>}/>
           <Route path="/donorRegistration" element={<RegistrationDonor/>}/>
           <Route path="/ngoRegistration" element={<RegistrationNGO/>}/>
+          <Route path="/donorHome" element={<DonorHome/>}/>
           
 
         </Routes>

@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {createRoot} from 'react-dom/client';
 import loginDonor from '../images/donorLogin.jpg'
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { donorLoginThunk } from '../store/donorSlice.js';
 function LoginDonor(){
     const donorObj = useSelector(state=> state.donor);
+    const [donorData,setDonorData] = useState();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const getData = (event)=>{
-
+        const {name,value} = event.target;
+        setDonorData({
+            ...donorData,
+            [name]:value
+        })
+    }
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+            dispatch(donorLoginThunk(donorData));
+            navigate('/donorHome');
+        event.target.reset();
     }
     return (<div>
         <div id="donorLeft">
@@ -15,12 +29,12 @@ function LoginDonor(){
         <div id="donorRight">
             <h2>Donor Login</h2> <br/>
             {donorObj.message}
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     type="email"
                     placeholder='Enter Email'
-                    name="email"
-                    id="email"
+                    name="_id"
+                    id="_id"
                     onChange={getData}
                 /> <br/>
                 <input
