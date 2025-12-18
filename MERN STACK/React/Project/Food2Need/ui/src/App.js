@@ -10,7 +10,7 @@ import LoginAdmin from './component/LoginAdmin.js';
 import RegistrationDonor from './component/RegistrationDonor.js';
 import RegistrationNGO from './component/RegistrationNGO.js';
 import DonorHome from './component/DonorHome.js';
-
+import DonorAddFood from './component/DonorAddFood.js';
 function App() {
   return (<div id="container">
     <Header/>
@@ -24,6 +24,7 @@ function App() {
           <Route path="/donorRegistration" element={<RegistrationDonor/>}/>
           <Route path="/ngoRegistration" element={<RegistrationNGO/>}/>
           <Route path="/donorHome" element={<DonorHome/>}/>
+          <Route path="/donorAddFood" element={<DonorAddFood/>}/>
           
 
         </Routes>

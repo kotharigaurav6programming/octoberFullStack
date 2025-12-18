@@ -3,8 +3,11 @@ import bcrypt from 'bcrypt';
 import donorSchema from '../model/donorSchema.js';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
+import {fileURLToPath} from 'url';
+
 dotenv.config();
 const DONOR_SECRET_KEY = process.env.DONOR_SECRET;
+
 export const addDonorController = async(request,response)=>{
     try{
         request.body.userId = uuid4();
@@ -29,6 +32,8 @@ export const loginDonorController = async(request,response)=>{
         if(donorObj){
             const existingPassword = donorObj.password;
             const status = await bcrypt.compare(password,existingPassword);
+            console.log("password status : "+status);
+            
             if(status){
                 const donorPayload = {
                     _id : _id,
@@ -39,14 +44,27 @@ export const loginDonorController = async(request,response)=>{
                 }
                 const token = await jwt.sign(donorPayload,DONOR_SECRET_KEY,expiryTime);
                 response.status(200).send({_id,donorToken:token});
-            }else
+            }else{
+                console.log("incorrect password");                
                 response.status(401).send();
+            }
         }else{
+            console.log("object not found");
             response.status(401).send();
         }
 
     }catch(error){
         console.log("Error in loginDonorController : ",error);
+        response.status(500).send();
+    }
+}
+
+export const donorAddFoodController = async(request,response)=>{
+    try{
+        const filename = request.body.files;
+        const __filename = fileURLToPath();
+    }catch(error){
+        console.log("Error in donorAddFoodController : ",error);
         response.status(500).send();
     }
 }

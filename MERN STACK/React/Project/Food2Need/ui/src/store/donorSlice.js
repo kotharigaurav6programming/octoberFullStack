@@ -14,7 +14,7 @@ const initialState = {
 const donorLoginThunk = createAsyncThunk('donorSlice/donorLoginThunk',async(donorObj)=>{
     try{
         const result = await axios.post(requestedDonorURL+'/loginDonor',donorObj);
-        // console.log("result received : ",result);
+         console.log("result received : ",result);
         jscookie.set("donorTokenData",result.data.donorToken,{expires:1});
         jscookie.set("donorEmail",result.data._id,{expires:1});
         return result;
@@ -34,6 +34,17 @@ const donorRegistrationThunk = createAsyncThunk('donorSlice/donorRegistrationThu
         return result;
     }
 });
+const donorAddFoodThunk = createAsyncThunk('donorSlice/donorAddFoodThunk',async(foodObj)=>{
+    try{
+        var result = await axios.post(requestedDonorURL+'/donorAddFood',foodObj);
+        console.log("result received : ",result);
+        return result;
+    }catch(error){
+        console.log("Error in donorAddFoodThunk : ",error);
+        return result;
+    }
+});
+
 const donorSlice = createSlice({
     name:"donorSlice",
     initialState,
@@ -60,14 +71,26 @@ const donorSlice = createSlice({
             .addCase(donorLoginThunk.pending,(state)=>{})
             .addCase(donorLoginThunk.fulfilled,(state,action)=>{
                 console.log("action : ",action);
-                // state.status = action.payload.status;
-                // if(state.status==200)
-                //     state.loggedInEmail = action.payload.data._id;       
-                
-                // we need to manage condition on action.payload = undefined
+                if(action.payload == undefined){
+                    state.status = 500;
+                }
+                if(action.payload?.status==200){
+                    state.loggedInEmail = action.payload.data._id;       
+                    console.log("state.loggedInEmail : ",state.loggedInEmail);
+                    state.status = action.payload.status;
+                }
             })
             .addCase(donorLoginThunk.rejected,(state)=>{})
-    }
+
+        builder
+            .addCase(donorAddFoodThunk.pending,(state)=>{})
+            .addCase(donorAddFoodThunk.fulfilled,(state,action)=>{
+                console.log("action : ",action);
+                
+            })
+            .addCase(donorAddFoodThunk.rejected,(state)=>{})
+
+        }
 });
 
 export {donorRegistrationThunk,donorLoginThunk};
