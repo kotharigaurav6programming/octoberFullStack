@@ -4,7 +4,8 @@ import donorSchema from '../model/donorSchema.js';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import {fileURLToPath} from 'url';
-
+import path from 'path';
+import surplusFoodSchema from '../model/surplusFoodSchema.js';
 dotenv.config();
 const DONOR_SECRET_KEY = process.env.DONOR_SECRET;
 
@@ -42,7 +43,7 @@ export const loginDonorController = async(request,response)=>{
                 const expiryTime = {
                     expiresIn : '365d'
                 }
-                const token = await jwt.sign(donorPayload,DONOR_SECRET_KEY,expiryTime);
+                const token = jwt.sign(donorPayload,DONOR_SECRET_KEY,expiryTime);
                 response.status(200).send({_id,donorToken:token});
             }else{
                 console.log("incorrect password");                
@@ -61,8 +62,30 @@ export const loginDonorController = async(request,response)=>{
 
 export const donorAddFoodController = async(request,response)=>{
     try{
-        const filename = request.body.files;
-        const __filename = fileURLToPath();
+        console.log("======================= > ",request.body);
+        
+        const filename = request.files.foodPic;
+        console.log("============> ",filename);
+        
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+
+        const fileName = new Date().getTime()+filename.name;
+        const pathName = path.join(__dirname.replace("\\controller","")+'/public/donorImages/'+fileName);
+        filename.mv(pathName,async (error)=>{
+            if(error){
+                console.log("Error while uploading image");
+                response.status(415).send();
+            }else{
+                request.body.surplusId = uuid4();
+                request.body.foodPic = fileName;
+                const donorObj = await donorSchema.findOne({_id:request.body.userEmailId});
+                request.body.userId = donorObj.userId;
+                const result = await surplusFoodSchema.create(request.body);
+                console.log("added surplus food status : ",result);
+                response.status(200).send();
+            }
+        });
     }catch(error){
         console.log("Error in donorAddFoodController : ",error);
         response.status(500).send();

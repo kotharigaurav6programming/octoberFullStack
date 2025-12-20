@@ -37,7 +37,7 @@ const donorRegistrationThunk = createAsyncThunk('donorSlice/donorRegistrationThu
 const donorAddFoodThunk = createAsyncThunk('donorSlice/donorAddFoodThunk',async(foodObj)=>{
     try{
         var result = await axios.post(requestedDonorURL+'/donorAddFood',foodObj);
-        console.log("result received : ",result);
+        console.log("result received in thunk : ",result);
         return result;
     }catch(error){
         console.log("Error in donorAddFoodThunk : ",error);
@@ -93,6 +93,6 @@ const donorSlice = createSlice({
         }
 });
 
-export {donorRegistrationThunk,donorLoginThunk};
+export {donorRegistrationThunk,donorLoginThunk,donorAddFoodThunk};
 export const {resetMessage} = donorSlice.actions;
 export default donorSlice.reducer;

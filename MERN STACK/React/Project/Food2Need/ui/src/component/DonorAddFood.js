@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import loginDonor from '../images/donorLogin.jpg'
+import { donorAddFoodThunk } from '../store/donorSlice';
 
 function DonorAddFood(){
+    const donorObj = useSelector(state=>state.donor);
     const[foodObj,setFoodObj] = useState({});
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const getData = (event)=>{
         var {name,value} = event.target;
         if(event.target.type=="file"){
             // console.log("event.target : ",event.target.files);
             value = event.target.files[0];
-            // console.log("value of file : ",value);
+             console.log("value of file : ",value);
             setFoodObj({
                 ...foodObj,
                 [name]:value
@@ -30,6 +34,11 @@ function DonorAddFood(){
                 formData.append(key,foodObj[key]);
             }
         }
+        formData.append("userEmailId",donorObj.loggedInEmail);
+        console.log("formData : ",formData);
+        
+        dispatch(donorAddFoodThunk(formData));
+        navigate("/donorHome");
         event.target.reset();
     }
     return (<div>
@@ -38,7 +47,7 @@ function DonorAddFood(){
                 </div>
         <div id="donorRight">
             <h2>Donor Add Food</h2> <br/>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} enctype="multipart/form-data">
                 <input
                     type="text"
                     placeholder='Enter Function Name'
@@ -87,7 +96,7 @@ function DonorAddFood(){
                     id="pickuptill"
                     onChange={getData}
                 /> <br/>
-                <select name="category" id="category">
+                <select name="category" id="category" onChange={getData}>
                     <option value="">Select Category</option>
                     <option value="Veg">Veg</option>
                     <option value="NonVeg">NonVeg</option>
