@@ -86,7 +86,15 @@ const donorSlice = createSlice({
             .addCase(donorAddFoodThunk.pending,(state)=>{})
             .addCase(donorAddFoodThunk.fulfilled,(state,action)=>{
                 console.log("action : ",action);
-                
+                if(action.payload == undefined){
+                    state.status = 500;
+                }
+                state.status = action.payload?.status;
+                if(state.status==200){
+                    state.message = "Surplus Food Added Successfull"
+                }else{
+                    state.message = "Error while Adding Surplus Food"
+                }
             })
             .addCase(donorAddFoodThunk.rejected,(state)=>{})
 

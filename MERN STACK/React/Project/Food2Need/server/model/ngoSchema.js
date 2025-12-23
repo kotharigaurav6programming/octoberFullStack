@@ -33,33 +33,28 @@ const ngoSchema = mongoose.Schema({
         type: String,
         required : true
     },
-    pic : {
+    ngoPic : {
         type: String,
         required : true
     },
     status : {
         type: String,
-        required : true,
         default : true    
     },
     emailVerify : {
         type: String,
-        required : true,
         default:false
     },
     adminVerify : {
         type: String,
-        required : true,
         default : false
     },
     createdAt : {
         type: String,
-        required : true,
         default : ()=> moment().format("DD/MM/YYYY")
     },
     uploadedAT : {
         type : String,
-        required : true,
         default : ()=> moment().format("hh:mm:ss A")
     }
 });

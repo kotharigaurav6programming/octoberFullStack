@@ -1,23 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {createRoot} from 'react-dom/client';
 import loginDonor from '../images/donorLogin.jpg'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { ngoRegistrationThunk } from '../store/ngoSlice.js';
 function RegistrationNGO(){
+    const [ngoData,setNGOData] = useState({});
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+        
     const getData = (event)=>{
-
+        var {name,value} = event.target;
+        if(event.target.type=="file"){
+            // console.log("event.target : ",event.target.files);
+            value = event.target.files[0];
+             console.log("value of file : ",value);
+            setNGOData({
+                ...ngoData,
+                [name]:value
+            });
+        }else{
+            setNGOData({
+                ...ngoData,
+                [name]:value
+            })
+        }
     }
+   
+     const handleSubmit = (event)=>{
+            event.preventDefault();
+            const formData = new FormData();
+            for(var key in ngoData){
+                if(ngoData[key]){
+                    formData.append(key,ngoData[key]);
+                }
+            }
+            console.log("formData : ",formData);
+            
+            dispatch(ngoRegistrationThunk(formData));
+        navigate("/ngoLogin");
+        event.target.reset();
+        }
     return (<div>
         <div id="donorLeft">
             <img src={loginDonor} id="donorLogin" alt="Login"/>
         </div>
         <div id="donorRight">
             <h2>NGO Registration</h2> <br/>
-            <form>
+            <form onSubmit={handleSubmit} enctype="multipart/form-data">
                 <input
                     type="text"
                     placeholder='Enter name'
-                    name="name"
-                    id="name"
+                    name="ngoName"
+                    id="ngoName"
                     onChange={getData}
                 /> <br/>
                 <input
@@ -62,6 +97,12 @@ function RegistrationNGO(){
                     id="address"
                     onChange={getData}
                 /> <br/> 
+                <input
+                    type="file"
+                    name="ngoPic"
+                    id="ngoPic"
+                    onChange={getData}
+                /> <br/>
                 <input
                     type="submit"
                     value="Registration"

@@ -43,9 +43,11 @@ function DonorAddFood(){
     }
     return (<div>
           <div id="donorLeft">
+            <h2>Welcome {donorObj.loggedInEmail}</h2>
                     <img src={loginDonor} id="donorLogin" alt="Login"/>
                 </div>
         <div id="donorRight">
+            
             <h2>Donor Add Food</h2> <br/>
             <form onSubmit={handleSubmit} enctype="multipart/form-data">
                 <input
