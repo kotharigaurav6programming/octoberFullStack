@@ -90,3 +90,23 @@ export const addNGOController = async(request,response)=>{
 //     }
 // }
 
+export const ngoVerifyEmailController = async(request,response)=>{
+    try{
+        var _id = request.body._id;
+        var updateStatus = {
+            $set : {
+                emailVerify : true
+            }
+        }
+        const result = await ngoSchema.updateOne({_id},updateStatus);
+        console.log("Result of email verify : ",result);
+        if(result.modifiedCount==1){
+            response.redirect("http://localhost:3000/ngoLogin?message='Email Verified | Wait for Admin Approval'");
+        }else{
+            response.redirect("http://localhost:3000/ngoLogin?message='Already Verified'");
+        }
+    }catch(error){
+        console.log("Error while verifying ngo : ",error);  
+        response.redirect("http://localhost:3000/ngoLogin?message='Something went wrong'");   
+    }
+}

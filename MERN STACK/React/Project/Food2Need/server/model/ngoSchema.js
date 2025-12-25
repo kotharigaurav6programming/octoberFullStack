@@ -38,15 +38,15 @@ const ngoSchema = mongoose.Schema({
         required : true
     },
     status : {
-        type: String,
+        type: Boolean,
         default : true    
     },
     emailVerify : {
-        type: String,
+        type: Boolean,
         default:false
     },
     adminVerify : {
-        type: String,
+        type: Boolean,
         default : false
     },
     createdAt : {

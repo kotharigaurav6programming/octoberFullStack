@@ -9,9 +9,22 @@ import adminRouter from "./router/adminRouter.js";
 import ngoRouter from "./router/ngoRouter.js";
 import donorRouter from "./router/donorRouter.js";
 import mongoose from "mongoose";
+import { adminCredentials } from "./utility/adminUtility.js";
 dotenv.config();
 var app = express();
 mongoose.connect(url);
+
+// insertion of admin credentials starts
+   (async()=>{
+    console.log("Gets entry for admin credentials");
+        try{
+            var res = await adminCredentials();
+        }catch(error){
+            console.log("Error while dealing with admin data insertion : ",error);
+        }
+    console.log("admin credentials scope ends");
+   })(); 
+// insertion of admin credentials stops
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());

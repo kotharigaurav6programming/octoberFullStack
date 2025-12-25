@@ -6,10 +6,16 @@ import { resetMessage } from '../store/donorSlice.js';
 import { useDispatch } from 'react-redux';
 
 function LoginNGO(){
-        const dispatch = useDispatch();
-        useEffect(()=>{
-            dispatch(resetMessage(''));
-        });
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(resetMessage(''));
+    });
+    var message;
+
+    var urlSearch = new URLSearchParams(window.location.search);
+    if(urlSearch.size==1)
+       message = urlSearch.get("message");
+
     const getData = (event)=>{
 
     }
@@ -19,6 +25,7 @@ function LoginNGO(){
         </div>
         <div id="donorRight">
             <h2>NGO Login</h2> <br/>
+            {message}
             <form>
                 <input
                     type="email"
