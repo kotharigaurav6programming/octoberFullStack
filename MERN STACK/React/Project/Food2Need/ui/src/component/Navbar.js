@@ -27,6 +27,16 @@ function Navbar(){
                     <Link id="navOp" to="/">Profile</Link>
                     <Link id="navOp" to="/">Logout</Link>
                 </div>);
+            }else if(navObj.navShow=="admin"){
+                setNavBar(<div id="section">
+                    <Link id="navOp" to="/">Home</Link>
+                    <Link id="navOp" to="/adminNGOList">NGOList</Link>
+                    <Link id="navOp" to="/">SurplusFood</Link>
+                    <Link id="navOp" to="/">ActiveNGO</Link>
+                    <Link id="navOp" to="/">Blog</Link>
+                    <Link id="navOp" to="/">Profile</Link>
+                    <Link id="navOp" to="/">Logout</Link>
+                </div>);
             }
         },500);
         return ()=> clearInterval(timer);

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
 import { requestedDonorURL } from "../utils.js";
 import jscookie from 'js-cookie';
-const donorCookieData = jscookie.get("donorCookieData");
+const donorTokenData = jscookie.get("donorTokenData");
 
 const initialState = {
     loggedInEmail : '',

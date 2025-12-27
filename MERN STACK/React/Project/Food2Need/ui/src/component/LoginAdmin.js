@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {createRoot} from 'react-dom/client';
 import loginDonor from '../images/donorLogin.jpg'
-import { Link } from 'react-router-dom';
-function LoginAdmin(){
-    const getData = (event)=>{
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { adminLoginThunk } from '../store/adminSlice.js';
 
+function LoginAdmin(){
+    const adminObj = useSelector(state=> state.admin);
+    const [adminData,setAdminData] = useState();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const getData = (event)=>{
+        const {name,value} = event.target;
+        setAdminData({
+            ...adminData,
+            [name]:value
+        })
+    }
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+            dispatch(adminLoginThunk(adminData));
+            navigate('/adminHome');
+        event.target.reset();
     }
     return (<div>
         <div id="donorLeft">
@@ -12,7 +29,7 @@ function LoginAdmin(){
         </div>
         <div id="donorRight">
             <h2>Admin Login</h2> <br/>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     type="email"
                     placeholder='Enter Email'
