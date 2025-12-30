@@ -33,6 +33,15 @@ const adminViewNGOListThunk = createAsyncThunk('adminSlice/adminViewNGOListThunk
         console.log("Error in adminViewNGOListThunk : ",error);
     }
 });
+const adminVerifyNGOThunk = createAsyncThunk('adminSlice/adminVerifyNGOThunk',async(ngoEmailObj)=>{
+    try{
+        const result = await axios.post(requestedAdminURL+'/adminVerifyNGO?adminTokenData='+adminTokenData,ngoEmailObj);
+        console.log("result received : ",result);
+        return result;
+    }catch(error){
+        console.log("Error in adminVerifyNGOThunk : ",error);
+    }
+});
 
 const adminSlice = createSlice({
     name:"adminSlice",
@@ -71,10 +80,26 @@ const adminSlice = createSlice({
                     }
                 })
                 .addCase(adminViewNGOListThunk.rejected,(state)=>{})
-    
+
+            builder
+                .addCase(adminVerifyNGOThunk.pending,(state)=>{})
+                .addCase(adminVerifyNGOThunk.fulfilled,(state,action)=>{
+                    console.log("action : ",action);
+                    if(action.payload == undefined){
+                        state.status = 500;
+                    }
+                    if(action.payload?.status==200){
+                        state.loggedInEmail = action.payload.data.email;
+                        state.ngoArray = action.payload.data.ngoList;       
+                        console.log("state.loggedInEmail : ",state.loggedInEmail);
+                        state.status = action.payload.status;
+                    }
+                })
+                .addCase(adminVerifyNGOThunk.rejected,(state)=>{})
+                
             }
 });
 
-export {adminLoginThunk,adminViewNGOListThunk};
+export {adminLoginThunk,adminViewNGOListThunk,adminVerifyNGOThunk};
 //export {} = adminSlice.actions;
 export default adminSlice.reducer;

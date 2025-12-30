@@ -56,3 +56,21 @@ export const adminViewNGOListController  = async(request,response)=>{
         response.status(500).send();
     }
 }
+
+export const adminVerifyNGOController  = async(request,response)=>{
+    try{
+        var _id = request.body._id;
+        var updateStatus = {
+            $set :{
+                adminVerify : true
+            }
+        }
+        var result = await ngoSchema.updateOne({_id},updateStatus);
+        console.log("Result of adminVerify ngo : ",result);        
+        var ngoList = await ngoSchema.find();
+        response.status(200).send({email:request.adminPayload.email,ngoList});
+    }catch(error){
+        console.log("Error while adminVerifyNgoController : ",error);
+        response.status(500).send();
+    }
+}

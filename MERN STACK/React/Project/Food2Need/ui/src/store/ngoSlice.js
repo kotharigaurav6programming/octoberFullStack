@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
 import { requestedNGOURL } from "../utils.js";
 import jscookie from 'js-cookie';
-const ngoCookieData = jscookie.get("ngoCookieData");
+const ngoTokenData = jscookie.get("ngoTokenData");
 
 const initialState = {
     loggedInEmail : '',
@@ -11,17 +11,17 @@ const initialState = {
     status : '',
     message : ''
 };
-// const donorLoginThunk = createAsyncThunk('donorSlice/donorLoginThunk',async(donorObj)=>{
-//     try{
-//         const result = await axios.post(requestedDonorURL+'/loginDonor',donorObj);
-//          console.log("result received : ",result);
-//         jscookie.set("donorTokenData",result.data.donorToken,{expires:1});
-//         jscookie.set("donorEmail",result.data._id,{expires:1});
-//         return result;
-//     }catch(error){
-//         console.log("Error in donorLoginThunk : ",error);
-//     }
-// });
+const ngoLoginThunk = createAsyncThunk('ngoSlice/ngoLoginThunk',async(ngoObj)=>{
+    try{
+        const result = await axios.post(requestedNGOURL+'/loginNgo',ngoObj);
+         console.log("result received : ",result);
+        jscookie.set("ngoTokenData",result.data.ngoToken,{expires:1});
+        jscookie.set("ngoEmail",result.data._id,{expires:1});
+        return result;
+    }catch(error){
+        console.log("Error in ngoLoginThunk : ",error);
+    }
+});
 
 const ngoRegistrationThunk = createAsyncThunk('ngoSlice/ngoRegistrationThunk',async(ngoObj)=>{
     var result;
@@ -57,24 +57,24 @@ const ngoSlice = createSlice({
             })
             .addCase(ngoRegistrationThunk.rejected,(state)=>{})
 
-        // builder
-        //     .addCase(donorLoginThunk.pending,(state)=>{})
-        //     .addCase(donorLoginThunk.fulfilled,(state,action)=>{
-        //         console.log("action : ",action);
-        //         if(action.payload == undefined){
-        //             state.status = 500;
-        //         }
-        //         if(action.payload?.status==200){
-        //             state.loggedInEmail = action.payload.data._id;       
-        //             console.log("state.loggedInEmail : ",state.loggedInEmail);
-        //             state.status = action.payload.status;
-        //         }
-        //     })
-        //     .addCase(donorLoginThunk.rejected,(state)=>{})
+        builder
+            .addCase(ngoLoginThunk.pending,(state)=>{})
+            .addCase(ngoLoginThunk.fulfilled,(state,action)=>{
+                console.log("action : ",action);
+                if(action.payload == undefined){
+                    state.status = 500;
+                }
+                if(action.payload?.status==200){
+                    state.loggedInEmail = action.payload.data._id;       
+                    console.log("state.loggedInEmail : ",state.loggedInEmail);
+                    state.status = action.payload.status;
+                }
+            })
+            .addCase(ngoLoginThunk.rejected,(state)=>{})
 
         }
 });
 
-export {ngoRegistrationThunk};
+export {ngoRegistrationThunk,ngoLoginThunk};
 export const {resetMessage} = ngoSlice.actions;
 export default ngoSlice.reducer;

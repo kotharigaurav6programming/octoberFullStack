@@ -52,43 +52,43 @@ export const addNGOController = async(request,response)=>{
         }
 }
 
-// export const loginDonorController = async(request,response)=>{
-//     try{
-//         const {_id,password} = request.body;
-//         console.log("gets entry email : "+_id+" and password : "+password);
+export const loginNgoController = async(request,response)=>{
+    try{
+        const {_id,password} = request.body;
+        console.log("gets entry email : "+_id+" and password : "+password);
         
-//         const donorObj = await donorSchema.findOne({_id:_id});
-//         console.log("donorObj : ",donorObj);
+        const ngoObj = await ngoSchema.findOne({_id:_id});
+        console.log("ngoObj : ",ngoObj);
         
-//         if(donorObj){
-//             const existingPassword = donorObj.password;
-//             const status = await bcrypt.compare(password,existingPassword);
-//             console.log("password status : "+status);
+        if(ngoObj){
+            const existingPassword = ngoObj.password;
+            const status = await bcrypt.compare(password,existingPassword);
+            console.log("password status : "+status);
             
-//             if(status){
-//                 const donorPayload = {
-//                     _id : _id,
-//                     role:"donor"
-//                 }
-//                 const expiryTime = {
-//                     expiresIn : '365d'
-//                 }
-//                 const token = jwt.sign(donorPayload,DONOR_SECRET_KEY,expiryTime);
-//                 response.status(200).send({_id,donorToken:token});
-//             }else{
-//                 console.log("incorrect password");                
-//                 response.status(401).send();
-//             }
-//         }else{
-//             console.log("object not found");
-//             response.status(401).send();
-//         }
+            if(status){
+                const ngoPayload = {
+                    _id : _id,
+                    role:"ngo"
+                }
+                const expiryTime = {
+                    expiresIn : '365d'
+                }
+                const token = jwt.sign(ngoPayload,NGO_SECRET_KEY,expiryTime);
+                response.status(200).send({_id,ngoToken:token});
+            }else{
+                console.log("incorrect password");                
+                response.status(401).send();
+            }
+        }else{
+            console.log("object not found");
+            response.status(401).send();
+        }
 
-//     }catch(error){
-//         console.log("Error in loginDonorController : ",error);
-//         response.status(500).send();
-//     }
-// }
+    }catch(error){
+        console.log("Error in loginNgoController : ",error);
+        response.status(500).send();
+    }
+}
 
 export const ngoVerifyEmailController = async(request,response)=>{
     try{
