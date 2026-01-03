@@ -6,6 +6,8 @@ import jwt from 'jsonwebtoken';
 import {fileURLToPath} from 'url';
 import path from 'path';
 import mailer from './mailer.js';
+import surplusFoodSchema from '../model/surplusFoodSchema.js';
+
 dotenv.config();
 const NGO_SECRET_KEY = process.env.NGO_SECRET;
 
@@ -108,5 +110,34 @@ export const ngoVerifyEmailController = async(request,response)=>{
     }catch(error){
         console.log("Error while verifying ngo : ",error);  
         response.redirect("http://localhost:3000/ngoLogin?message='Something went wrong'");   
+    }
+}
+
+export const ngoSurplusFoodListController  = async(request,response)=>{
+    try{
+        var surplusFoodList = await surplusFoodSchema.find();
+        response.status(200).send({_id:request.ngoPayload._id,surplusFoodList});
+    }catch(error){
+        console.log("Error while ngoSurplusFoodListController : ",error);
+        response.status(500).send();
+    }
+}
+
+export const ngoApplyForFoodController  = async(request,response)=>{
+    try{
+        var surplusId = request.body.surplusId;
+        var _id = request.body.ngoEmail;
+        var updateStatus = {
+            $set :{
+                allocatedNgoId : _id
+            }
+        }
+        var result = await surplusFoodSchema.updateOne({surplusId},updateStatus);
+        console.log("Result of ngoApplyForFood : ",result);        
+        var surplusFoodList = await surplusFoodSchema.find();
+        response.status(200).send({_id:request.ngoPayload._id,surplusFoodList});
+    }catch(error){
+        console.log("Error while ngoApplyForFoodController : ",error);
+        response.status(500).send();
     }
 }

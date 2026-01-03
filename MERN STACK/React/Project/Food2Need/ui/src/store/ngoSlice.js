@@ -8,9 +8,29 @@ const initialState = {
     loggedInEmail : '',
     ngoObj : {},
     ngoArray : [],
+    surplusFoodArray : [],
     status : '',
     message : ''
 };
+const surplusFoodListThunk = createAsyncThunk('ngoSlice/surplusFoodListThunk',async()=>{
+    try{
+        const result = await axios.get(requestedNGOURL+'/ngoSurplusFoodList?ngoTokenData='+ngoTokenData);
+        console.log("result received : ",result);
+        return result;
+    }catch(error){
+        console.log("Error in surplusFoodListThunk : ",error);
+    }
+});
+const ngoApplyForFoodThunk = createAsyncThunk('ngoSlice/ngoApplyForFoodThunk',async(surplusIdObj)=>{
+    try{
+        const result = await axios.post(requestedNGOURL+'/ngoApplyForFood?ngoTokenData='+ngoTokenData,surplusIdObj);
+        console.log("result received : ",result);
+        return result;
+    }catch(error){
+        console.log("Error in ngoApplyForFoodThunk : ",error);
+    }
+});
+
 const ngoLoginThunk = createAsyncThunk('ngoSlice/ngoLoginThunk',async(ngoObj)=>{
     try{
         const result = await axios.post(requestedNGOURL+'/loginNgo',ngoObj);
@@ -72,9 +92,41 @@ const ngoSlice = createSlice({
             })
             .addCase(ngoLoginThunk.rejected,(state)=>{})
 
+            builder
+                .addCase(surplusFoodListThunk.pending,(state)=>{})
+                .addCase(surplusFoodListThunk.fulfilled,(state,action)=>{
+                    console.log("action : ",action);
+                    if(action.payload == undefined){
+                        state.status = 500;
+                    }
+                    if(action.payload?.status==200){
+                        state.loggedInEmail = action.payload.data._id;
+                        state.surplusFoodArray = action.payload.data.surplusFoodList;       
+                        console.log("state.loggedInEmail : ",state.loggedInEmail);
+                        state.status = action.payload.status;
+                    }
+                })
+                .addCase(surplusFoodListThunk.rejected,(state)=>{})
+             builder
+                .addCase(ngoApplyForFoodThunk.pending,(state)=>{})
+                .addCase(ngoApplyForFoodThunk.fulfilled,(state,action)=>{
+                    console.log("action : ",action);
+                    if(action.payload == undefined){
+                        state.status = 500;
+                    }
+                    if(action.payload?.status==200){
+                        state.loggedInEmail = action.payload.data._id;
+                        state.surplusFoodArray = action.payload.data.surplusFoodList;       
+                        console.log("state.loggedInEmail : ",state.loggedInEmail);
+                        state.status = action.payload.status;
+                    }
+                })
+                .addCase(ngoApplyForFoodThunk.rejected,(state)=>{})
+            
+
         }
 });
 
-export {ngoRegistrationThunk,ngoLoginThunk};
+export {ngoRegistrationThunk,ngoLoginThunk,surplusFoodListThunk,ngoApplyForFoodThunk};
 export const {resetMessage} = ngoSlice.actions;
 export default ngoSlice.reducer;

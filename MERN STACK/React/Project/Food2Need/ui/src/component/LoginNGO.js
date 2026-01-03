@@ -45,8 +45,8 @@ function LoginNGO(){
                 <input
                     type="email"
                     placeholder='Enter Email'
-                    name="email"
-                    id="email"
+                    name="_id"
+                    id="_id"
                     onChange={getData}
                 /> <br/>
                 <input
