@@ -9,8 +9,19 @@ const initialState = {
     donorObj : {},
     donorArray : [],
     status : '',
+    surplusFoodArray:[],
     message : ''
 };
+const donorSurplusFoodListThunk = createAsyncThunk('donorSlice/donorSurplusFoodListThunk',async(obj)=>{
+    try{
+        const result = await axios.post(requestedDonorURL+'/donorSurplusFoodList?donorTokenData='+donorTokenData,obj);
+        console.log("result received : ",result);
+        return result;
+    }catch(error){
+        console.log("Error in donorSurplusFoodListThunk : ",error);
+    }
+});
+
 const donorLoginThunk = createAsyncThunk('donorSlice/donorLoginThunk',async(donorObj)=>{
     try{
         const result = await axios.post(requestedDonorURL+'/loginDonor',donorObj);
@@ -98,9 +109,24 @@ const donorSlice = createSlice({
             })
             .addCase(donorAddFoodThunk.rejected,(state)=>{})
 
+            builder
+                .addCase(donorSurplusFoodListThunk.pending,(state)=>{})
+                .addCase(donorSurplusFoodListThunk.fulfilled,(state,action)=>{
+                    console.log("action : ",action);
+                    if(action.payload == undefined){
+                        state.status = 500;
+                    }
+                    if(action.payload?.status==200){
+                        state.surplusFoodArray = action.payload.data.surplusFoodList;       
+                        console.log("state.loggedInEmail : ",state.loggedInEmail);
+                        state.status = action.payload.status;
+                    }
+                })
+                .addCase(donorSurplusFoodListThunk.rejected,(state)=>{})
+
         }
 });
 
-export {donorRegistrationThunk,donorLoginThunk,donorAddFoodThunk};
+export {donorRegistrationThunk,donorLoginThunk,donorAddFoodThunk,donorSurplusFoodListThunk};
 export const {resetMessage} = donorSlice.actions;
 export default donorSlice.reducer;

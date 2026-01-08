@@ -1,12 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import {createRoot} from 'react-dom/client';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import '../style.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import jscookie from 'js-cookie';
+import { setNavShow } from '../store/commonSlice';
+const donorTokenData = jscookie.get("donorTokenData");
 
 function Navbar(){
     const [navBar,setNavBar] = useState();
     const navObj = useSelector(state=> state.common);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const donorLogout = ()=>{
+        jscookie.set("donorEmail",null);
+        jscookie.remove("donorTokenData");
+        dispatch(setNavShow("home"));
+        navigate("/");
+    }
+
     useEffect(()=>{
         let timer = setInterval(()=>{
             if(navObj.navShow=="home"){
@@ -21,11 +33,11 @@ function Navbar(){
                 setNavBar(<div id="section">
                     <Link id="navOp" to="/">Home</Link>
                     <Link id="navOp" to="/donorAddFood">AddFood</Link>
-                    <Link id="navOp" to="/">ViewRequest</Link>
+                    <Link id="navOp" to="/donorViewRequest">ViewRequest</Link>
                     <Link id="navOp" to="/">DonationHistory</Link>
                     <Link id="navOp" to="/">Blog</Link>
                     <Link id="navOp" to="/">Profile</Link>
-                    <Link id="navOp" to="/">Logout</Link>
+                    <span id="navOp" onClick={()=>{donorLogout()}}>Logout</span>
                 </div>);
             }else if(navObj.navShow=="admin"){
                 setNavBar(<div id="section">

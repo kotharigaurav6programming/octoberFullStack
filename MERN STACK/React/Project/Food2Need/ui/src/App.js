@@ -15,7 +15,7 @@ import AdminHome from './component/AdminHome.js';
 import NGOHome from './component/NGOHome.js';
 import AdminNGOList from './component/AdminNGOList.js';
 import SurplusFoodList from './component/SurplusFoodList.js';
-
+import DonorViewRequest from './component/DonorViewRequest.js';
 
 function App() {
   return (<div id="container">
@@ -35,6 +35,7 @@ function App() {
           <Route path="/adminNGOList" element={<AdminNGOList/>}/>
           <Route path="/ngoHome" element={<NGOHome/>}/>
           <Route path="/surplusFoodList" element={<SurplusFoodList/>}/>
+          <Route path="/donorViewRequest" element={<DonorViewRequest/>}/>
           
 
         </Routes>

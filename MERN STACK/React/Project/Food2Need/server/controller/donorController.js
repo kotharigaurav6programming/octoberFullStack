@@ -6,6 +6,8 @@ import jwt from 'jsonwebtoken';
 import {fileURLToPath} from 'url';
 import path from 'path';
 import surplusFoodSchema from '../model/surplusFoodSchema.js';
+import ngoSchema from '../model/ngoSchema.js';
+import { log } from 'console';
 dotenv.config();
 const DONOR_SECRET_KEY = process.env.DONOR_SECRET;
 
@@ -88,6 +90,34 @@ export const donorAddFoodController = async(request,response)=>{
         });
     }catch(error){
         console.log("Error in donorAddFoodController : ",error);
+        response.status(500).send();
+    }
+}
+
+export const donorSurplusFoodListController  = async(request,response)=>{
+    try{
+        var email = request.body._id;
+        console.log(">>>>>>>>>>>>>>>>>> email : ",email);
+        var obj = await donorSchema.find({_id:email});
+        console.log(">>>>>>>>>>>>>>>>>> userId : ",obj[0].userId);
+        
+        var surplusFoodList = await surplusFoodSchema.find({userId:obj[0].userId}).lean();
+        // console.log("............ ",surplusFoodList);
+        for(var i=0;i<surplusFoodList.length;i++){
+            if(surplusFoodList[i].allocatedNgoId!=""){
+                var ngoObj = await ngoSchema.findOne({_id:surplusFoodList[i].allocatedNgoId});
+                surplusFoodList[i].ngoName  = ngoObj.ngoName;
+                surplusFoodList[i].ngoContact  = ngoObj.contact;
+            }else{
+                surplusFoodList[i].ngoName = "";
+                surplusFoodList[i].ngoContact = '';
+            }
+        }
+        //  console.log("$$$$$$$$$$$$$$$$$$ ",surplusFoodList);
+      
+        response.status(200).send({_id:request.donorPayload._id,surplusFoodList});
+    }catch(error){
+        console.log("Error while donorSurplusFoodListController : ",error);
         response.status(500).send();
     }
 }
