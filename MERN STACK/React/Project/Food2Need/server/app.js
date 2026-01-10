@@ -12,7 +12,10 @@ import mongoose from "mongoose";
 import { adminCredentials } from "./utility/adminUtility.js";
 dotenv.config();
 var app = express();
-mongoose.connect(url);
+mongoose.connect(url,{
+    serverSelectionTimeoutMS:1200000,  // needs to give more time as some times online platform takes time to give response so that our asynchronous functionality gives unexpected behaviour
+    maxPoolSize: 10, // Adjust as needed 
+});
 
 // insertion of admin credentials starts
    (async()=>{

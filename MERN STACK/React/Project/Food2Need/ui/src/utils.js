@@ -1,5 +1,5 @@
-export const requestedAdminURL = "http://localhost:5000/admin";
-export const requestedDonorURL = "http://localhost:5000/donor";
-export const requestedNGOURL = "http://localhost:5000/ngo";
-export const imagePath = "http://localhost:5000/ngoImages";
-export const donorPath = "http://localhost:5000/donorImages";
+export const requestedAdminURL = process.env.REACT_APP_REQUESTED_ADMIN_URL;
+export const requestedDonorURL = process.env.REACT_APP_REQUESTED_DONOR_URL;
+export const requestedNGOURL = process.env.REACT_APP_REQUESTED_NGO_URL;
+export const imagePath = process.env.REACT_APP_IMAGE_PATH;
+export const donorPath = process.env.REACT_APP_DONOR_PATH;
